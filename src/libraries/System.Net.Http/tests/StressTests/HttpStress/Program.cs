@@ -33,6 +33,8 @@ namespace HttpStress
                 return (int)ExitCode.CliError;
             }
 
+            Environment.FailFast("Manicka test, delete this before merging");
+
             return (int)await Run(config);
         }
 
