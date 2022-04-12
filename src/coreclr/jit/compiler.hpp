@@ -4386,6 +4386,22 @@ void GenTree::VisitOperands(TVisitor visitor)
             return;
         }
 
+        case GT_COND_EQ:
+        case GT_COND_NE:
+        case GT_COND_LT:
+        case GT_COND_LE:
+        case GT_COND_GE:
+        case GT_COND_GT:
+        {
+            GenTreeConditional* const cond = this->AsConditional();
+            if (visitor(cond->gtCond) == VisitResult::Abort)
+            {
+                return;
+            }
+            VisitBinOpOperands<TVisitor>(visitor);
+            return;
+        }
+
         // Binary nodes
         default:
             assert(this->OperIsBinary());

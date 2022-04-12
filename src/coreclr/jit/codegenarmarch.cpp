@@ -365,6 +365,15 @@ void CodeGen::genCodeForTreeNode(GenTree* treeNode)
             genCodeForCompare(treeNode->AsOp());
             break;
 
+        case GT_COND_EQ:
+        case GT_COND_NE:
+        case GT_COND_LT:
+        case GT_COND_LE:
+        case GT_COND_GE:
+        case GT_COND_GT:
+            genCodeForConditional(treeNode->AsConditional());
+            break;
+
         case GT_JTRUE:
             genCodeForJumpTrue(treeNode->AsOp());
             break;

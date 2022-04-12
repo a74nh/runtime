@@ -147,6 +147,13 @@ GTNODE(GT               , GenTreeOp          ,0,GTK_BINOP)
 GTNODE(TEST_EQ          , GenTreeOp          ,0,GTK_BINOP|DBK_NOTHIR)
 GTNODE(TEST_NE          , GenTreeOp          ,0,GTK_BINOP|DBK_NOTHIR)
 
+GTNODE(COND_EQ          , GenTreeConditional ,0,GTK_BINOP)
+GTNODE(COND_NE          , GenTreeConditional ,0,GTK_BINOP)
+GTNODE(COND_LT          , GenTreeConditional ,0,GTK_BINOP)
+GTNODE(COND_LE          , GenTreeConditional ,0,GTK_BINOP)
+GTNODE(COND_GE          , GenTreeConditional ,0,GTK_BINOP)
+GTNODE(COND_GT          , GenTreeConditional ,0,GTK_BINOP)
+
 GTNODE(COMMA            , GenTreeOp          ,0,GTK_BINOP|DBK_NOTLIR)
 GTNODE(QMARK            , GenTreeQmark       ,0,GTK_BINOP|GTK_EXOP|DBK_NOTLIR)
 GTNODE(COLON            , GenTreeColon       ,0,GTK_BINOP|DBK_NOTLIR)

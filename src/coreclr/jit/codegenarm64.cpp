@@ -4223,6 +4223,52 @@ void CodeGen::genCodeForCompare(GenTreeOp* tree)
 }
 
 //------------------------------------------------------------------------
+// genCodeForCompare: Produce code for a GT_CEQ/GT_CNE node.
+//
+// Arguments:
+//    tree - the node
+//
+void CodeGen::genCodeForConditional(GenTreeConditional* tree)
+{
+    emitter* emit = GetEmitter();
+
+    insCond cond = INS_COND_EQ;
+    switch (tree->OperGet())
+    {
+        case GT_COND_EQ:
+            cond = INS_COND_EQ;
+            break;
+        case GT_COND_NE:
+            cond = INS_COND_NE;
+            break;
+        case GT_COND_GE:
+            cond = INS_COND_GE;
+            break;
+        case GT_COND_GT:
+            cond = INS_COND_GT;
+            break;
+        case GT_COND_LT:
+            cond = INS_COND_LT;
+            break;
+        case GT_COND_LE:
+            cond = INS_COND_LE;
+            break;
+        default:
+            assert(false && "Invalid condition");
+            break;
+    }
+
+    emitAttr attr = emitActualTypeSize(tree->TypeGet());
+
+    regNumber targetReg = tree->GetRegNum();
+    regNumber srcReg1 = genConsumeReg(tree->gtGetOp1());
+    regNumber srcReg2 = genConsumeReg(tree->gtGetOp2());
+
+    emit->emitIns_R_R_R_COND(INS_csel, attr, targetReg, srcReg1, srcReg2, cond);
+    regSet.verifyRegUsed(targetReg);
+}
+
+//------------------------------------------------------------------------
 // genCodeForJumpCompare: Generates code for jmpCompare statement.
 //
 // A GT_JCMP node is created when a comparison and conditional branch

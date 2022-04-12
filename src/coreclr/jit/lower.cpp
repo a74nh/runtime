@@ -3174,6 +3174,195 @@ GenTree* Lowering::LowerCompare(GenTree* cmp)
     return cmp->gtNext;
 }
 
+
+//------------------------------------------------------------------------
+// Lowering::LowerIfCompares: Merges a if+branch block with a following conditional block
+//
+// Arguments:
+//    block - Block to be lowered
+//
+
+void Lowering::LowerIfCompares(BasicBlock* block)
+{
+    GenTree* last = block->lastNode();
+    BasicBlock *middle_block = nullptr;
+
+    // Arm only for now.
+#ifdef TARGET_ARM64
+
+    // Does the block end by branching via a JTRUE after a compare?
+    if (block->bbJumpKind == BBJ_COND && block->NumSucc() == 2 &&
+        last->OperIs(GT_JTRUE) && last->gtGetOp1()->OperIsCompare())
+    {
+        // Is the false path (next) a diversion which then unconditionally
+        // goes back to the true path (JumpDest)?
+        if (block->bbNext->NumSucc() == 1 && block->bbNext->bbJumpKind == BBJ_NONE &&
+            block->bbNext->bbNext == block->bbJumpDest)
+        {
+            middle_block = block->bbNext;
+        }
+    }
+
+    // middle_block is the diversion block.
+    // Can all the nodes within it be made to conditionally execute?
+    if (middle_block)
+    {
+        JITDUMP("Attempting to conditionally execute " FMT_BB " from " FMT_BB "\n", middle_block->bbNum, block->bbNum);
+        GenTree* node = LIR::AsRange(middle_block).FirstNode();
+        bool conditional_found = false;
+        while (node != nullptr && middle_block != nullptr)
+        {
+            // Check the block only contains certain instructions
+            switch (node->gtOper)
+            {
+                case GT_IL_OFFSET:
+                case GT_CNS_INT:
+                case GT_STORE_LCL_VAR:
+                case GT_LCL_VAR:
+                    // We can unconditionally keep these.
+                    break;
+
+                case GT_EQ:
+                case GT_NE:
+                case GT_LT:
+                case GT_LE:
+                case GT_GE:
+                case GT_GT:
+                    // These instructions overwrite the flags being used to predicate the entire block.
+                    if (conditional_found)
+                    {
+                        // ... Therefore can only handle one per block.
+                        middle_block = nullptr;
+                    }
+                    conditional_found = true;
+                    break;
+
+                case GT_COND_EQ:
+                case GT_COND_NE:
+                case GT_COND_LT:
+                case GT_COND_LE:
+                case GT_COND_GE:
+                case GT_COND_GT:
+                    // These are already conditionally executed based on a previous instruction
+                    // in the block
+                    assert(conditional_found == true && "Unbound conditional node");
+                    break;
+
+                default:
+                    // Cannot optimise this block.
+                    middle_block = nullptr;
+                    break;
+            }
+            node = node->gtNext;
+        }
+    }
+
+    // Conditionally execute the middle block and merge it into the main one.
+    if (middle_block)
+    {
+        JITDUMP("Rewriting with conditionals (before):\n");
+        comp->fgDumpBlock(block);
+        comp->fgDumpBlock(middle_block);
+        JITDUMP("\n");
+        GenTree* cmp = last->gtGetOp1();
+
+        // Remove the JTRUE node
+        LIR::AsRange(block).Remove(last);
+        assert(cmp->gtNext == nullptr);
+
+        // The compare generates flags, not a register.
+        cmp->gtType  = TYP_VOID;
+        cmp->gtFlags |= GTF_SET_FLAGS;
+
+        // Get the condition op by inverting the condition used to enter the block.
+        genTreeOps cond_op = GT_COND_NE;
+        switch (cmp->OperGet())
+        {
+            case GT_EQ:
+                cond_op = GT_COND_NE;
+                break;
+            case GT_NE:
+                cond_op = GT_COND_EQ;
+                break;
+            case GT_LT:
+                cond_op = GT_COND_GE;
+                break;
+            case GT_LE:
+                cond_op = GT_COND_GT;
+                break;
+            case GT_GE:
+                cond_op = GT_COND_LT;
+                break;
+            case GT_GT:
+                cond_op = GT_COND_LE;
+                break;
+            default:
+                assert(false && "Invalid condition");
+                break;
+        }
+
+        // Iterate over the middle block, adding conditional nodes.
+        GenTree* node = LIR::AsRange(middle_block).FirstNode();
+        while (node != nullptr)
+        {
+            switch (node->gtOper)
+            {
+                //AHTODO: In double condition, these end up in the wrong places.
+                //        But cannot move up due to dependency on the GT_STORE_LCL_VAR's gtOp1
+                case GT_STORE_LCL_VAR:
+                {
+                    // Create a node containing the value currently at the destination.
+                    GenTree* base = new (comp, GT_LCL_VAR) GenTreeLclVar(GT_LCL_VAR, node->TypeGet(), node->AsLclVarCommon()->GetLclNum());
+                    BlockRange().InsertBefore(node, base);
+
+                    // Create a conditional node.
+                    GenTree* cond = new (comp, cond_op) GenTreeConditional(cond_op, node->TypeGet(), cmp, node->AsOp()->gtOp1, base);
+                    BlockRange().InsertBefore(node, cond);
+                    node->AsOp()->gtOp1 = cond;
+
+                    break;
+                }
+
+                case GT_EQ:
+                case GT_NE:
+                case GT_LT:
+                case GT_LE:
+                case GT_GE:
+                case GT_GT:
+                case GT_COND_EQ:
+                case GT_COND_NE:
+                case GT_COND_LT:
+                case GT_COND_LE:
+                case GT_COND_GE:
+                case GT_COND_GT:
+
+                case GT_IL_OFFSET:
+                case GT_CNS_INT:
+                case GT_LCL_VAR:
+                    // Nothing needs updating here.
+                    break;
+
+                default:
+                    assert(false && "Invalid node found in conditional block.");
+                    break;
+            }
+            node = node->gtNext;
+        }
+
+        // Merge the original and middle blocks.
+        comp->fgRemoveAllRefPreds(block->bbJumpDest, block);
+        block->bbJumpKind = BBJ_NONE;
+        block->bbJumpDest = block->bbNext;
+        comp->fgCompactBlocks(block, block->bbNext);
+
+        JITDUMP("Rewriting with conditionals (after):");
+        comp->fgDumpBlock(block);
+        JITDUMP("\n");
+    }
+#endif
+}
+
+
 //------------------------------------------------------------------------
 // Lowering::LowerJTrue: Lowers a JTRUE node.
 //
@@ -6423,6 +6612,19 @@ PhaseStatus Lowering::DoPhase()
         // `lvDoNotEnregister` flag before we start reading it.
         // The main reason why this flag is not set is that we are running in minOpts.
         comp->lvSetMinOptsDoNotEnreg();
+    }
+
+    // Iterate through the blocks lowering any if+branch blocks.
+    // Do this before general lowering so that JCMP nodes have not been created.
+    // TODO: For now this reverse iterates - that may or may not be the best option.
+    // TODO: Is this the best place to do this? Do we need a full phase?
+    // TODO: Add a reverse block iterator: comp->ReverseBlocks().
+    // TODO: Can JCMP detection be removed once this does everything?
+    BasicBlock* block = comp->fgLastBB;
+    while (block != nullptr)
+    {
+        LowerIfCompares(block);
+        block=block->bbPrev;
     }
 
     for (BasicBlock* const block : comp->Blocks())
