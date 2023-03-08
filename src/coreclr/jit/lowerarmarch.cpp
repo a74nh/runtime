@@ -2267,19 +2267,6 @@ void Lowering::ContainCheckCast(GenTreeCast* node)
 //
 void Lowering::ContainCheckCompare(GenTreeOp* cmp)
 {
-#if defined(TARGET_ARM64)
-    if (cmp->OperIs(GT_TEST_EQ, GT_TEST_NE))
-    {
-        if (ContainCheckCompareChainForAnd(cmp))
-        {
-            // Turn the chain into a CCMP node
-            JITDUMP("Switching node to CCMP:\n");
-            cmp->SetOper(cmp->OperIs(GT_TEST_EQ) ? GT_CCMP_NE : GT_CCMP_EQ);
-            DISPNODE(cmp);
-        }
-    }
-#endif
-
     CheckImmedAndMakeContained(cmp, cmp->gtOp2);
 }
 
@@ -2417,11 +2404,10 @@ insCflags Lowering::TruthifyingFlags(GenCondition condition)
             NO_WAY("unexpected condition type");
             return INS_FLAGS_NONE;
     }
-    return false;
 }
 
 //------------------------------------------------------------------------
-// ContainCheckChainedCompare: determine whether the source of a compare within a compare chain should be contained.
+// ContainCheckConditionalCompare: determine whether the source of a compare within a compare chain should be contained.
 //
 // Arguments:
 //    node - pointer to the node

@@ -886,7 +886,6 @@ protected:
     void genCodeForCCMP(GenTreeCCMP* ccmp);
 #endif
     void genCodeForSelect(GenTreeOp* select);
-    void genCodeForConditionalCompare(GenTreeOp* select);
     void genIntrinsic(GenTreeIntrinsic* treeNode);
     void genPutArgStk(GenTreePutArgStk* treeNode);
     void genPutArgReg(GenTreeOp* tree);

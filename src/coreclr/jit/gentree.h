@@ -1068,7 +1068,7 @@ public:
         {
             // These are the only operators which can produce either VOID or non-VOID results.
             assert(OperIs(GT_NOP, GT_CALL, GT_COMMA) || OperIsCompare() || OperIsLong() || OperIsHWIntrinsic() ||
-                   IsCnsVec() || OperIsConditionalCompare());
+                   IsCnsVec());
             return false;
         }
 
@@ -1361,20 +1361,6 @@ public:
     bool OperIsConditional() const
     {
         return OperIsConditional(OperGet());
-    }
-
-    static bool OperIsConditionalCompare(genTreeOps gtOper)
-    {
-#if defined(TARGET_ARM64)
-        return (GT_CCMP_EQ == gtOper || GT_CCMP_NE == gtOper);
-#else
-        return false;
-#endif
-    }
-
-    bool OperIsConditionalCompare() const
-    {
-        return OperIsConditionalCompare(OperGet());
     }
 
     static bool OperIsCC(genTreeOps gtOper)

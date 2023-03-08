@@ -250,11 +250,6 @@ GTNODE(SELECTCC         , GenTreeOpCC        ,0,GTK_BINOP|DBK_NOTHIR)
 // sets the condition flags to the specified immediate value.
 GTNODE(CCMP             , GenTreeCCMP        ,0,GTK_BINOP|GTK_NOVALUE|DBK_NOTHIR)
 #endif
-// Sets the condition flags according to the combined results of its children.
-#if defined(TARGET_ARM64)
-GTNODE(CCMP_EQ          , GenTreeOp          ,0,GTK_BINOP|DBK_NOTHIR)
-GTNODE(CCMP_NE          , GenTreeOp          ,0,GTK_BINOP|DBK_NOTHIR)
-#endif
 
 
 //-----------------------------------------------------------------------------
