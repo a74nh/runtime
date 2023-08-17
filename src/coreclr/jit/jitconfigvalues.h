@@ -440,6 +440,14 @@ CONFIG_INTEGER(JitDoValueNumber, W("JitDoValueNumber"), 1) // Perform value numb
 CONFIG_METHODSET(JitOptRepeat, W("JitOptRepeat"))            // Runs optimizer multiple times on the method
 CONFIG_INTEGER(JitOptRepeatCount, W("JitOptRepeatCount"), 2) // Number of times to repeat opts when repeating
 CONFIG_INTEGER(JitDoIfConversion, W("JitDoIfConversion"), 1) // Perform If conversion
+CONFIG_INTEGER(JitDoIfConversionUniquePred, W("JitDoIfConversionUniquePred"), 1) // Perform If conversion unique predication check
+CONFIG_INTEGER(JitDoCompareChainCond, W("JitDoCompareChainCond"), 1) // Perform Compare chain conditions
+CONFIG_INTEGER(JitDoCompareChainCondLowering, W("JitDoCompareChainCondLowering"), 1) // Perform Compare chain conditions
+CONFIG_INTEGER(JitDoLowering, W("JitDoLowering"), 1) // Perform Lowering
+CONFIG_INTEGER(JitDoLowerConstCompare, W("JitDoLowerConstCompare"), 1) // Perform const compare Lowering
+CONFIG_INTEGER(JitDoLowerJTrue, W("JitDoLowerJTrue"), 1) // Perform JTRUE Lowering
+CONFIG_INTEGER(JitDoLowerSelect, W("JitDoLowerSelect"), 1) // Perform SELECT Lowering
+CONFIG_INTEGER(JitFailLoweringBitCast, W("JitFailLoweringBitCast"), 0) // Cause assert failure when lowering a bit cast.
 #endif                                                       // defined(OPT_CONFIG)
 
 CONFIG_INTEGER(JitTelemetry, W("JitTelemetry"), 1) // If non-zero, gather JIT telemetry data

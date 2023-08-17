@@ -525,6 +525,12 @@ GenTree* Lowering::LowerNode(GenTree* node)
             break;
 
         case GT_BITCAST:
+#if defined(DEBUG)
+        if (JitConfig.JitFailLoweringBitCast() != 0)
+        {
+            assert(false);
+        }
+#endif
             ContainCheckBitCast(node);
             break;
 
@@ -3412,6 +3418,11 @@ GenTree* Lowering::DecomposeLongCompare(GenTree* cmp)
 //
 GenTree* Lowering::OptimizeConstCompare(GenTree* cmp)
 {
+    bool doJitDoLowerConstCompare = true;
+#if defined(DEBUG)
+    doJitDoLowerConstCompare = (JitConfig.JitDoLowerConstCompare() != 0);
+#endif
+
     assert(cmp->gtGetOp2()->IsIntegralConst());
 
     GenTree*       op1 = cmp->gtGetOp1();
@@ -3492,7 +3503,7 @@ GenTree* Lowering::OptimizeConstCompare(GenTree* cmp)
             }
         }
     }
-    else if (op1->OperIs(GT_AND) && cmp->OperIs(GT_EQ, GT_NE))
+    else if (op1->OperIs(GT_AND) && cmp->OperIs(GT_EQ, GT_NE) && doJitDoLowerConstCompare)
     {
         //
         // Transform ((x AND y) EQ|NE 0) into (x TEST_EQ|TEST_NE y) when possible.
@@ -3714,6 +3725,13 @@ GenTree* Lowering::LowerCompare(GenTree* cmp)
 //
 GenTree* Lowering::LowerJTrue(GenTreeOp* jtrue)
 {
+#if defined(DEBUG)
+    if (JitConfig.JitDoLowerJTrue() == 0)
+    {
+        return nullptr;
+    }
+#endif
+
     GenTree* cond = jtrue->gtGetOp1();
 
     JITDUMP("Lowering JTRUE:\n");
@@ -3796,6 +3814,11 @@ GenTree* Lowering::LowerSelect(GenTreeConditional* select)
     GenTree* trueVal  = select->gtOp1;
     GenTree* falseVal = select->gtOp2;
 
+    bool doJitDoLowerSelect = true;
+#if defined(DEBUG)
+    doJitDoLowerSelect = (JitConfig.JitDoLowerSelect() != 0);
+#endif
+
     // Replace SELECT cond 1/0 0/1 with (perhaps reversed) cond
     if (cond->OperIsCompare() && ((trueVal->IsIntegralConst(0) && falseVal->IsIntegralConst(1)) ||
                                   (trueVal->IsIntegralConst(1) && falseVal->IsIntegralConst(0))))
@@ -3835,7 +3858,7 @@ GenTree* Lowering::LowerSelect(GenTreeConditional* select)
     // on 32-bit architectures because of this.
     GenCondition selectCond;
     GenTreeOpCC* newSelect = nullptr;
-    if (((select->gtFlags & GTF_SET_FLAGS) == 0) && TryLowerConditionToFlagsNode(select, cond, &selectCond))
+    if (doJitDoLowerSelect && ((select->gtFlags & GTF_SET_FLAGS) == 0) && TryLowerConditionToFlagsNode(select, cond, &selectCond))
     {
         select->SetOper(GT_SELECTCC);
         newSelect              = select->AsOpCC();
@@ -7300,6 +7323,13 @@ void Lowering::LowerBlock(BasicBlock* block)
 
     m_block = block;
 
+
+#if defined(DEBUG)
+    if (JitConfig.JitDoLowering() == 0)
+    {
+        return;
+    }
+#endif
     // NOTE: some of the lowering methods insert calls before the node being
     // lowered (See e.g. InsertPInvoke{Method,Call}{Prolog,Epilog}). In
     // general, any code that is inserted before the current node should be

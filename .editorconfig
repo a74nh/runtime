@@ -187,3 +187,8 @@ indent_size = 2
 end_of_line = lf
 [*.{cmd,bat}]
 end_of_line = crlf
+
+# Allow if conversion example to build
+[*.{cs,vb}]
+dotnet_diagnostic.IDE0060.severity = none
+dotnet_diagnostic.IDE0073.severity = none

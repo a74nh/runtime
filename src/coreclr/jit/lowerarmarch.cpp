@@ -2325,6 +2325,13 @@ GenTree* Lowering::TryLowerAndOrToCCMP(GenTreeOp* tree)
 {
     assert(tree->OperIs(GT_AND, GT_OR));
 
+#if defined(DEBUG)
+    if (JitConfig.JitDoCompareChainCondLowering() == 0)
+    {
+        return nullptr;
+    }
+#endif
+
     if (!comp->opts.OptimizationEnabled())
     {
         return nullptr;

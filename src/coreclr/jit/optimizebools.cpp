@@ -1512,6 +1512,11 @@ PhaseStatus Compiler::optOptimizeBools()
                     continue;
                 }
 
+                bool doCompareChain = true;
+#if defined(DEBUG)
+                doCompareChain = JitConfig.JitDoCompareChainCond() != 0;
+#endif
+
                 // When it is conditional jumps
 
                 if (optBoolsDsc.optOptimizeBoolsCondBlock())
@@ -1520,7 +1525,7 @@ PhaseStatus Compiler::optOptimizeBools()
                     numCond++;
                 }
 #ifdef TARGET_ARM64
-                else if (optBoolsDsc.optOptimizeCompareChainCondBlock())
+                else if (doCompareChain && optBoolsDsc.optOptimizeCompareChainCondBlock())
                 {
                     // The optimization will have merged b1 and b2. Retry the loop so that
                     // b1 and b2->bbNext can be tested.

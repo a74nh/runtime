@@ -90,7 +90,7 @@ bool OptIfConversionDsc::IfConvertCheckInnerBlockFlow(BasicBlock* block)
 
     // Check that we have linear flow and are still in the same EH region
 
-    if (block->GetUniquePred(m_comp) == nullptr)
+    if (block->GetUniquePred(m_comp) == nullptr && JitConfig.JitDoIfConversionUniquePred() != 0)
     {
         return false;
     }
