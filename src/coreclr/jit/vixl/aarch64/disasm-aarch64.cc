@@ -34,7 +34,9 @@ namespace vixl {
 namespace aarch64 {
 
 
-Disassembler::Disassembler() {
+Disassembler::Disassembler(Compiler* _compiler)
+  : compiler(_compiler)
+{
   buffer_size_ = 256;
   buffer_ = reinterpret_cast<char *>(malloc(buffer_size_));
   buffer_pos_ = 0;
@@ -43,7 +45,9 @@ Disassembler::Disassembler() {
 }
 
 
-Disassembler::Disassembler(char *text_buffer, int buffer_size) {
+Disassembler::Disassembler(Compiler* _compiler, char *text_buffer, int buffer_size)
+  : compiler(_compiler)
+{
   buffer_size_ = buffer_size;
   buffer_ = text_buffer;
   buffer_pos_ = 0;
@@ -1698,7 +1702,7 @@ void Disassembler::VisitAtomicMemory(const Instruction *instr) {
 
   char buffer[kMaxAtomicOpMnemonicLength];
   if (strlen(prefix) > 0) {
-    snprintf(buffer, kMaxAtomicOpMnemonicLength, "%s%s", prefix, mnemonic);
+    _snprintf_s(buffer, kMaxAtomicOpMnemonicLength, -1, "%s%s", prefix, mnemonic);
     mnemonic = buffer;
   }
 
@@ -4883,8 +4887,8 @@ void Disassembler::VisitNEONTable(const Instruction *instr) {
 
   char re_form[sizeof(form_4v) + 6];
   int reg_num = instr->GetRn();
-  snprintf(re_form,
-           sizeof(re_form),
+  _snprintf_s(re_form,
+           sizeof(re_form), -1,
            form,
            (reg_num + 1) % kNumberOfVRegisters,
            (reg_num + 2) % kNumberOfVRegisters,
@@ -10660,13 +10664,20 @@ int Disassembler::SubstitutePrefetchField(const Instruction *instr,
   int placeholder_length = is_sve ? 9 : 6;
   static const char *stream_options[] = {"keep", "strm"};
 
-  auto get_hints = [](bool is_sve) -> std::vector<std::string> {
-    static const std::vector<std::string> sve_hints = {"ld", "st"};
-    static const std::vector<std::string> core_hints = {"ld", "li", "st"};
-    return (is_sve) ? sve_hints : core_hints;
-  };
+  // auto get_hints xt= [](bool is_sve) -> jitstd::vector<std::string> {
+  //   //AHTODO
+  //   static const jitstd::vector<std::string> sve_hints(compiler->getAllocator(CMK_Codegen));
+  //   // sve_hints.push_back("ld");
+  //   // sve_hints.push_back("st");
+  //   static const jitstd::vector<std::string> core_hints(compiler->getAllocator(CMK_Codegen));
+  //   // core_hints.push_back("ld");
+  //   // core_hints.push_back("li");
+  //   // core_hints.push_back("st");
+  //   return (is_sve) ? sve_hints : core_hints;
+  // };
 
-  std::vector<std::string> hints = get_hints(is_sve);
+  jitstd::vector<std::string> hints(compiler->getAllocator(CMK_Codegen));
+  // /= get_hints(is_sve);
   unsigned hint =
       is_sve ? instr->GetSVEPrefetchHint() : instr->GetPrefetchHint();
   unsigned target = instr->GetPrefetchTarget() + 1;
@@ -10674,13 +10685,14 @@ int Disassembler::SubstitutePrefetchField(const Instruction *instr,
 
   if ((hint >= hints.size()) || (target > 3)) {
     // Unallocated prefetch operations.
-    if (is_sve) {
-      std::bitset<4> prefetch_mode(instr->GetSVEImmPrefetchOperation());
-      AppendToOutput("#0b%s", prefetch_mode.to_string().c_str());
-    } else {
-      std::bitset<5> prefetch_mode(instr->GetImmPrefetchOperation());
-      AppendToOutput("#0b%s", prefetch_mode.to_string().c_str());
-    }
+    //AHTODO
+    // if (is_sve) {
+    //   std::bitset<4> prefetch_mode(instr->GetSVEImmPrefetchOperation());
+    //   AppendToOutput("#0b%s", prefetch_mode.to_string().c_str());
+    // } else {
+    //   std::bitset<5> prefetch_mode(instr->GetImmPrefetchOperation());
+    //   AppendToOutput("#0b%s", prefetch_mode.to_string().c_str());
+    // }
   } else {
     VIXL_ASSERT(stream < ArrayLength(stream_options));
     AppendToOutput("p%sl%d%s",
@@ -10905,8 +10917,8 @@ void Disassembler::ResetOutput() {
 void Disassembler::AppendToOutput(const char *format, ...) {
   va_list args;
   va_start(args, format);
-  buffer_pos_ += vsnprintf(&buffer_[buffer_pos_],
-                           buffer_size_ - buffer_pos_,
+  buffer_pos_ += _vsnprintf_s(&buffer_[buffer_pos_],
+                           buffer_size_ - buffer_pos_, -1,
                            format,
                            args);
   va_end(args);
@@ -10914,7 +10926,7 @@ void Disassembler::AppendToOutput(const char *format, ...) {
 
 
 void PrintDisassembler::Disassemble(const Instruction *instr) {
-  Decoder decoder;
+  Decoder decoder(compiler);
   if (cpu_features_auditor_ != NULL) {
     decoder.AppendVisitor(cpu_features_auditor_);
   }
@@ -10924,7 +10936,7 @@ void PrintDisassembler::Disassemble(const Instruction *instr) {
 
 void PrintDisassembler::DisassembleBuffer(const Instruction *start,
                                           const Instruction *end) {
-  Decoder decoder;
+  Decoder decoder(compiler);
   if (cpu_features_auditor_ != NULL) {
     decoder.AppendVisitor(cpu_features_auditor_);
   }
@@ -10977,16 +10989,17 @@ void PrintDisassembler::ProcessOutput(const Instruction *instr) {
       // Always allow some space between the instruction and the annotation.
       const int min_pad = 2;
 
-      int pad = std::max(min_pad, (indent_to - bytes_printed));
+      int pad = max(min_pad, (indent_to - bytes_printed));
       fprintf(stream_, "%*s", pad, "");
 
-      std::stringstream features;
-      features << needs;
-      fprintf(stream_,
-              "%s%s%s",
-              cpu_features_prefix_,
-              features.str().c_str(),
-              cpu_features_suffix_);
+      //AHTODO
+      // std::stringstream features;
+      // features << needs;
+      // fprintf(stream_,
+      //         "%s%s%s",
+      //         cpu_features_prefix_,
+      //         features.str().c_str(),
+      //         cpu_features_suffix_);
     }
   }
   fprintf(stream_, "\n");

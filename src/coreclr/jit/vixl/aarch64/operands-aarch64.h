@@ -28,7 +28,7 @@
 #define VIXL_AARCH64_OPERANDS_AARCH64_H_
 
 #include <sstream>
-#include <string>
+#include <clr_std/string>
 
 #include "instructions-aarch64.h"
 #include "registers-aarch64.h"
@@ -797,7 +797,7 @@ class IntegerOperand {
   // `Insr(z0.VnB(), -1)`.
   template <unsigned N, unsigned kShift, typename T>
   bool TryEncodeAsShiftedIntNForLane(const CPURegister& zd, T* imm) const {
-    VIXL_STATIC_ASSERT(std::numeric_limits<T>::digits > N);
+    // VIXL_STATIC_ASSERT(std::numeric_limits<T>::digits > N);
     VIXL_ASSERT(FitsInLane(zd));
     if ((raw_bits_ & GetUintMask(kShift)) != 0) return false;
 
@@ -856,7 +856,7 @@ class IntegerOperand {
   // is provided for symmetry.
   template <unsigned N, unsigned kShift, typename T>
   bool TryEncodeAsShiftedUintNForLane(const CPURegister& zd, T* imm) const {
-    VIXL_STATIC_ASSERT(std::numeric_limits<T>::digits > N);
+    // VIXL_STATIC_ASSERT(std::numeric_limits<T>::digits > N);
     VIXL_ASSERT(FitsInLane(zd));
 
     // TODO: Should we convert -1 to 0xff here?

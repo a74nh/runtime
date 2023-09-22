@@ -27,8 +27,8 @@
 #ifndef VIXL_CPU_FEATURES_H
 #define VIXL_CPU_FEATURES_H
 
-#include <bitset>
-#include <ostream>
+// #include <bitset>
+// #include <ostream>
 
 #include "globals-vixl.h"
 
@@ -372,15 +372,17 @@ class CPUFeatures {
   const_iterator end() const;
 
  private:
+  //AHTODO
   // Each bit represents a feature. This set will be extended as needed.
-  std::bitset<kNumberOfFeatures> features_;
+  // std::bitset<kNumberOfFeatures> features_;
+  int features_;
 
-  friend std::ostream& operator<<(std::ostream& os,
-                                  const vixl::CPUFeatures& features);
+  // friend std::ostream& operator<<(std::ostream& os,
+  //                                 const vixl::CPUFeatures& features);
 };
 
-std::ostream& operator<<(std::ostream& os, vixl::CPUFeatures::Feature feature);
-std::ostream& operator<<(std::ostream& os, const vixl::CPUFeatures& features);
+// std::ostream& operator<<(std::ostream& os, vixl::CPUFeatures::Feature feature);
+// std::ostream& operator<<(std::ostream& os, const vixl::CPUFeatures& features);
 
 // This is not a proper C++ iterator type, but it simulates enough of
 // ForwardIterator that simple loops can be written.
@@ -407,8 +409,8 @@ class CPUFeaturesConstIterator {
   // For proper support of C++'s simplest "Iterator" concept, this class would
   // have to define member types (such as CPUFeaturesIterator::pointer) to make
   // it appear as if it iterates over Feature objects in memory. That is, we'd
-  // need CPUFeatures::iterator to behave like std::vector<Feature>::iterator.
-  // This is at least partially possible -- the std::vector<bool> specialisation
+  // need CPUFeatures::iterator to behave like jitstd::vector<Feature>::iterator.
+  // This is at least partially possible -- the jitstd::vector<bool> specialisation
   // does something similar -- but it doesn't seem worthwhile for a
   // special-purpose debug helper, so they are omitted here.
  private:

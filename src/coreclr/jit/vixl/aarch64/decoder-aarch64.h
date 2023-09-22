@@ -27,14 +27,15 @@
 #ifndef VIXL_AARCH64_DECODER_AARCH64_H_
 #define VIXL_AARCH64_DECODER_AARCH64_H_
 
-#include <list>
-#include <map>
-#include <string>
+#include "list.h"
+// #include <map>
+#include <clr_std/string>
 
 #include "../globals-vixl.h"
 
 #include "instructions-aarch64.h"
 
+#include "../../jit.h"
 
 // List macro containing all visitors needed by the decoder class.
 
@@ -336,7 +337,11 @@ class CompiledDecodeNode;
 // handles the instruction.
 class Decoder {
  public:
-  Decoder() { ConstructDecodeGraph(); }
+  Decoder(Compiler* _compiler) :
+    compiler(_compiler),
+    visitors_(_compiler->getAllocator(CMK_Codegen)),
+    decode_nodes_(_compiler->getAllocator(CMK_Codegen))
+  { ConstructDecodeGraph(); }
 
   // Top-level wrappers around the actual decoding function.
   void Decode(const Instruction* instr);
@@ -393,10 +398,12 @@ class Decoder {
   VISITOR_LIST(DECLARE)
 #undef DECLARE
 
-  std::list<DecoderVisitor*>* visitors() { return &visitors_; }
+  jitstd::list<DecoderVisitor*>* visitors() { return &visitors_; }
 
   // Get a DecodeNode by name from the Decoder's map.
   DecodeNode* GetDecodeNode(std::string name);
+
+  Compiler* compiler;
 
  private:
   // Decodes an instruction and calls the visitor functions registered with the
@@ -407,7 +414,7 @@ class Decoder {
   void AddDecodeNode(const DecodeNode& node);
 
   // Visitors are registered in a list.
-  std::list<DecoderVisitor*> visitors_;
+  jitstd::list<DecoderVisitor*> visitors_;
 
   // Compile the dynamically generated decode graph based on the static
   // information in kDecodeMapping and kVisitorNodes.
@@ -418,7 +425,8 @@ class Decoder {
   CompiledDecodeNode* compiled_decoder_root_;
 
   // Map of node names to DecodeNodes.
-  std::map<std::string, DecodeNode> decode_nodes_;
+  // std::map<std::string, DecodeNode> decode_nodes_;
+  jitstd::vector<DecodeNode> decode_nodes_;
 };
 
 const int kMaxDecodeSampledBits = 16;
@@ -535,20 +543,27 @@ class CompiledDecodeNode {
 class DecodeNode {
  public:
   // Default constructor needed for map initialisation.
-  DecodeNode() : compiled_node_(NULL) {}
+  DecodeNode(Compiler* compiler)
+      : sampled_bits_(compiler->getAllocator(CMK_Codegen)),
+        pattern_table_(compiler->getAllocator(CMK_Codegen)),
+        compiled_node_(NULL) {}
 
   // Constructor for DecodeNode wrappers around visitor functions. These are
   // marked as "compiled", as there is no decoding left to do.
-  explicit DecodeNode(const VisitorNode& visitor, Decoder* decoder)
+  explicit DecodeNode(Compiler* compiler, const VisitorNode& visitor, Decoder* decoder)
       : name_(visitor.name),
+        sampled_bits_(compiler->getAllocator(CMK_Codegen)),
         visitor_fn_(visitor.visitor_fn),
+        pattern_table_(compiler->getAllocator(CMK_Codegen)),
         decoder_(decoder),
         compiled_node_(NULL) {}
 
   // Constructor for DecodeNodes that map bit patterns to other DecodeNodes.
-  explicit DecodeNode(const DecodeMapping& map, Decoder* decoder = NULL)
+  explicit DecodeNode(Compiler* compiler, const DecodeMapping& map, Decoder* decoder = NULL)
       : name_(map.name),
+        sampled_bits_(compiler->getAllocator(CMK_Codegen)),
         visitor_fn_(NULL),
+        pattern_table_(compiler->getAllocator(CMK_Codegen)),
         decoder_(decoder),
         compiled_node_(NULL) {
     // The length of the bit string in the first mapping determines the number
@@ -572,7 +587,7 @@ class DecodeNode {
   void SetSampledBits(const uint8_t* bits, int bit_count);
 
   // Get the bits sampled from the instruction by this node.
-  std::vector<uint8_t> GetSampledBits() const;
+  jitstd::vector<uint8_t> GetSampledBits() const;
 
   // Get the number of bits sampled from the instruction by this node.
   size_t GetSampledBitsCount() const;
@@ -655,7 +670,7 @@ class DecodeNode {
 
   // Vector of bits sampled from an instruction to determine which node to look
   // up next in the decode process.
-  std::vector<uint8_t> sampled_bits_;
+  jitstd::vector<uint8_t> sampled_bits_;
 
   // Visitor function that handles the instruction identified. Set only for leaf
   // nodes, where no extra decoding is required. For non-leaf decoding nodes,
@@ -663,7 +678,7 @@ class DecodeNode {
   DecodeFnPtr visitor_fn_;
 
   // Source mapping from bit pattern to name of next decode stage.
-  std::vector<DecodePattern> pattern_table_;
+  jitstd::vector<DecodePattern> pattern_table_;
 
   // Pointer to the decoder containing this node, used to call its visitor
   // function for leaf nodes.

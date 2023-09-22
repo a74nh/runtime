@@ -83,7 +83,8 @@ void CodeGenInterface::CopyRegisterInfo()
 
 /*****************************************************************************/
 
-CodeGen::CodeGen(Compiler* theCompiler) : CodeGenInterface(theCompiler)
+CodeGen::CodeGen(Compiler* theCompiler)
+    : CodeGenInterface(theCompiler), vixlMasm(theCompiler)
 {
 #if defined(TARGET_XARCH)
     negBitmaskFlt  = nullptr;

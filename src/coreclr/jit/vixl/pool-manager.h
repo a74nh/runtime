@@ -274,7 +274,7 @@ class PoolObject {
     VIXL_ASSERT(min <= max_location_);
     VIXL_ASSERT(max >= min_location_);
     min_location_ = std::max(min_location_, min);
-    max_location_ = std::min(max_location_, max);
+    max_location_ = min(max_location_, max);
     UpdateLocationHint();
   }
 
@@ -445,9 +445,9 @@ class PoolManager {
   bool IsBlocked() const { return monitor_ != 0; }
 
  private:
-  typedef typename std::vector<PoolObject<T> >::iterator objects_iter;
+  typedef typename jitstd::vector<PoolObject<T> >::iterator objects_iter;
   typedef
-      typename std::vector<PoolObject<T> >::const_iterator const_objects_iter;
+      typename jitstd::vector<PoolObject<T> >::const_iterator const_objects_iter;
 
   PoolObject<T>* GetObjectIfTracked(LocationBase<T>* label) {
     return const_cast<PoolObject<T>*>(
@@ -509,10 +509,10 @@ class PoolManager {
   // is sorted every time we add, delete or update a PoolObject.
   // TODO: Consider a more efficient data structure here, to allow us to delete
   // elements as we emit them.
-  std::vector<PoolObject<T> > objects_;
+  jitstd::vector<PoolObject<T> > objects_;
 
   // Objects to be deleted on pool destruction.
-  std::vector<LocationBase<T>*> delete_on_destruction_;
+  jitstd::vector<LocationBase<T>*> delete_on_destruction_;
 
   // The header_size_ and alignment_ values are hardcoded for each instance of
   // PoolManager. The PoolManager does not know how to emit the header, and

@@ -170,6 +170,13 @@ check_type_size(prwatch_t PRWATCH_T)
 set(CMAKE_EXTRA_INCLUDE_FILE)
 check_type_size(off_t SIZEOF_OFF_T)
 
+set(CMAKE_EXTRA_INCLUDE_FILES sys/auxv.h)
+set(CMAKE_EXTRA_INCLUDE_FILES cmath)
+set(CMAKE_EXTRA_INCLUDE_FILES sstream)
+set(CMAKE_EXTRA_INCLUDE_FILES bitset)
+set(CMAKE_EXTRA_INCLUDE_FILES inttypes.h)
+
+
 check_cxx_symbol_exists(SYS_yield sys/syscall.h HAVE_YIELD_SYSCALL)
 check_cxx_symbol_exists(INFTIM poll.h HAVE_INFTIM)
 check_cxx_symbol_exists(CHAR_BIT limits.h HAVE_CHAR_BIT)
@@ -1284,5 +1291,9 @@ check_prototype_definition(
     0
     ${STATFS_INCLUDES}
     HAVE_NON_LEGACY_STATFS)
+
+set(CMAKE_REQUIRED_LIBRARIES cmath)
+set(CMAKE_REQUIRED_LIBRARIES sstream)
+
 
 configure_file(${CMAKE_CURRENT_LIST_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)

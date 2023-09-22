@@ -318,7 +318,7 @@ vector<T, Allocator>::vector(const vector<Alt, AltAllocator>& vec)
 template <typename T, typename Allocator>
 vector<T, Allocator>::vector(const vector<T, Allocator>& vec)
     : m_allocator(vec.m_allocator)
-    , m_pArray(m_allocator.allocate(vec.m_nSize))
+    , m_pArray(vec.m_nSize>0 ? m_allocator.allocate(vec.m_nSize) : nullptr)
     , m_nSize(vec.m_nSize)
     , m_nCapacity(vec.m_nSize)
 {

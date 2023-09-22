@@ -1,5 +1,7 @@
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+set(CMAKE_EXTRA_INCLUDE_FILES signal.h)
+
 include_directories("./jitstd")
 include_directories("../inc")
 
@@ -241,6 +243,21 @@ set( JIT_ARM64_SOURCES
   unwindarm64.cpp
   hwintrinsicarm64.cpp
   hwintrinsiccodegenarm64.cpp
+  vixl/code-buffer-vixl.cc
+  vixl/compiler-intrinsics-vixl.cc
+  vixl/cpu-features.cc
+  vixl/utils-vixl.cc
+  vixl/aarch64/assembler-aarch64.cc
+  vixl/aarch64/assembler-sve-aarch64.cc
+  vixl/aarch64/cpu-aarch64.cc
+  vixl/aarch64/cpu-features-auditor-aarch64.cc
+  vixl/aarch64/decoder-aarch64.cc
+  vixl/aarch64/disasm-aarch64.cc
+  vixl/aarch64/instructions-aarch64.cc
+  vixl/aarch64/macro-assembler-aarch64.cc
+  vixl/aarch64/macro-assembler-sve-aarch64.cc
+  vixl/aarch64/operands-aarch64.cc
+  vixl/aarch64/registers-aarch64.cc
 )
 
 set( JIT_ARMV6_SOURCES
@@ -402,6 +419,31 @@ set( JIT_ARM64_HEADERS
     instrsarm64.h
     registerarm64.h
     simdashwintrinsiclistarm64.h
+    abi-aarch64.h
+  assembler-aarch64.h
+  constants-aarch64.h
+  cpu-aarch64.h
+  cpu-features-auditor-aarch64.h
+  decoder-aarch64.h
+  decoder-constants-aarch64.h
+  disasm-aarch64.h
+  instructions-aarch64.h
+  macro-assembler-aarch64.h
+  operands-aarch64.h
+  registers-aarch64.h
+  vixl/aarch64/assembler-base-vixl.h
+  vixl/aarch64/code-buffer-vixl.h
+  vixl/aarch64/code-generation-scopes-vixl.h
+  vixl/aarch64/compiler-intrinsics-vixl.h
+  vixl/cpu-features.h
+  vixl/globals-vixl.h
+  vixl/invalset-vixl.h
+  vixl/macro-assembler-interface.h
+  vixl/simulator-constants-aarch64.h
+  vixl/platform-vixl.h
+  vixl/pool-manager-impl.h
+  vixl/pool-manager.h
+  vixl/utils-vixl.h
 )
 
 set( JIT_ARM_HEADERS

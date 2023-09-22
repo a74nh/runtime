@@ -27,7 +27,7 @@
 #ifndef VIXL_AARCH64_REGISTERS_AARCH64_H_
 #define VIXL_AARCH64_REGISTERS_AARCH64_H_
 
-#include <string>
+#include <clr_std/string>
 
 #include "instructions-aarch64.h"
 
@@ -279,8 +279,10 @@ class CPURegister {
   // but this breaks backwards-compatibility quite severely, particularly with
   // code like `cond ? reg.W() : reg.X()`, which would have indeterminate type.
 
+// #undef W
+
   // Core registers, like "w0".
-  Register W() const;
+  Register Wreg() const;
   Register X() const;
   // FP/NEON registers, like "b0".
   VRegister B() const;

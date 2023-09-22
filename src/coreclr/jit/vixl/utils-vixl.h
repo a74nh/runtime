@@ -27,6 +27,7 @@
 #ifndef VIXL_UTILS_H
 #define VIXL_UTILS_H
 
+#include <math.h>
 #include <cmath>
 #include <cstring>
 #include <limits>
@@ -34,6 +35,7 @@
 
 #include "compiler-intrinsics-vixl.h"
 #include "globals-vixl.h"
+#include "../jit.h"
 
 namespace vixl {
 
@@ -390,18 +392,18 @@ VIXL_DEPRECATED("Float16Classify", inline int float16classify(uint16_t value)) {
 bool IsZero(Float16 value);
 
 inline bool IsPositiveZero(double value) {
-  return (value == 0.0) && (copysign(1.0, value) > 0.0);
+  return (value == 0.0) && (_copysign(1.0, value) > 0.0);
 }
 
-inline bool IsNaN(float value) { return std::isnan(value); }
+inline bool IsNaN(float value) { return _isnan(value); }
 
-inline bool IsNaN(double value) { return std::isnan(value); }
+inline bool IsNaN(double value) { return _isnan(value); }
 
 inline bool IsNaN(Float16 value) { return Float16Classify(value) == FP_NAN; }
 
-inline bool IsInf(float value) { return std::isinf(value); }
+inline bool IsInf(float value) { return isinf(value); }
 
-inline bool IsInf(double value) { return std::isinf(value); }
+inline bool IsInf(double value) { return isinf(value); }
 
 inline bool IsInf(Float16 value) {
   return Float16Classify(value) == FP_INFINITE;
@@ -771,7 +773,7 @@ class BitField {
   }
 
  public:
-  explicit BitField(unsigned size) : bitfield_(size, 0) {}
+  explicit BitField(Compiler* compiler, unsigned size) : bitfield_(size, 0, compiler->getAllocator(CMK_Codegen)) {}
 
   void Set(int i) {
     VIXL_ASSERT((i >= 0) && (static_cast<size_t>(i) < bitfield_.size()));
@@ -805,7 +807,7 @@ class BitField {
   }
 
  private:
-  std::vector<bool> bitfield_;
+  jitstd::vector<bool> bitfield_;
 };
 
 namespace internal {
@@ -1004,39 +1006,39 @@ Int64 BitCount(Uint32 value);
 
 // The algorithm used is adapted from the one described in section 8.2 of
 // Hacker's Delight, by Henry S. Warren, Jr.
-template <unsigned N, typename T>
-int64_t MultiplyHigh(T u, T v) {
-  uint64_t u0, v0, w0, u1, v1, w1, w2, t;
-  VIXL_STATIC_ASSERT((N == 8) || (N == 16) || (N == 32) || (N == 64));
-  uint64_t sign_mask = UINT64_C(1) << (N - 1);
-  uint64_t sign_ext = 0;
-  unsigned half_bits = N / 2;
-  uint64_t half_mask = GetUintMask(half_bits);
-  if (std::numeric_limits<T>::is_signed) {
-    sign_ext = UINT64_C(0xffffffffffffffff) << half_bits;
-  }
+// template <unsigned N, typename T>
+// int64_t MultiplyHigh(T u, T v) {
+//   uint64_t u0, v0, w0, u1, v1, w1, w2, t;
+//   VIXL_STATIC_ASSERT((N == 8) || (N == 16) || (N == 32) || (N == 64));
+//   uint64_t sign_mask = UINT64_C(1) << (N - 1);
+//   uint64_t sign_ext = 0;
+//   unsigned half_bits = N / 2;
+//   uint64_t half_mask = GetUintMask(half_bits);
+//   if (std::numeric_limits<T>::is_signed) {
+//     sign_ext = UINT64_C(0xffffffffffffffff) << half_bits;
+//   }
 
-  VIXL_ASSERT(sizeof(u) == sizeof(uint64_t));
-  VIXL_ASSERT(sizeof(u) == sizeof(u0));
+//   VIXL_ASSERT(sizeof(u) == sizeof(uint64_t));
+//   VIXL_ASSERT(sizeof(u) == sizeof(u0));
 
-  u0 = u & half_mask;
-  u1 = u >> half_bits | (((u & sign_mask) != 0) ? sign_ext : 0);
-  v0 = v & half_mask;
-  v1 = v >> half_bits | (((v & sign_mask) != 0) ? sign_ext : 0);
+//   u0 = u & half_mask;
+//   u1 = u >> half_bits | (((u & sign_mask) != 0) ? sign_ext : 0);
+//   v0 = v & half_mask;
+//   v1 = v >> half_bits | (((v & sign_mask) != 0) ? sign_ext : 0);
 
-  w0 = u0 * v0;
-  t = u1 * v0 + (w0 >> half_bits);
+//   w0 = u0 * v0;
+//   t = u1 * v0 + (w0 >> half_bits);
 
-  w1 = t & half_mask;
-  w2 = t >> half_bits | (((t & sign_mask) != 0) ? sign_ext : 0);
-  w1 = u0 * v1 + w1;
-  w1 = w1 >> half_bits | (((w1 & sign_mask) != 0) ? sign_ext : 0);
+//   w1 = t & half_mask;
+//   w2 = t >> half_bits | (((t & sign_mask) != 0) ? sign_ext : 0);
+//   w1 = u0 * v1 + w1;
+//   w1 = w1 >> half_bits | (((w1 & sign_mask) != 0) ? sign_ext : 0);
 
-  uint64_t value = u1 * v1 + w2 + w1;
-  int64_t result;
-  memcpy(&result, &value, sizeof(result));
-  return result;
-}
+//   uint64_t value = u1 * v1 + w2 + w1;
+//   int64_t result;
+//   memcpy(&result, &value, sizeof(result));
+//   return result;
+// }
 
 }  // namespace internal
 
@@ -1232,8 +1234,8 @@ T FPRound(int64_t sign,
   }
 
   // The casts below are only well-defined for unsigned integers.
-  VIXL_STATIC_ASSERT(std::numeric_limits<T>::is_integer);
-  VIXL_STATIC_ASSERT(!std::numeric_limits<T>::is_signed);
+  // VIXL_STATIC_ASSERT(std::numeric_limits<T>::is_integer);
+  // VIXL_STATIC_ASSERT(!std::numeric_limits<T>::is_signed);
 
   if (shift > 0) {
     if (round_mode == FPTieEven) {

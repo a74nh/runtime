@@ -1127,4 +1127,118 @@ CoCreateGuid(OUT GUID * pguid);
 
 #endif // RC_INVOKED
 
+#ifndef INT64_C
+#  define INT64_C(v) v
+#  define UINT64_C(v) v ## ULL
+
+#  define INT32_C(v) v
+#  define UINT32_C(v) v ## ULL
+
+# define INT16_C(c) c
+# define UINT16_C(c) c
+
+#define isinf(x) __builtin_isinf_sign (x)
+
+#  define PTRDIFF_MAX       (9223372036854775807L)
+
+#  define __PRI64_PREFIX        "l"
+#  define __PRIPTR_PREFIX       "l"
+
+# define PRId8          "d"
+# define PRId16         "d"
+# define PRId32         "d"
+# define PRId64         __PRI64_PREFIX "d"
+
+# define PRIx8          "x"
+# define PRIx16         "x"
+# define PRIx32         "x"
+# define PRIx64         __PRI64_PREFIX "x"
+
+# define PRIdPTR        __PRIPTR_PREFIX "d"
+# define PRIiPTR        __PRIPTR_PREFIX "i"
+# define PRIoPTR        __PRIPTR_PREFIX "o"
+# define PRIuPTR        __PRIPTR_PREFIX "u"
+# define PRIxPTR        __PRIPTR_PREFIX "x"
+# define PRIXPTR        __PRIPTR_PREFIX "X"
+
+#   define LLONG_MAX    9223372036854775807LL
+#   define LLONG_MIN    (-LLONG_MAX - 1LL)
+
+#endif //INT64_C
+
+
+#ifndef FP_NAN
+
+enum
+  {
+    FP_NAN =
+# define FP_NAN 0
+      FP_NAN,
+    FP_INFINITE =
+# define FP_INFINITE 1
+      FP_INFINITE,
+    FP_ZERO =
+# define FP_ZERO 2
+      FP_ZERO,
+    FP_SUBNORMAL =
+# define FP_SUBNORMAL 3
+      FP_SUBNORMAL,
+    FP_NORMAL =
+# define FP_NORMAL 4
+      FP_NORMAL
+  };
+
+#endif
+
+#ifdef __cplusplus
+
+extern "C++"
+namespace std {
+template <class _Ty>
+class numeric_limits {
+   public:
+    static constexpr _Ty Max() { static_assert(sizeof(_Ty) != sizeof(_Ty), "func must be specialized!"); return _Ty(); }
+    static constexpr _Ty Min() { static_assert(sizeof(_Ty) != sizeof(_Ty), "func must be specialized!"); return _Ty(); }
+};
+
+template <>
+class numeric_limits<int32_t> {
+public:
+    static constexpr int32_t Max() { return 0x7fffffff; }
+    static constexpr int32_t Min() { return -0x7fffffff - 1; }
+};
+
+template <>
+class numeric_limits<uint32_t> {
+public:
+    static constexpr uint32_t Max() { return 0xffffffff; }
+    static constexpr uint32_t Min() { return 0; }
+};
+
+template <>
+class numeric_limits<int64_t> {
+   public:
+    static constexpr int64_t Max() { return 0x7fffffffffffffffi64; }
+
+    static constexpr int64_t Min() { return -0x7fffffffffffffffi64 - 1; }
+};
+
+  constexpr int
+  fpclassify(float __x)
+  { return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL,
+                                FP_SUBNORMAL, FP_ZERO, __x); }
+
+  constexpr int
+  fpclassify(double __x)
+  { return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL,
+                                FP_SUBNORMAL, FP_ZERO, __x); }
+
+  constexpr int
+  fpclassify(long double __x)
+  { return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL,
+                                FP_SUBNORMAL, FP_ZERO, __x); }
+
+}  // namespace std
+#endif
+
 #endif // __PALRT_H__

@@ -41,22 +41,24 @@ void Pool::Release() {
 
 
 void Pool::SetNextCheckpoint(ptrdiff_t checkpoint) {
-  masm_->checkpoint_ = std::min(masm_->checkpoint_, checkpoint);
+  masm_->checkpoint_ = min(masm_->checkpoint_, checkpoint);
   checkpoint_ = checkpoint;
 }
 
 
 LiteralPool::LiteralPool(MacroAssembler* masm)
     : Pool(masm),
+      entries_(masm->compiler->getAllocator(CMK_Codegen)),
       size_(0),
       first_use_(-1),
-      recommended_checkpoint_(kNoCheckpointRequired) {}
+      recommended_checkpoint_(kNoCheckpointRequired),
+      deleted_on_destruction_(masm->compiler->getAllocator(CMK_Codegen)) {}
 
 
 LiteralPool::~LiteralPool() VIXL_NEGATIVE_TESTING_ALLOW_EXCEPTION {
   VIXL_ASSERT(IsEmpty());
   VIXL_ASSERT(!IsBlocked());
-  for (std::vector<RawLiteral*>::iterator it = deleted_on_destruction_.begin();
+  for (jitstd::vector<RawLiteral*>::iterator it = deleted_on_destruction_.begin();
        it != deleted_on_destruction_.end();
        it++) {
     delete *it;
@@ -65,7 +67,7 @@ LiteralPool::~LiteralPool() VIXL_NEGATIVE_TESTING_ALLOW_EXCEPTION {
 
 
 void LiteralPool::Reset() {
-  std::vector<RawLiteral*>::iterator it, end;
+  jitstd::vector<RawLiteral*>::iterator it, end;
   for (it = entries_.begin(), end = entries_.end(); it != end; ++it) {
     RawLiteral* literal = *it;
     if (literal->deletion_policy_ == RawLiteral::kDeletedOnPlacementByPool) {
@@ -145,7 +147,7 @@ void LiteralPool::Emit(EmitOption option) {
     }
 
     // Now populate the literal pool.
-    std::vector<RawLiteral*>::iterator it, end;
+    jitstd::vector<RawLiteral*>::iterator it, end;
     for (it = entries_.begin(), end = entries_.end(); it != end; ++it) {
       VIXL_ASSERT((*it)->IsUsed());
       masm_->place(*it);
@@ -175,7 +177,7 @@ void LiteralPool::AddEntry(RawLiteral* literal) {
 
 
 void LiteralPool::UpdateFirstUse(ptrdiff_t use_position) {
-  first_use_ = std::min(first_use_, use_position);
+  first_use_ = min(first_use_, use_position);
   if (first_use_ == -1) {
     first_use_ = use_position;
     SetNextRecommendedCheckpoint(GetNextRecommendedCheckpoint());
@@ -313,8 +315,10 @@ void VeneerPool::Emit(EmitOption option, size_t amount) {
 }
 
 
-MacroAssembler::MacroAssembler(PositionIndependentCodeOption pic)
+MacroAssembler::MacroAssembler(Compiler* _compiler,
+                               PositionIndependentCodeOption pic)
     : Assembler(pic),
+      compiler(_compiler),
 #ifdef VIXL_DEBUG
       allow_macro_instructions_(true),
 #endif
@@ -335,9 +339,11 @@ MacroAssembler::MacroAssembler(PositionIndependentCodeOption pic)
 }
 
 
-MacroAssembler::MacroAssembler(size_t capacity,
+MacroAssembler::MacroAssembler(Compiler* _compiler,
+                               size_t capacity,
                                PositionIndependentCodeOption pic)
     : Assembler(capacity, pic),
+      compiler(_compiler),
 #ifdef VIXL_DEBUG
       allow_macro_instructions_(true),
 #endif
@@ -355,10 +361,12 @@ MacroAssembler::MacroAssembler(size_t capacity,
 }
 
 
-MacroAssembler::MacroAssembler(byte* buffer,
+MacroAssembler::MacroAssembler(Compiler* _compiler,
+                               byte* buffer,
                                size_t capacity,
                                PositionIndependentCodeOption pic)
     : Assembler(buffer, capacity, pic),
+      compiler(_compiler),
 #ifdef VIXL_DEBUG
       allow_macro_instructions_(true),
 #endif
@@ -1395,7 +1403,7 @@ void MacroAssembler::Add(const Register& rd,
   VIXL_ASSERT(allow_macro_instructions_);
   if (operand.IsImmediate()) {
     int64_t imm = operand.GetImmediate();
-    if ((imm < 0) && (imm != std::numeric_limits<int64_t>::min()) &&
+    if ((imm < 0) && (imm != std::numeric_limits<int64_t>::Min()) &&
         IsImmAddSub(-imm)) {
       AddSubMacro(rd, rn, -imm, S, SUB);
       return;
@@ -1419,7 +1427,7 @@ void MacroAssembler::Sub(const Register& rd,
   VIXL_ASSERT(allow_macro_instructions_);
   if (operand.IsImmediate()) {
     int64_t imm = operand.GetImmediate();
-    if ((imm < 0) && (imm != std::numeric_limits<int64_t>::min()) &&
+    if ((imm < 0) && (imm != std::numeric_limits<int64_t>::Min()) &&
         IsImmAddSub(-imm)) {
       AddSubMacro(rd, rn, -imm, S, ADD);
       return;
@@ -1619,7 +1627,7 @@ Operand MacroAssembler::MoveImmediateForShiftedOp(const Register& dst,
       // can use the extend form to shift left by a maximum of four bits. Right
       // shifts are not allowed, so we filter them out later before the new
       // immediate is tested.
-      shift_low = std::min(shift_low, 4);
+      shift_low = min(shift_low, 4);
     }
     // TryOneInstrMoveImmediate handles `imm` with a value of zero, so shift_low
     // must lie in the range [0, 63], and the shifts below are well-defined.
@@ -2450,7 +2458,7 @@ MemOperand MacroAssembler::BaseMemOperandForLoadStoreCPURegList(
     int total_size = registers.GetTotalSizeInBytes();
     int64_t min_offset = mem.GetOffset();
     int64_t max_offset =
-        mem.GetOffset() + std::max(0, total_size - 2 * reg_size);
+        mem.GetOffset() + max(0, total_size - 2 * reg_size);
     if ((registers.GetCount() >= 2) &&
         (!Assembler::IsImmLSPair(min_offset, WhichPowerOf2(reg_size)) ||
          !Assembler::IsImmLSPair(max_offset, WhichPowerOf2(reg_size)))) {
@@ -2522,7 +2530,7 @@ void MacroAssembler::PrintfNoPreserve(const char* format,
       pcs[i] = pcs_varargs.PopLowestIndex().X();
       // We might only need a W register here. We need to know the size of the
       // argument so we can properly encode it for the simulator call.
-      if (args[i].Is32Bits()) pcs[i] = pcs[i].W();
+      if (args[i].Is32Bits()) pcs[i] = pcs[i].Wreg();
     } else if (args[i].IsVRegister()) {
       // In C, floats are always cast to doubles for varargs calls.
       pcs[i] = pcs_varargs_fp.PopLowestIndex().D();
@@ -2628,7 +2636,8 @@ void MacroAssembler::PrintfNoPreserve(const char* format,
     dc32(arg_pattern_list);  // kPrintfArgPatternListOffset
   } else {
     Register tmp = temps.AcquireX();
-    Mov(tmp, reinterpret_cast<uintptr_t>(printf));
+    // AHTODO
+    // Mov(tmp, reinterpret_cast<uintptr_t>(printf));
     Blr(tmp);
   }
 }
@@ -2705,113 +2714,113 @@ void MacroAssembler::Printf(const char* format,
   PopCPURegList(kCallerSaved);
 }
 
-void MacroAssembler::Trace(TraceParameters parameters, TraceCommand command) {
-  VIXL_ASSERT(allow_macro_instructions_);
+// void MacroAssembler::Trace(TraceParameters parameters, TraceCommand command) {
+//   VIXL_ASSERT(allow_macro_instructions_);
 
-  if (generate_simulator_code_) {
-    // The arguments to the trace pseudo instruction need to be contiguous in
-    // memory, so make sure we don't try to emit a literal pool.
-    ExactAssemblyScope scope(this, kTraceLength);
+//   if (generate_simulator_code_) {
+//     // The arguments to the trace pseudo instruction need to be contiguous in
+//     // memory, so make sure we don't try to emit a literal pool.
+//     ExactAssemblyScope scope(this, kTraceLength);
 
-    Label start;
-    bind(&start);
+//     Label start;
+//     bind(&start);
 
-    // Refer to simulator-aarch64.h for a description of the marker and its
-    // arguments.
-    hlt(kTraceOpcode);
+//     // Refer to simulator-aarch64.h for a description of the marker and its
+//     // arguments.
+//     hlt(kTraceOpcode);
 
-    VIXL_ASSERT(GetSizeOfCodeGeneratedSince(&start) == kTraceParamsOffset);
-    dc32(parameters);
+//     VIXL_ASSERT(GetSizeOfCodeGeneratedSince(&start) == kTraceParamsOffset);
+//     dc32(parameters);
 
-    VIXL_ASSERT(GetSizeOfCodeGeneratedSince(&start) == kTraceCommandOffset);
-    dc32(command);
-  } else {
-    // Emit nothing on real hardware.
-    USE(parameters, command);
-  }
-}
+//     VIXL_ASSERT(GetSizeOfCodeGeneratedSince(&start) == kTraceCommandOffset);
+//     dc32(command);
+//   } else {
+//     // Emit nothing on real hardware.
+//     USE(parameters, command);
+//   }
+// }
 
 
-void MacroAssembler::Log(TraceParameters parameters) {
-  VIXL_ASSERT(allow_macro_instructions_);
+// void MacroAssembler::Log(TraceParameters parameters) {
+//   VIXL_ASSERT(allow_macro_instructions_);
 
-  if (generate_simulator_code_) {
-    // The arguments to the log pseudo instruction need to be contiguous in
-    // memory, so make sure we don't try to emit a literal pool.
-    ExactAssemblyScope scope(this, kLogLength);
+//   if (generate_simulator_code_) {
+//     // The arguments to the log pseudo instruction need to be contiguous in
+//     // memory, so make sure we don't try to emit a literal pool.
+//     ExactAssemblyScope scope(this, kLogLength);
 
-    Label start;
-    bind(&start);
+//     Label start;
+//     bind(&start);
 
-    // Refer to simulator-aarch64.h for a description of the marker and its
-    // arguments.
-    hlt(kLogOpcode);
+//     // Refer to simulator-aarch64.h for a description of the marker and its
+//     // arguments.
+//     hlt(kLogOpcode);
 
-    VIXL_ASSERT(GetSizeOfCodeGeneratedSince(&start) == kLogParamsOffset);
-    dc32(parameters);
-  } else {
-    // Emit nothing on real hardware.
-    USE(parameters);
-  }
-}
+//     VIXL_ASSERT(GetSizeOfCodeGeneratedSince(&start) == kLogParamsOffset);
+//     dc32(parameters);
+//   } else {
+//     // Emit nothing on real hardware.
+//     USE(parameters);
+//   }
+// }
 
 
 void MacroAssembler::SetSimulatorCPUFeatures(const CPUFeatures& features) {
-  ConfigureSimulatorCPUFeaturesHelper(features, kSetCPUFeaturesOpcode);
+  // ConfigureSimulatorCPUFeaturesHelper(features, kSetCPUFeaturesOpcode);
 }
 
 
 void MacroAssembler::EnableSimulatorCPUFeatures(const CPUFeatures& features) {
-  ConfigureSimulatorCPUFeaturesHelper(features, kEnableCPUFeaturesOpcode);
+  // ConfigureSimulatorCPUFeaturesHelper(features, kEnableCPUFeaturesOpcode);
 }
 
 
 void MacroAssembler::DisableSimulatorCPUFeatures(const CPUFeatures& features) {
-  ConfigureSimulatorCPUFeaturesHelper(features, kDisableCPUFeaturesOpcode);
+  // ConfigureSimulatorCPUFeaturesHelper(features, kDisableCPUFeaturesOpcode);
 }
 
 
-void MacroAssembler::ConfigureSimulatorCPUFeaturesHelper(
-    const CPUFeatures& features, DebugHltOpcode action) {
-  VIXL_ASSERT(allow_macro_instructions_);
-  VIXL_ASSERT(generate_simulator_code_);
+// void MacroAssembler::ConfigureSimulatorCPUFeaturesHelper(
+//     const CPUFeatures& features, DebugHltOpcode action) {
+//   VIXL_ASSERT(allow_macro_instructions_);
+//   VIXL_ASSERT(generate_simulator_code_);
 
-  typedef ConfigureCPUFeaturesElementType ElementType;
-  VIXL_ASSERT(CPUFeatures::kNumberOfFeatures <=
-              std::numeric_limits<ElementType>::max());
+//   typedef ConfigureCPUFeaturesElementType ElementType;
+//   VIXL_ASSERT(CPUFeatures::kNumberOfFeatures <=
+//               std::numeric_limits<ElementType>::max());
 
-  size_t count = features.Count();
+//   size_t count = features.Count();
 
-  size_t preamble_length = kConfigureCPUFeaturesListOffset;
-  size_t list_length = (count + 1) * sizeof(ElementType);
-  size_t padding_length = AlignUp(list_length, kInstructionSize) - list_length;
+//   size_t preamble_length = kConfigureCPUFeaturesListOffset;
+//   size_t list_length = (count + 1) * sizeof(ElementType);
+//   size_t padding_length = AlignUp(list_length, kInstructionSize) - list_length;
 
-  size_t total_length = preamble_length + list_length + padding_length;
+//   size_t total_length = preamble_length + list_length + padding_length;
 
-  // Check the overall code size as well as the size of each component.
-  ExactAssemblyScope guard_total(this, total_length);
+//   // Check the overall code size as well as the size of each component.
+//   ExactAssemblyScope guard_total(this, total_length);
 
-  {  // Preamble: the opcode itself.
-    ExactAssemblyScope guard_preamble(this, preamble_length);
-    hlt(action);
-  }
-  {  // A kNone-terminated list of features.
-    ExactAssemblyScope guard_list(this, list_length);
-    for (CPUFeatures::const_iterator it = features.begin();
-         it != features.end();
-         ++it) {
-      dc(static_cast<ElementType>(*it));
-    }
-    dc(static_cast<ElementType>(CPUFeatures::kNone));
-  }
-  {  // Padding for instruction alignment.
-    ExactAssemblyScope guard_padding(this, padding_length);
-    for (size_t size = 0; size < padding_length; size += sizeof(ElementType)) {
-      // The exact value is arbitrary.
-      dc(static_cast<ElementType>(CPUFeatures::kNone));
-    }
-  }
-}
+//   {  // Preamble: the opcode itself.
+//     ExactAssemblyScope guard_preamble(this, preamble_length);
+//     hlt(action);
+//   }
+//   {  // A kNone-terminated list of features.
+//     ExactAssemblyScope guard_list(this, list_length);
+//     for (CPUFeatures::const_iterator it = features.begin();
+//          it != features.end();
+//          ++it) {
+//       dc(static_cast<ElementType>(*it));
+//     }
+//     dc(static_cast<ElementType>(CPUFeatures::kNone));
+//   }
+//   {  // Padding for instruction alignment.
+//     ExactAssemblyScope guard_padding(this, padding_length);
+//     for (size_t size = 0; size < padding_length; size += sizeof(ElementType)) {
+//       // The exact value is arbitrary.
+//       dc(static_cast<ElementType>(CPUFeatures::kNone));
+//     }
+//   }
+// }
 
 void MacroAssembler::SaveSimulatorCPUFeatures() {
   VIXL_ASSERT(allow_macro_instructions_);

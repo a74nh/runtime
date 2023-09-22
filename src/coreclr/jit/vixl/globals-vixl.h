@@ -27,9 +27,14 @@
 #ifndef VIXL_GLOBALS_H
 #define VIXL_GLOBALS_H
 
-#if __cplusplus < 201402L
-#error VIXL requires C++14
-#endif
+#define VIXL_NEGATIVE_TESTING
+#define VIXL_DEBUG
+
+#define VIXL_INCLUDE_TARGET_A64
+
+// #if __cplusplus < 201402L
+// #error VIXL requires C++14
+// #endif
 
 // Get standard C99 macros for integer types.
 #ifndef __STDC_CONSTANT_MACROS
@@ -59,9 +64,11 @@ extern "C" {
 
 #ifdef VIXL_NEGATIVE_TESTING
 #include <sstream>
-#include <stdexcept>
-#include <string>
+// #include <stdexcept>
+#include <clr_std/string>
 #endif
+
+#include "error.h"
 
 namespace vixl {
 
@@ -89,47 +96,49 @@ struct Unsigned<64> {
 }  // namespace vixl
 
 // Detect the host's pointer size.
-#if (UINTPTR_MAX == UINT32_MAX)
-#define VIXL_HOST_POINTER_32
-#elif (UINTPTR_MAX == UINT64_MAX)
+// #if (UINTPTR_MAX == UINT32_MAX)
+// #define VIXL_HOST_POINTER_32
+// #elif (UINTPTR_MAX == UINT64_MAX)
 #define VIXL_HOST_POINTER_64
-#else
-#error "Unsupported host pointer size."
-#endif
+// #else
+// #error "Unsupported host pointer size."
+// #endif
 
-#ifdef VIXL_NEGATIVE_TESTING
-#define VIXL_ABORT()                                                         \
-  do {                                                                       \
-    std::ostringstream oss;                                                  \
-    oss << "Aborting in " << __FILE__ << ", line " << __LINE__ << std::endl; \
-    throw std::runtime_error(oss.str());                                     \
-  } while (false)
-#define VIXL_ABORT_WITH_MSG(msg)                                             \
-  do {                                                                       \
-    std::ostringstream oss;                                                  \
-    oss << (msg) << "in " << __FILE__ << ", line " << __LINE__ << std::endl; \
-    throw std::runtime_error(oss.str());                                     \
-  } while (false)
-#define VIXL_CHECK(condition)                                \
-  do {                                                       \
-    if (!(condition)) {                                      \
-      std::ostringstream oss;                                \
-      oss << "Assertion failed (" #condition ")\nin ";       \
-      oss << __FILE__ << ", line " << __LINE__ << std::endl; \
-      throw std::runtime_error(oss.str());                   \
-    }                                                        \
-  } while (false)
-#else
+// #ifdef VIXL_NEGATIVE_TESTING
+// #define VIXL_ABORT()                                                         \
+//   do {                                                                       \
+//     std::ostringstream oss;                                                  \
+//     oss << "Aborting in " << __FILE__ << ", line " << __LINE__ << std::endl; \
+//     throw std::runtime_error(oss.str());                                     \
+//   } while (false)
+// #define VIXL_ABORT_WITH_MSG(msg)                                             \
+//   do {                                                                       \
+//     std::ostringstream oss;                                                  \
+//     oss << (msg) << "in " << __FILE__ << ", line " << __LINE__ << std::endl; \
+//     throw std::runtime_error(oss.str());                                     \
+//   } while (false)
+// #define VIXL_CHECK(condition)                                \
+//   do {                                                       \
+//     if (!(condition)) {                                      \
+//       std::ostringstream oss;                                \
+//       oss << "Assertion failed (" #condition ")\nin ";       \
+//       oss << __FILE__ << ", line " << __LINE__ << std::endl; \
+//       throw std::runtime_error(oss.str());                   \
+//     }                                                        \
+//   } while (false)
+// #else
 #define VIXL_ABORT()                                         \
   do {                                                       \
     printf("Aborting in %s, line %i\n", __FILE__, __LINE__); \
-    abort();                                                 \
-  } while (false)
+    NO_WAY("Vixl abort");                                    \
+  } while (false);
+
 #define VIXL_ABORT_WITH_MSG(msg)                             \
   do {                                                       \
     printf("%sin %s, line %i\n", (msg), __FILE__, __LINE__); \
-    abort();                                                 \
-  } while (false)
+    NO_WAY(msg);                                             \
+  } while (false);
+
 #define VIXL_CHECK(condition)                           \
   do {                                                  \
     if (!(condition)) {                                 \
@@ -137,10 +146,11 @@ struct Unsigned<64> {
              #condition,                                \
              __FILE__,                                  \
              __LINE__);                                 \
-      abort();                                          \
+      NO_WAY("Vixl check");                             \
     }                                                   \
-  } while (false)
-#endif
+  } while (false);
+
+// #endif
 #ifdef VIXL_DEBUG
 #define VIXL_ASSERT(condition) VIXL_CHECK(condition)
 #define VIXL_UNIMPLEMENTED()               \
@@ -293,6 +303,5 @@ inline void USE(const T1&, const T2&, const T3&, const T4&) {}
 #define VIXL_INCLUDE_TARGET_T32_ONLY
 #endif
 #endif
-
 
 #endif  // VIXL_GLOBALS_H

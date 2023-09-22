@@ -25,7 +25,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <sstream>
-#include <string>
+#include <clr_std/string>
 
 #include "registers-aarch64.h"
 
@@ -33,31 +33,32 @@ namespace vixl {
 namespace aarch64 {
 
 std::string CPURegister::GetArchitecturalName() const {
-  std::ostringstream name;
-  if (IsZRegister()) {
-    name << 'z' << GetCode();
-    if (HasLaneSize()) {
-      name << '.' << GetLaneSizeSymbol();
-    }
-  } else if (IsPRegister()) {
-    name << 'p' << GetCode();
-    if (HasLaneSize()) {
-      name << '.' << GetLaneSizeSymbol();
-    }
-    switch (qualifiers_) {
-      case kNoQualifiers:
-        break;
-      case kMerging:
-        name << "/m";
-        break;
-      case kZeroing:
-        name << "/z";
-        break;
-    }
-  } else {
-    VIXL_UNIMPLEMENTED();
-  }
-  return name.str();
+  // std::ostringstream name;
+  // if (IsZRegister()) {
+  //   name << 'z' << GetCode();
+  //   if (HasLaneSize()) {
+  //     name << '.' << GetLaneSizeSymbol();
+  //   }
+  // } else if (IsPRegister()) {
+  //   name << 'p' << GetCode();
+  //   if (HasLaneSize()) {
+  //     name << '.' << GetLaneSizeSymbol();
+  //   }
+  //   switch (qualifiers_) {
+  //     case kNoQualifiers:
+  //       break;
+  //     case kMerging:
+  //       name << "/m";
+  //       break;
+  //     case kZeroing:
+  //       name << "/z";
+  //       break;
+  //   }
+  // } else {
+  //   VIXL_UNIMPLEMENTED();
+  // }
+  // return name.str();
+  return "TODO";
 }
 
 unsigned CPURegister::GetMaxCodeFor(CPURegister::RegisterBank bank) {
@@ -123,8 +124,13 @@ bool CPURegister::IsValid() const {
 }
 
 // Most coersions simply invoke the necessary constructor.
+
+Register CPURegister::Wreg() const {
+    VIXL_ASSERT(GetBank() == kRRegisterBank);
+    return WRegister(GetCode());
+  }
+
 #define VIXL_CPUREG_COERCION_LIST(U) \
-  U(Register, W, R)                  \
   U(Register, X, R)                  \
   U(VRegister, B, V)                 \
   U(VRegister, H, V)                 \

@@ -670,7 +670,7 @@ void Assembler::fmax(const ZRegister& zd,
   VIXL_ASSERT(zd.Is(zn));
   VIXL_ASSERT(AreSameLaneSize(zd, zn));
   VIXL_ASSERT(zd.GetLaneSizeInBytes() != kBRegSizeInBytes);
-  VIXL_ASSERT(((imm == 0.0) && (copysign(1.0, imm) == 1.0)) || (imm == 1.0));
+  VIXL_ASSERT(((imm == 0.0) && (_copysign(1.0, imm) == 1.0)) || (imm == 1.0));
 
   Instr i1 = (imm == 1.0) ? (1 << 5) : 0;
   Emit(FMAX_z_p_zs | SVESize(zd) | Rd(zd) | PgLow8(pg) | i1);
@@ -706,7 +706,7 @@ void Assembler::fmaxnm(const ZRegister& zd,
   VIXL_ASSERT(zd.Is(zn));
   VIXL_ASSERT(AreSameLaneSize(zd, zn));
   VIXL_ASSERT(zd.GetLaneSizeInBytes() != kBRegSizeInBytes);
-  VIXL_ASSERT(((imm == 0.0) && (copysign(1.0, imm) == 1.0)) || (imm == 1.0));
+  VIXL_ASSERT(((imm == 0.0) && (_copysign(1.0, imm) == 1.0)) || (imm == 1.0));
 
   Instr i1 = (imm == 1.0) ? (1 << 5) : 0;
   Emit(FMAXNM_z_p_zs | SVESize(zd) | Rd(zd) | PgLow8(pg) | i1);
@@ -742,7 +742,7 @@ void Assembler::fmin(const ZRegister& zd,
   VIXL_ASSERT(zd.Is(zn));
   VIXL_ASSERT(AreSameLaneSize(zd, zn));
   VIXL_ASSERT(zd.GetLaneSizeInBytes() != kBRegSizeInBytes);
-  VIXL_ASSERT(((imm == 0.0) && (copysign(1.0, imm) == 1.0)) || (imm == 1.0));
+  VIXL_ASSERT(((imm == 0.0) && (_copysign(1.0, imm) == 1.0)) || (imm == 1.0));
 
   Instr i1 = (imm == 1.0) ? (1 << 5) : 0;
   Emit(FMIN_z_p_zs | SVESize(zd) | Rd(zd) | PgLow8(pg) | i1);
@@ -778,7 +778,7 @@ void Assembler::fminnm(const ZRegister& zd,
   VIXL_ASSERT(zd.Is(zn));
   VIXL_ASSERT(AreSameLaneSize(zd, zn));
   VIXL_ASSERT(zd.GetLaneSizeInBytes() != kBRegSizeInBytes);
-  VIXL_ASSERT(((imm == 0.0) && (copysign(1.0, imm) == 1.0)) || (imm == 1.0));
+  VIXL_ASSERT(((imm == 0.0) && (_copysign(1.0, imm) == 1.0)) || (imm == 1.0));
 
   Instr i1 = (imm == 1.0) ? (1 << 5) : 0;
   Emit(FMINNM_z_p_zs | SVESize(zd) | Rd(zd) | PgLow8(pg) | i1);
@@ -4027,7 +4027,7 @@ void Assembler::SVELd234Helper(int num_regs,
     VIXL_ASSERT(!addr.GetScalarOffset().IsZero());
   }
 
-  Instr op;
+  Instr op = 0;
   if (addr.IsScalarPlusImmediate()) {
     op = SVELoadMultipleStructures_ScalarPlusImmFixed;
   } else if (addr.IsScalarPlusScalar()) {
@@ -5087,7 +5087,7 @@ void Assembler::SVESt234Helper(int num_regs,
     VIXL_ASSERT(!addr.GetScalarOffset().IsZero());
   }
 
-  Instr op;
+  Instr op = 0;
   if (addr.IsScalarPlusImmediate()) {
     op = SVEStoreMultipleStructures_ScalarPlusImmFixed;
   } else if (addr.IsScalarPlusScalar()) {

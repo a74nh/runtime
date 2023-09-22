@@ -29,6 +29,7 @@
 
 #include <cstring>
 
+#include "jitstd/algorithm.h"
 #include <algorithm>
 #include <vector>
 
@@ -46,7 +47,7 @@ namespace vixl {
 // - Adding an element already present in the set is illegal. In debug mode,
 //   this is checked at insertion time.
 // - The templated class `ElementType` must provide comparison operators so that
-//   `std::sort()` can be used.
+//   `jitstd::sort()` can be used.
 // - A key must be available to represent invalid elements.
 // - Elements with an invalid key must compare higher or equal to any other
 //   element.
@@ -57,13 +58,13 @@ namespace vixl {
 // operations:
 // - Elements are (generally) inserted in order (sorted according to their key).
 // - A key is available to mark elements as invalid (deleted).
-// The backing `std::vector` allows for fast insertions. When
+// The backing `jitstd::vector` allows for fast insertions. When
 // searching for an element we ensure the elements are sorted (this is generally
 // the case) and perform a binary search. When deleting an element we do not
 // free the associated memory immediately. Instead, an element to be deleted is
 // marked with the 'invalid' key. Other methods of the container take care of
 // ignoring entries marked as invalid.
-// To avoid the overhead of the `std::vector` container when only few entries
+// To avoid the overhead of the `jitstd::vector` container when only few entries
 // are used, a number of elements are preallocated.
 
 // 'ElementType' and 'KeyType' are respectively the types of the elements and
@@ -213,7 +214,7 @@ class InvalSet {
   // Elements are only invalidated when using the vector. The preallocated
   // storage always only contains valid elements.
   ElementType preallocated_[kNPreallocatedElements];
-  std::vector<ElementType>* vector_;
+  jitstd::vector<ElementType>* vector_;
 
   // Iterators acquire and release this monitor. While a set is acquired,
   // certain operations are illegal to ensure that the iterator will
@@ -244,7 +245,7 @@ class InvalSet {
 
 
 template <class S>
-class InvalSetIterator : public std::iterator<std::forward_iterator_tag,
+class InvalSetIterator : public jitstd::iterator<jitstd::forward_iterator_tag,
                                               typename S::_ElementType> {
  private:
   // Redefine types to mirror the associated set types.
@@ -303,7 +304,7 @@ class InvalSetIterator : public std::iterator<std::forward_iterator_tag,
   // Used when looking at the preallocated elements, or in debug mode when using
   // the vector to track how many times the iterator has advanced.
   size_t index_;
-  typename std::vector<ElementType>::iterator iterator_;
+  typename jitstd::vector<ElementType>::iterator iterator_;
   S* inval_set_;
 
   // TODO: These helpers are deprecated and will be removed in future versions
@@ -359,8 +360,9 @@ void InvalSet<TEMPLATE_INVALSET_P_DEF>::insert(const ElementType& element) {
       preallocated_[size_] = element;
     } else {
       // Transition to using the vector.
-      vector_ =
-          new std::vector<ElementType>(preallocated_, preallocated_ + size_);
+      // AHTODO
+      // vector_ =
+      //     new jitstd::vector<ElementType>(preallocated_, preallocated_ + size_, compiler->getAllocator(CMK_Codegen));
       vector_->push_back(element);
     }
   }
@@ -549,7 +551,16 @@ void InvalSet<TEMPLATE_INVALSET_P_DEF>::Sort(SortType sort_type) {
   }
 
   Clean();
-  std::sort(StorageBegin(), StorageEnd());
+
+    struct compare
+    {
+        bool operator()(ElementType& elem1, ElementType& elem2)
+        {
+            return elem1 < elem2;
+        }
+    };
+
+  jitstd::sort(StorageBegin(), StorageEnd(), compare());
 
   SetSorted(true);
   cached_min_index_ = 0;
@@ -620,11 +631,12 @@ const ElementType InvalSet<TEMPLATE_INVALSET_P_DEF>::CleanBack() {
   VIXL_ASSERT(monitor() == 0);
   if (IsUsingVector()) {
     // Delete the invalid trailing elements.
-    typename std::vector<ElementType>::reverse_iterator it = vector_->rbegin();
+    typename jitstd::vector<ElementType>::reverse_iterator it = vector_->rbegin();
     while (!IsValid(*it)) {
       it++;
     }
-    vector_->erase(it.base(), vector_->end());
+    // AHTODO: Fix me
+    // vector_->erase(it.base(), vector_->end());
   }
   return Back();
 }
@@ -737,7 +749,7 @@ InvalSetIterator<S>::InvalSetIterator(S* inval_set)
     inval_set->Acquire();
 #endif
     if (using_vector_) {
-      iterator_ = typename std::vector<ElementType>::iterator(
+      iterator_ = typename jitstd::vector<ElementType>::iterator(
           inval_set_->vector_->begin());
     }
     MoveToValidElement();
@@ -756,11 +768,11 @@ InvalSetIterator<S>::~InvalSetIterator() {
 template <class S>
 typename S::_ElementType* InvalSetIterator<S>::Current() const {
   VIXL_ASSERT(!Done());
-  if (using_vector_) {
-    return &(*iterator_);
-  } else {
+  // if (using_vector_) {
+  //   return &(*iterator_);
+  // } else {
     return &(inval_set_->preallocated_[index_]);
-  }
+  // }
 }
 
 
@@ -773,7 +785,8 @@ void InvalSetIterator<S>::Advance() {
 template <class S>
 bool InvalSetIterator<S>::Done() const {
   if (using_vector_) {
-    bool done = (iterator_ == inval_set_->vector_->end());
+    //AHTODO
+    bool done = true; //(iterator_ == inval_set_->vector_->end());
     VIXL_ASSERT(done == (index_ == inval_set_->size()));
     return done;
   } else {
@@ -870,7 +883,7 @@ bool InvalSetIterator<S>::operator==(const InvalSetIterator<S>& rhs) const {
     equal = equal && (index_ == rhs.index_);
 #ifdef DEBUG
     // If not using_vector_, iterator_ should be default-initialised.
-    typename std::vector<ElementType>::iterator default_iterator;
+    typename jitstd::vector<ElementType>::iterator default_iterator;
     VIXL_ASSERT(iterator_ == default_iterator);
     VIXL_ASSERT(rhs.iterator_ == default_iterator);
 #endif

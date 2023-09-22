@@ -134,11 +134,11 @@ class ABI {
     // Stage C.11
     NGRN_ = 8;
     // Stage C.12
-    stack_offset_ = AlignUp(stack_offset_, std::max(type_alignment, 8));
+    stack_offset_ = AlignUp(stack_offset_, max(type_alignment, 8));
     // Stage C.13: Unsupported. Caught by the assertions above.
     // Stage C.14
     VIXL_ASSERT(size <= 8u);
-    size = std::max(size, 8u);
+    size = max(size, 8u);
     int offset = stack_offset_;
     stack_offset_ += size;
     return GenericOperand(MemOperand(stack_pointer_, offset), operand_size);

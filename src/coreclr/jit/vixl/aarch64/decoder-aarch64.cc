@@ -24,7 +24,7 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#include <string>
+#include <clr_std/string>
 
 #include "../globals-vixl.h"
 #include "../utils-vixl.h"
@@ -36,7 +36,7 @@ namespace vixl {
 namespace aarch64 {
 
 void Decoder::Decode(const Instruction* instr) {
-  std::list<DecoderVisitor*>::iterator it;
+  jitstd::list<DecoderVisitor*>::iterator it;
   for (it = visitors_.begin(); it != visitors_.end(); it++) {
     VIXL_ASSERT((*it)->IsConstVisitor());
   }
@@ -49,26 +49,39 @@ void Decoder::Decode(Instruction* instr) {
 }
 
 void Decoder::AddDecodeNode(const DecodeNode& node) {
-  decode_nodes_.insert(std::make_pair(node.GetName(), node));
+  // decode_nodes_.insert(std::make_pair(node.GetName(), node));
+  // std::pair<std::string, DecodeNode> *p = new std::pair<std::string, DecodeNode>(node.GetName(), node);
+  decode_nodes_.push_back(node);
 }
 
 DecodeNode* Decoder::GetDecodeNode(std::string name) {
-  if (decode_nodes_.count(name) != 1) {
-    std::string msg = "Can't find decode node " + name + ".\n";
-    VIXL_ABORT_WITH_MSG(msg.c_str());
+  // if (decode_nodes_.count(name) != 1) {
+  //   std::string msg = "Can't find decode node " + name + ".\n";
+  //   VIXL_ABORT_WITH_MSG(msg.c_str());
+  // }
+  // return &decode_nodes_[name];
+  for(unsigned int i = 0; i < decode_nodes_.size(); i++)
+  {
+    if (name.compare(decode_nodes_[i].GetName()) == 0)
+    {
+      return &decode_nodes_[i];
+    }
   }
-  return &decode_nodes_[name];
+  // std::string msg = "Can't find decode node " + name + ".\n";
+  std::string msg = "Can't find decode node\n";
+  VIXL_ABORT_WITH_MSG(msg.c_str());
+  return nullptr;
 }
 
 void Decoder::ConstructDecodeGraph() {
   // Add all of the decoding nodes to the Decoder.
   for (unsigned i = 0; i < ArrayLength(kDecodeMapping); i++) {
-    AddDecodeNode(DecodeNode(kDecodeMapping[i], this));
+    AddDecodeNode(DecodeNode(compiler, kDecodeMapping[i], this));
   }
 
   // Add the visitor function wrapping nodes to the Decoder.
   for (unsigned i = 0; i < ArrayLength(kVisitorNodes); i++) {
-    AddDecodeNode(DecodeNode(kVisitorNodes[i], this));
+    AddDecodeNode(DecodeNode(compiler, kVisitorNodes[i], this));
   }
 
   // Compile the graph from the root.
@@ -87,7 +100,7 @@ void Decoder::PrependVisitor(DecoderVisitor* new_visitor) {
 
 void Decoder::InsertVisitorBefore(DecoderVisitor* new_visitor,
                                   DecoderVisitor* registered_visitor) {
-  std::list<DecoderVisitor*>::iterator it;
+  jitstd::list<DecoderVisitor*>::iterator it;
   for (it = visitors_.begin(); it != visitors_.end(); it++) {
     if (*it == registered_visitor) {
       visitors_.insert(it, new_visitor);
@@ -103,7 +116,7 @@ void Decoder::InsertVisitorBefore(DecoderVisitor* new_visitor,
 
 void Decoder::InsertVisitorAfter(DecoderVisitor* new_visitor,
                                  DecoderVisitor* registered_visitor) {
-  std::list<DecoderVisitor*>::iterator it;
+  jitstd::list<DecoderVisitor*>::iterator it;
   for (it = visitors_.begin(); it != visitors_.end(); it++) {
     if (*it == registered_visitor) {
       it++;
@@ -126,7 +139,7 @@ void Decoder::RemoveVisitor(DecoderVisitor* visitor) {
   void Decoder::Visit##A(const Instruction* instr) {            \
     VIXL_ASSERT(((A##FMask == 0) && (A##Fixed == 0)) ||         \
                 (instr->Mask(A##FMask) == A##Fixed));           \
-    std::list<DecoderVisitor*>::iterator it;                    \
+    jitstd::list<DecoderVisitor*>::iterator it;                    \
     for (it = visitors_.begin(); it != visitors_.end(); it++) { \
       (*it)->Visit##A(instr);                                   \
     }                                                           \
@@ -137,13 +150,14 @@ VISITOR_LIST(DEFINE_VISITOR_CALLERS)
 void DecodeNode::SetSampledBits(const uint8_t* bits, int bit_count) {
   VIXL_ASSERT(!IsCompiled());
 
-  sampled_bits_.resize(bit_count);
-  for (int i = 0; i < bit_count; i++) {
+  int i = 0;
+  sampled_bits_.resize(bit_count, i);
+  for (i = 0; i < bit_count; i++) {
     sampled_bits_[i] = bits[i];
   }
 }
 
-std::vector<uint8_t> DecodeNode::GetSampledBits() const {
+jitstd::vector<uint8_t> DecodeNode::GetSampledBits() const {
   return sampled_bits_;
 }
 
@@ -372,7 +386,7 @@ bool DecodeNode::TryCompileOptimisedDecodeTable(Decoder* decoder) {
       // value test.
       uint32_t single_decode_mask = 0;
       uint32_t single_decode_value = 0;
-      std::vector<uint8_t> bits = GetSampledBits();
+      jitstd::vector<uint8_t> bits = GetSampledBits();
 
       // Construct the instruction mask and value from the pattern.
       VIXL_ASSERT(bits.size() == strlen(pattern_table_[0].pattern));
@@ -415,7 +429,7 @@ CompiledDecodeNode* DecodeNode::Compile(Decoder* decoder) {
 
     // For each pattern in pattern_table_, create an entry in matches that
     // has a corresponding mask and value for the pattern.
-    std::vector<MaskValuePair> matches;
+    jitstd::vector<MaskValuePair> matches(decoder->compiler->getAllocator(CMK_Codegen));
     for (size_t i = 0; i < pattern_table_.size(); i++) {
       if (strcmp(pattern_table_[i].pattern, "otherwise") == 0) {
         // "otherwise" must be the last pattern in the list, otherwise the
@@ -488,10 +502,10 @@ DecodeNode::MaskValuePair DecodeNode::GenerateMaskValuePair(
 }
 
 std::string DecodeNode::GenerateOrderedPattern(std::string pattern) const {
-  std::vector<uint8_t> sampled_bits = GetSampledBits();
+  jitstd::vector<uint8_t> sampled_bits = GetSampledBits();
   // Construct a temporary 32-character string containing '_', then at each
   // sampled bit position, set the corresponding pattern character.
-  std::string temp(32, '_');
+  std::string temp("________________________________");
   for (size_t i = 0; i < sampled_bits.size(); i++) {
     temp[sampled_bits[i]] = pattern[i];
   }
@@ -501,7 +515,7 @@ std::string DecodeNode::GenerateOrderedPattern(std::string pattern) const {
   std::string result;
   for (size_t i = 0; i < temp.size(); i++) {
     if (temp[i] != '_') {
-      result.push_back(temp[i]);
+      result+=temp[i];
     }
   }
   VIXL_ASSERT(result.size() == sampled_bits.size());
@@ -509,7 +523,7 @@ std::string DecodeNode::GenerateOrderedPattern(std::string pattern) const {
 }
 
 uint32_t DecodeNode::GenerateSampledBitsMask() const {
-  std::vector<uint8_t> sampled_bits = GetSampledBits();
+  jitstd::vector<uint8_t> sampled_bits = GetSampledBits();
   uint32_t mask = 0;
   for (size_t i = 0; i < sampled_bits.size(); i++) {
     mask |= 1 << sampled_bits[i];

@@ -33,7 +33,7 @@ extern "C" {
 }
 
 namespace vixl {
-inline void HostBreakpoint() { raise(SIGINT); }
+inline void HostBreakpoint() { /*raise(2);*/ }
 }  // namespace vixl
 
 #endif

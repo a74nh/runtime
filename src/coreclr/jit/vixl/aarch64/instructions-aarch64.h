@@ -789,8 +789,8 @@ class NEONFormatDecoder {
                          SubstitutionMode mode0 = kFormat,
                          SubstitutionMode mode1 = kFormat,
                          SubstitutionMode mode2 = kFormat) {
-    snprintf(form_buffer_,
-             sizeof(form_buffer_),
+    _snprintf_s(form_buffer_,
+             sizeof(form_buffer_), -1,
              string,
              GetSubstitute(0, mode0),
              GetSubstitute(1, mode1),
@@ -801,7 +801,7 @@ class NEONFormatDecoder {
   // Append a "2" to a mnemonic string based of the state of the Q bit.
   const char* Mnemonic(const char* mnemonic) {
     if ((instrbits_ & NEON_Q) != 0) {
-      snprintf(mne_buffer_, sizeof(mne_buffer_), "%s2", mnemonic);
+      _snprintf_s(mne_buffer_, sizeof(mne_buffer_), -1, "%s2", mnemonic);
       return mne_buffer_;
     }
     return mnemonic;

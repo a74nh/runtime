@@ -39,7 +39,7 @@ namespace vixl {
 
 CPUFeatures CPUFeatures::All() {
   CPUFeatures all;
-  all.features_.set();
+  // all.features_.set();
   return all;
 }
 
@@ -64,48 +64,50 @@ CPUFeatures CPUFeatures::InferFromOS(QueryIDRegistersOption option) {
 }
 
 void CPUFeatures::Combine(const CPUFeatures& other) {
-  features_ |= other.features_;
+  // features_ |= other.features_;
 }
 
 void CPUFeatures::Combine(Feature feature) {
-  if (feature != CPUFeatures::kNone) features_.set(feature);
+  // if (feature != CPUFeatures::kNone) features_.set(feature);
 }
 
 void CPUFeatures::Remove(const CPUFeatures& other) {
-  features_ &= ~other.features_;
+  // features_ &= ~other.features_;
 }
 
 void CPUFeatures::Remove(Feature feature) {
-  if (feature != CPUFeatures::kNone) features_.reset(feature);
+  // if (feature != CPUFeatures::kNone) features_.reset(feature);
 }
 
 bool CPUFeatures::Has(const CPUFeatures& other) const {
-  return (features_ & other.features_) == other.features_;
+  return true;
+  (features_ & other.features_) == other.features_;
 }
 
 bool CPUFeatures::Has(Feature feature) const {
-  return (feature == CPUFeatures::kNone) || features_[feature];
+  return true;
+  // (feature == CPUFeatures::kNone) || features_[feature];
 }
 
-size_t CPUFeatures::Count() const { return features_.count(); }
+// size_t CPUFeatures::Count() const { return features_.count(); }
 
-std::ostream& operator<<(std::ostream& os, CPUFeatures::Feature feature) {
-  // clang-format off
-  switch (feature) {
-#define VIXL_FORMAT_FEATURE(SYMBOL, NAME, CPUINFO) \
-    case CPUFeatures::SYMBOL:                      \
-      return os << NAME;
-VIXL_CPU_FEATURE_LIST(VIXL_FORMAT_FEATURE)
-#undef VIXL_FORMAT_FEATURE
-    case CPUFeatures::kNone:
-      return os << "none";
-    case CPUFeatures::kNumberOfFeatures:
-      VIXL_UNREACHABLE();
-  }
-  // clang-format on
-  VIXL_UNREACHABLE();
-  return os;
-}
+// std::ostream& operator<<(std::ostream& os, CPUFeatures::Feature feature) {
+//   // clang-format off
+//   switch (feature) {
+// #define VIXL_FORMAT_FEATURE(SYMBOL, NAME, CPUINFO) \
+//     case CPUFeatures::SYMBOL:                      \
+//       return os << NAME;
+// VIXL_CPU_FEATURE_LIST(VIXL_FORMAT_FEATURE)
+// #undef VIXL_FORMAT_FEATURE
+//     case CPUFeatures::kNone:
+//       return os << "none";
+//     case CPUFeatures::kNumberOfFeatures:
+//       VIXL_UNREACHABLE();
+//   }
+//   // clang-format on
+//   VIXL_UNREACHABLE();
+//   return os;
+// }
 
 CPUFeatures::const_iterator CPUFeatures::begin() const {
   // For iterators in general, it's undefined to increment `end()`, but here we
@@ -117,36 +119,37 @@ CPUFeatures::const_iterator CPUFeatures::end() const {
   return const_iterator(this, kNone);
 }
 
-std::ostream& operator<<(std::ostream& os, const CPUFeatures& features) {
-  bool need_separator = false;
-  for (CPUFeatures::Feature feature : features) {
-    if (need_separator) os << ", ";
-    need_separator = true;
-    os << feature;
-  }
-  return os;
-}
+// std::ostream& operator<<(std::ostream& os, const CPUFeatures& features) {
+//   bool need_separator = false;
+//   for (CPUFeatures::Feature feature : features) {
+//     if (need_separator) os << ", ";
+//     need_separator = true;
+//     os << feature;
+//   }
+//   return os;
+// }
 
 bool CPUFeaturesConstIterator::operator==(
     const CPUFeaturesConstIterator& other) const {
   VIXL_ASSERT(IsValid());
-  return (cpu_features_ == other.cpu_features_) && (feature_ == other.feature_);
+  return true;
+  //(cpu_features_ == other.cpu_features_) && (feature_ == other.feature_);
 }
 
 CPUFeaturesConstIterator& CPUFeaturesConstIterator::operator++() {  // Prefix
   VIXL_ASSERT(IsValid());
-  do {
-    // Find the next feature. The order is unspecified.
-    feature_ = static_cast<CPUFeatures::Feature>(feature_ + 1);
-    if (feature_ == CPUFeatures::kNumberOfFeatures) {
-      feature_ = CPUFeatures::kNone;
-      VIXL_STATIC_ASSERT(CPUFeatures::kNone == -1);
-    }
-    VIXL_ASSERT(CPUFeatures::kNone <= feature_);
-    VIXL_ASSERT(feature_ < CPUFeatures::kNumberOfFeatures);
-    // cpu_features_->Has(kNone) is always true, so this will terminate even if
-    // the features list is empty.
-  } while (!cpu_features_->Has(feature_));
+  // do {
+  //   // Find the next feature. The order is unspecified.
+  //   feature_ = static_cast<CPUFeatures::Feature>(feature_ + 1);
+  //   if (feature_ == CPUFeatures::kNumberOfFeatures) {
+  //     feature_ = CPUFeatures::kNone;
+  //     VIXL_STATIC_ASSERT(CPUFeatures::kNone == -1);
+  //   }
+  //   VIXL_ASSERT(CPUFeatures::kNone <= feature_);
+  //   VIXL_ASSERT(feature_ < CPUFeatures::kNumberOfFeatures);
+  //   // cpu_features_->Has(kNone) is always true, so this will terminate even if
+  //   // the features list is empty.
+  // } while (!cpu_features_->Has(feature_));
   return *this;
 }
 

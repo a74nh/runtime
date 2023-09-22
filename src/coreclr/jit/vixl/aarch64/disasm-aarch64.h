@@ -42,8 +42,8 @@ namespace aarch64 {
 
 class Disassembler : public DecoderVisitor {
  public:
-  Disassembler();
-  Disassembler(char* text_buffer, int buffer_size);
+  Disassembler(Compiler* compiler);
+  Disassembler(Compiler* compiler, char* text_buffer, int buffer_size);
   virtual ~Disassembler();
   char* GetOutput();
 
@@ -110,6 +110,8 @@ class Disassembler : public DecoderVisitor {
   //    0xb010200 |       0x0:  b #+0xcc  (addr 0xcc)
   void MapCodeAddress(int64_t base_address, const Instruction* instr_address);
   int64_t CodeRelativeAddress(const void* instr);
+
+  Compiler* compiler;
 
  private:
   void Format(const Instruction* instr,
@@ -182,8 +184,9 @@ class Disassembler : public DecoderVisitor {
 
 class PrintDisassembler : public Disassembler {
  public:
-  explicit PrintDisassembler(FILE* stream)
-      : cpu_features_auditor_(NULL),
+  explicit PrintDisassembler(Compiler *compiler, FILE* stream)
+      : Disassembler(compiler),
+        cpu_features_auditor_(NULL),
         cpu_features_prefix_("// Needs: "),
         cpu_features_suffix_(""),
         signed_addresses_(false),

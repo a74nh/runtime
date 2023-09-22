@@ -24,10 +24,10 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#if defined(__aarch64__) && (defined(__ANDROID__) || defined(__linux__))
-#include <sys/auxv.h>
-#define VIXL_USE_LINUX_HWCAP 1
-#endif
+// #if defined(__aarch64__) && (defined(__ANDROID__) || defined(__linux__))
+// #include <sys/auxv.h>
+// #define VIXL_USE_LINUX_HWCAP 1
+// #endif
 
 #include "../utils-vixl.h"
 
@@ -150,7 +150,7 @@ CPUFeatures AA64ISAR1::GetCPUFeatures() const {
 
   // Only one of these fields should be non-zero, but they have the same
   // encodings, so merge the logic.
-  int apx = std::max(Get(kAPI), Get(kAPA));
+  int apx = max(Get(kAPI), Get(kAPA));
   if (apx >= 1) {
     f.Combine(CPUFeatures::kPAuth);
     // APA (rather than API) indicates QARMA.

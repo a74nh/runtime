@@ -38,12 +38,13 @@
 // Required for runtime call support.
 // TODO: Break this dependency. We should be able to separate out the necessary
 // parts so that we don't need to include the whole simulator header.
-#include "simulator-aarch64.h"
+// #include "simulator-aarch64.h"
 // Required in order to generate debugging instructions for the simulator. This
 // is needed regardless of whether the simulator is included or not, since
 // generating simulator specific instructions is controlled at runtime.
 #include "simulator-constants-aarch64.h"
 
+#include "compiler.h"
 
 #define LS_MACRO_LIST(V)                                     \
   V(Ldrb, Register&, rt, LDRB_w)                             \
@@ -147,7 +148,7 @@ class LiteralPool : public Pool {
   static const ptrdiff_t kRecommendedLiteralPoolRange = 128 * KBytes;
 
  private:
-  std::vector<RawLiteral*> entries_;
+  jitstd::vector<RawLiteral*> entries_;
   size_t size_;
   ptrdiff_t first_use_;
   // The parent class `Pool` provides a `checkpoint_`, which is the buffer
@@ -157,7 +158,7 @@ class LiteralPool : public Pool {
   // checkpoint is reached.
   ptrdiff_t recommended_checkpoint_;
 
-  std::vector<RawLiteral*> deleted_on_destruction_;
+  jitstd::vector<RawLiteral*> deleted_on_destruction_;
 };
 
 
@@ -373,7 +374,7 @@ class VeneerPool : public Pool {
     ptrdiff_t GetFirstLimit() {
       ptrdiff_t res = kInvalidOffset;
       for (int i = 0; i < kNumberOfTrackedBranchTypes; i++) {
-        res = std::min(res, typed_set_[i].GetFirstLimit());
+        res = min(res, typed_set_[i].GetFirstLimit());
       }
       return res;
     }
@@ -665,10 +666,11 @@ enum FPMacroNaNPropagationOption {
 class MacroAssembler : public Assembler, public MacroAssemblerInterface {
  public:
   explicit MacroAssembler(
-      PositionIndependentCodeOption pic = PositionIndependentCode);
-  MacroAssembler(size_t capacity,
+                 Compiler* compiler,
                  PositionIndependentCodeOption pic = PositionIndependentCode);
-  MacroAssembler(byte* buffer,
+  MacroAssembler(Compiler* compiler, size_t capacity, 
+                 PositionIndependentCodeOption pic = PositionIndependentCode);
+  MacroAssembler(Compiler* compiler, byte* buffer,
                  size_t capacity,
                  PositionIndependentCodeOption pic = PositionIndependentCode);
   ~MacroAssembler();
@@ -4343,7 +4345,7 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
     VIXL_ASSERT(allow_macro_instructions_);
     // The element type in this predicated movprfx is determined by the larger
     // type between the source and destination.
-    int lane_size = std::max(zd.GetLaneSizeInBits(), zn.GetLaneSizeInBits());
+    int lane_size = max(zd.GetLaneSizeInBits(), zn.GetLaneSizeInBits());
     MovprfxHelperScope guard(this,
                              zd.WithLaneSize(lane_size),
                              pg,
@@ -6149,7 +6151,7 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
       uqdecp(rd, pg);
     } else {
       // Convert <Xd> into <Wd>, to make this more consistent with Sqdecp.
-      uqdecp(rd.W(), pg);
+      uqdecp(rd.Wreg(), pg);
     }
   }
   void Uqdecp(const Register& rdn, const PRegisterWithLaneSize& pg) {
@@ -6213,7 +6215,7 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
       uqincp(rd, pg);
     } else {
       // Convert <Xd> into <Wd>, to make this more consistent with Sqincp.
-      uqincp(rd.W(), pg);
+      uqincp(rd.Wreg(), pg);
     }
   }
   void Uqincp(const Register& rdn, const PRegisterWithLaneSize& pg) {
@@ -6433,8 +6435,8 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
 
   ptrdiff_t GetNextCheckPoint() const {
     ptrdiff_t next_checkpoint_for_pools =
-        std::min(literal_pool_.GetCheckpoint(), veneer_pool_.GetCheckpoint());
-    return std::min(next_checkpoint_for_pools,
+        min(literal_pool_.GetCheckpoint(), veneer_pool_.GetCheckpoint());
+    return min(next_checkpoint_for_pools,
                     static_cast<ptrdiff_t>(GetBuffer().GetCapacity()));
   }
   VIXL_DEPRECATED("GetNextCheckPoint", ptrdiff_t NextCheckPoint()) {
@@ -6546,7 +6548,7 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
   // __ Trace(LOG_DISASM, TRACE_DISABLE);
   // Will stop logging disassembly. It has no effect if the disassembly wasn't
   // already being logged.
-  void Trace(TraceParameters parameters, TraceCommand command);
+  // void Trace(TraceParameters parameters, TraceCommand command);
 
   // Log the requested data independently of what is being traced.
   //
@@ -6554,7 +6556,7 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
   //
   // __ Log(LOG_FLAGS)
   // Will output the flags.
-  void Log(TraceParameters parameters);
+  // void Log(TraceParameters parameters);
 
   // Enable or disable CPU features dynamically. This mechanism allows users to
   // strictly check the use of CPU features in different regions of code.
@@ -6570,9 +6572,9 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
 
 // `CallRuntime` requires variadic templating, that is only available from
 // C++11.
-#if __cplusplus >= 201103L
-#define VIXL_HAS_MACROASSEMBLER_RUNTIME_CALL_SUPPORT
-#endif  // #if __cplusplus >= 201103L
+// #if __cplusplus >= 201103L
+// #define VIXL_HAS_MACROASSEMBLER_RUNTIME_CALL_SUPPORT
+// #endif  // #if __cplusplus >= 201103L
 
 #ifdef VIXL_HAS_MACROASSEMBLER_RUNTIME_CALL_SUPPORT
   template <typename R, typename... P>
@@ -6689,6 +6691,8 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
     VIXL_ASSERT(*nan_option != NoFPMacroNaNPropagationSelected);
   }
 
+  Compiler* compiler;
+
  private:
   // The actual Push and Pop implementations. These don't generate any code
   // other than that required for the push or pop. This allows
@@ -6739,8 +6743,8 @@ class MacroAssembler : public Assembler, public MacroAssemblerInterface {
                                                 GetCursorOffset());
   }
 
-  void ConfigureSimulatorCPUFeaturesHelper(const CPUFeatures& features,
-                                           DebugHltOpcode action);
+  // void ConfigureSimulatorCPUFeaturesHelper(const CPUFeatures& features,
+  //                                          DebugHltOpcode action);
 
   void CompareHelper(Condition cond,
                      const PRegisterWithLaneSize& pd,
@@ -6962,7 +6966,7 @@ inline size_t LiteralPool::GetOtherPoolsMaxSize() const {
 
 inline void LiteralPool::SetNextRecommendedCheckpoint(ptrdiff_t offset) {
   masm_->recommended_checkpoint_ =
-      std::min(masm_->recommended_checkpoint_, offset);
+      min(masm_->recommended_checkpoint_, offset);
   recommended_checkpoint_ = offset;
 }
 
@@ -7084,7 +7088,7 @@ class UseScratchRegisterScope {
   // Take a register from the appropriate temps list. It will be returned
   // automatically when the scope ends.
   Register AcquireW() {
-    return AcquireFrom(masm_->GetScratchRegisterList()).W();
+    return AcquireFrom(masm_->GetScratchRegisterList()).Wreg();
   }
   Register AcquireX() {
     return AcquireFrom(masm_->GetScratchRegisterList()).X();

@@ -253,7 +253,7 @@ bool Instruction::CanTakeSVEMovprfx(const Instruction* movprfx) const {
         unsigned opc = ExtractBits(23, 22);
         unsigned opc2 = ExtractBits(18, 17);
         VectorFormat instr_vform =
-            SVEFormatFromLaneSizeInBytesLog2(std::max(opc, opc2));
+            SVEFormatFromLaneSizeInBytesLog2(max(opc, opc2));
         if (movprfx_vform != instr_vform) return false;
       }
       return zd_matches && !zd_matches_zn;
@@ -394,7 +394,7 @@ bool Instruction::CanTakeSVEMovprfx(const Instruction* movprfx) const {
         unsigned opc = ExtractBits(23, 22);
         unsigned opc2 = ExtractBits(18, 17);
         VectorFormat instr_vform =
-            SVEFormatFromLaneSizeInBytesLog2(std::max(opc, opc2));
+            SVEFormatFromLaneSizeInBytesLog2(max(opc, opc2));
         if (movprfx_vform != instr_vform) return false;
       }
       return zd_matches && !zd_matches_zn;
@@ -605,7 +605,7 @@ std::pair<int, int> Instruction::GetSVEPermuteIndexAndLaneSizeLog2() const {
   uint32_t imm_2 = ExtractBits<0x00C00000>();
   uint32_t tsz_5 = ExtractBits<0x001F0000>();
   uint32_t imm_7 = (imm_2 << 5) | tsz_5;
-  int lane_size_in_byte_log_2 = std::min(CountTrailingZeros(tsz_5), 5);
+  int lane_size_in_byte_log_2 = min(CountTrailingZeros(tsz_5), 5);
   int index = ExtractUnsignedBitfield32(6, lane_size_in_byte_log_2 + 1, imm_7);
   return std::make_pair(index, lane_size_in_byte_log_2);
 }

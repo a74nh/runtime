@@ -27,9 +27,9 @@
 #ifndef VIXL_AARCH64_CPU_FEATURES_AUDITOR_AARCH64_H_
 #define VIXL_AARCH64_CPU_FEATURES_AUDITOR_AARCH64_H_
 
-#include <iostream>
+// #include <iostream>
 
-#include "cpu-features.h"
+#include "../cpu-features.h"
 #include "decoder-aarch64.h"
 
 namespace vixl {

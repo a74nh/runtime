@@ -84,6 +84,8 @@ namespace std
         {   // construct from compatible pair
         }
 
+        constexpr pair(const pair&) = default;    ///< Copy constructor
+
         void swap(_Myt& _Right)
         {   // exchange contents with _Right
             if (this != &_Right)
@@ -242,6 +244,11 @@ namespace std
     {   // return second element of pair
         return (_Pair.second);
     }
+
+    template<typename _T1, typename _T2>
+    inline pair<_T1, _T2>
+    make_pair(_T1 __x, _T2 __y)
+    { return std::pair<_T1, _T2>(__x, __y); }
 
 } // namespace std
 
