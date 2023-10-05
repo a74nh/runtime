@@ -20,6 +20,8 @@
  *
 ******************************************************************************/
 
+#include "constants-arm64-sve.h"
+
 #if !defined(TARGET_ARM64)
 #error Unexpected target type
 #endif
@@ -1680,10 +1682,10 @@ INST1(fminnmv,     "fminnmv",      0,      IF_DV_2R,  0x2EB0C800)
 INST1(fminv,       "fminv",        0,      IF_DV_2R,  0x2EB0F800)
                                    //  fminv   Vd,Vn                DV_2R  0Q1011101X110000 111110nnnnnddddd   2EB0 F800   Vd,Vn      (vector)
 
-INST3(uzp1,        "uzp1",         0,      IF_EN3n,   0x0E001800,  0x05206800, 0x05204800)
+INST3(uzp1,        "uzp1",         0,      IF_EN3n,   0x0E001800,  UZP1_z_zz, UZP1_p_pp)
                                    //  uzp1    Vd,Vn,Vm             DV_3A  0Q001110XX0mmmmm 000110nnnnnddddd   0E00 1800   Vd,Vn,Vm  (vector)
-                                   //  uzp1    Zd,Zn,Zm             DV_3H  00000101XX1mmmmm 011010nnnnnddddd   0520 6800   Zd,Zn,Zm  (SVE vector)
-                                   //  uzp1    Pd,Pn,Pm             DV_3I  00000101XX10mmmm 0100100nnnn0dddd   0520 4800   Pd,Pn,Pm  (SVE predicate)
+                                   //  uzp1    Zd,Zn,Zm             DV_3H  00000101XX1mmmmm 011010nnnnnddddd   UZP1_z_zz   Zd,Zn,Zm  (SVE vector)
+                                   //  uzp1    Pd,Pn,Pm             DV_3I  00000101XX10mmmm 0100100nnnn0dddd   UZP1_p_pp   Pd,Pn,Pm  (SVE predicate)
 
 INST1(uzp2,        "uzp2",         0,      IF_DV_3A,  0x0E005800)
                                    //  upz2    Vd,Vn,Vm             DV_3A  0Q001110XX0mmmmm 010110nnnnnddddd   0E00 5800   Vd,Vn,Vm  (vector)
