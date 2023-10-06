@@ -13,6 +13,8 @@
 #include "compiler.h" // temporary??
 #include "regset.h"
 #include "jitgcinfo.h"
+#include "vixl/aarch64/macro-assembler-aarch64.h"
+#include "vixl/aarch64/disasm-aarch64.h"
 
 class CodeGen final : public CodeGenInterface
 {
@@ -35,6 +37,10 @@ public:
         GenTree* addr, bool fold, bool* revPtr, GenTree** rv1Ptr, GenTree** rv2Ptr, unsigned* mulPtr, ssize_t* cnsPtr);
 
 private:
+
+    vixl::aarch64::MacroAssembler vixlMasm;
+    vixl::aarch64::PrintDisassembler vixlDisasm;
+
 #if defined(TARGET_XARCH)
     // Bit masks used in negating a float or double number.
     // This is to avoid creating more than one data constant for these bitmasks when a

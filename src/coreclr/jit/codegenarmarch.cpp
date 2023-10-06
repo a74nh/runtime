@@ -1573,15 +1573,59 @@ void CodeGen::genCodeForShift(GenTree* tree)
 
     GenTree* operand = tree->gtGetOp1();
     GenTree* shiftBy = tree->gtGetOp2();
+
+    vixl::aarch64::Register dest_reg(tree->GetRegNum(), size * vixl::kBitsPerByte);
+    vixl::aarch64::Register operand_reg(operand->GetRegNum(), size * vixl::kBitsPerByte);
+
+
     if (!shiftBy->IsCnsIntOrI())
     {
         GetEmitter()->emitIns_R_R_R(ins, size, dstReg, operand->GetRegNum(), shiftBy->GetRegNum());
+
+        vixl::aarch64::Register shiftBy_reg(shiftBy->GetRegNum(), size * vixl::kBitsPerByte);
+
+        switch(tree->gtOper)
+        {
+        case GT_LSH:
+            vixlMasm.Lsl(dest_reg, operand_reg, shiftBy_reg);
+            break;
+        case GT_RSH:
+            vixlMasm.Asr(dest_reg, operand_reg, shiftBy_reg);
+            break;
+        case GT_RSZ:
+            vixlMasm.Lsr(dest_reg, operand_reg, shiftBy_reg);
+            break;
+        case GT_ROR:
+            vixlMasm.Ror(dest_reg, operand_reg, shiftBy_reg);
+            break;
+        default:
+            assert(false);
+        }
+
     }
     else
     {
         unsigned immWidth   = emitter::getBitWidth(size); // For ARM64, immWidth will be set to 32 or 64
         unsigned shiftByImm = (unsigned)shiftBy->AsIntCon()->gtIconVal & (immWidth - 1);
         GetEmitter()->emitIns_R_R_I(ins, size, dstReg, operand->GetRegNum(), shiftByImm);
+
+        switch(tree->gtOper)
+        {
+        case GT_LSH:
+            vixlMasm.Lsl(dest_reg, operand_reg, shiftByImm);
+            break;
+        case GT_RSH:
+            vixlMasm.Asr(dest_reg, operand_reg, shiftByImm);
+            break;
+        case GT_RSZ:
+            vixlMasm.Lsr(dest_reg, operand_reg, shiftByImm);
+            break;
+        case GT_ROR:
+            vixlMasm.Ror(dest_reg, operand_reg, shiftByImm);
+            break;
+        default:
+            assert(false);
+        }
     }
 
     genProduceReg(tree);

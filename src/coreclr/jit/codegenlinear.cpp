@@ -16,6 +16,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 #include "emit.h"
 #include "codegen.h"
+#include "vixl/aarch64/macro-assembler-aarch64.h"
+#include "vixl/aarch64/disasm-aarch64.h"
 
 //------------------------------------------------------------------------
 // genInitializeRegisterState: Initialize the register state contained in 'regSet'.
@@ -161,6 +163,11 @@ void CodeGen::genCodeForBBlist()
 
     /* Initialize structures used in the block list iteration */
     genInitialize();
+
+    // Clear the VIXL buffer and get a label pointing to the start.
+    vixl::aarch64::Label vixlCodeStart, vixlCodeEnd;
+    vixlMasm.Reset();
+    vixlMasm.Bind(&vixlCodeStart);
 
     /*-------------------------------------------------------------------------
      *
@@ -838,6 +845,34 @@ void CodeGen::genCodeForBBlist()
         compiler->compCurBB = nullptr;
 #endif // DEBUG
     }  //------------------ END-FOR each block of the method -------------------
+
+
+    // Tell vixl we've finished generating code and get a label pointing to the end
+    vixlMasm.Bind(&vixlCodeEnd);
+    vixlMasm.FinalizeCode();
+    vixl::aarch64::Instruction* vixlAddressStart = vixlMasm.GetLabelAddress<vixl::aarch64::Instruction*>(&vixlCodeStart);
+    vixl::aarch64::Instruction* vixlAddressEnd   = vixlMasm.GetLabelAddress<vixl::aarch64::Instruction*>(&vixlCodeEnd);
+
+    // We should now have a buffer containing some instructions.
+
+    // Disassemble the buffer to the jit standard output.
+    if (vixlAddressStart != vixlAddressEnd)
+    {
+        JITDUMP("Ready for disassmble: %s this=%p compiler=%p\n", compiler->info.compFullName, this, compiler);
+
+        if (compiler->verbose)
+        {
+            JITDUMP("About to disassmble: %s\n", compiler->info.compFullName);
+            // Bug: The next few lines never complete.
+            // However, when debugging in gdb sometimes this will complete.
+            // For example: "break exit; run"
+            // when stepping through in gdb, after the disassembler has printed, another thread will
+            // jump in and start work. Then a few more steps later, the rest of the program will compile
+            // and suddenly everything has exited.
+            vixlDisasm.DisassembleBuffer(vixlAddressStart, vixlAddressEnd);
+            JITDUMP("Finished disassmble\n");
+        }
+    }
 
     // There could be variables alive at this point. For example see lvaKeepAliveAndReportThis.
     // This call is for cleaning the GC refs
