@@ -448,6 +448,7 @@ CONFIG_INTEGER(JitDoLowerConstCompare, W("JitDoLowerConstCompare"), 1) // Perfor
 CONFIG_INTEGER(JitDoLowerJTrue, W("JitDoLowerJTrue"), 1) // Perform JTRUE Lowering
 CONFIG_INTEGER(JitDoLowerSelect, W("JitDoLowerSelect"), 1) // Perform SELECT Lowering
 CONFIG_INTEGER(JitFailLoweringBitCast, W("JitFailLoweringBitCast"), 0) // Cause assert failure when lowering a bit cast.
+CONFIG_INTEGER(JitInvertIfConversion, W("JitInvertIfConversion"), 0) // Invert some if conversion conditions.
 #endif                                                       // defined(OPT_CONFIG)
 
 CONFIG_INTEGER(JitTelemetry, W("JitTelemetry"), 1) // If non-zero, gather JIT telemetry data

@@ -703,6 +703,13 @@ bool OptIfConversionDsc::optIfConvert()
 
         selectTrueInput  = m_elseOperation.node->gtGetOp1();
         selectFalseInput = m_thenOperation.node->gtGetOp1();
+
+        if (JitConfig.JitInvertIfConversion() != 0)
+        {
+            selectFalseInput  = m_elseOperation.node->gtGetOp1();
+            selectTrueInput = m_thenOperation.node->gtGetOp1();
+        }
+
         selectType       = genActualType(m_thenOperation.node);
     }
 
