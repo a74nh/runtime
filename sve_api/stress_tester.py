@@ -10,7 +10,7 @@ def strip_text(text):
         return text[passed_test_index:]
     else:
         return text
-        
+
 def invoke_test(env_vars, args):
     print(f"------------------- {env_vars} -------------------")
     # Prepare environment variables dictionary
@@ -37,18 +37,19 @@ def invoke_test(env_vars, args):
                 if len(line.strip()) == 0:
                     output_batch_lines = False
                     print("..........................................")
-                
+
                 if output_batch_lines or ('System.Exception' in line) or ('at ' in line.strip()):
                     print(line)
         else:
             # Everything passed
-            test_count = 0
-            for line in result.stdout.splitlines():
-                if 'Beginning scenario:' in line:
-                    test_count = test_count+1
-                if 'Passed test:' in line:
-                    print(f'{strip_text(line)} : {test_count}')
-                    test_count = 0
+            if not env_vars:
+                test_count = 0
+                for line in result.stdout.splitlines():
+                    if 'Beginning scenario:' in line:
+                        test_count = test_count+1
+                    if 'Passed test:' in line:
+                        print(f'{strip_text(line)} : {test_count}')
+                        test_count = 0
                     
         # Print the errors, if any
         if result.stderr:
