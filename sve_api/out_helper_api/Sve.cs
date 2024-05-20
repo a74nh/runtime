@@ -261,7 +261,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; SABD Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sabd, EA_SCALABLE, REG_V5, REG_P2, REG_V6, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
@@ -281,7 +281,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; SABD Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sabd, EA_SCALABLE, REG_V5, REG_P2, REG_V6, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
@@ -301,7 +301,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; SABD Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sabd, EA_SCALABLE, REG_V5, REG_P2, REG_V6, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
@@ -321,7 +321,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; SABD Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sabd, EA_SCALABLE, REG_V5, REG_P2, REG_V6, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
@@ -341,7 +341,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; UABD Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uabd, EA_SCALABLE, REG_V23, REG_P3, REG_V9, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
@@ -361,7 +361,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; UABD Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uabd, EA_SCALABLE, REG_V23, REG_P3, REG_V9, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
@@ -381,7 +381,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; UABD Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uabd, EA_SCALABLE, REG_V23, REG_P3, REG_V9, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
@@ -401,7 +401,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; UABD Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UABD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uabd, EA_SCALABLE, REG_V23, REG_P3, REG_V9, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
@@ -464,7 +464,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; ADD Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -488,7 +488,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; ADD Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -512,7 +512,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; ADD Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -536,7 +536,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; ADD Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -560,7 +560,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; ADD Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -584,7 +584,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; ADD Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -608,7 +608,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; ADD Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -632,7 +632,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; ADD Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -704,8 +704,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  SADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_1BYTE, REG_V1, REG_P4, REG_V2, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_2BYTE, REG_V2, REG_P5, REG_V3, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_SCALABLE, REG_V1, REG_P4, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_SCALABLE, REG_V2, REG_P5, REG_V3, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -717,8 +717,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  SADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_1BYTE, REG_V1, REG_P4, REG_V2, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_2BYTE, REG_V2, REG_P5, REG_V3, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_SCALABLE, REG_V1, REG_P4, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_SCALABLE, REG_V2, REG_P5, REG_V3, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -730,8 +730,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  SADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_1BYTE, REG_V1, REG_P4, REG_V2, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_2BYTE, REG_V2, REG_P5, REG_V3, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_SCALABLE, REG_V1, REG_P4, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_saddv, EA_SCALABLE, REG_V2, REG_P5, REG_V3, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -743,7 +743,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  UADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_4BYTE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_SCALABLE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -755,7 +755,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  UADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_4BYTE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_SCALABLE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -767,7 +767,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  UADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_4BYTE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_SCALABLE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -779,7 +779,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  UADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_4BYTE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_SCALABLE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -791,7 +791,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AI_3A  UADDV <Dd>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_4BYTE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uaddv, EA_SCALABLE, REG_V3, REG_P6, REG_V4, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -803,7 +803,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FADDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_faddv, EA_2BYTE, REG_V21, REG_P7, REG_V7, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_faddv, EA_SCALABLE, REG_V21, REG_P7, REG_V7, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -815,7 +815,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FADDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_faddv, EA_2BYTE, REG_V21, REG_P7, REG_V7, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_faddv, EA_SCALABLE, REG_V21, REG_P7, REG_V7, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -990,9 +990,9 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HJ_3A  FADDA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_2BYTE, REG_V21, REG_P6, REG_V14, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_4BYTE, REG_V22, REG_P5, REG_V13, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_8BYTE, REG_V23, REG_P4, REG_V12, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_SCALABLE, REG_V21, REG_P6, REG_V14, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_SCALABLE, REG_V22, REG_P5, REG_V13, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_SCALABLE, REG_V23, REG_P4, REG_V12, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1004,9 +1004,9 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HJ_3A  FADDA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_2BYTE, REG_V21, REG_P6, REG_V14, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_4BYTE, REG_V22, REG_P5, REG_V13, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_8BYTE, REG_V23, REG_P4, REG_V12, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_SCALABLE, REG_V21, REG_P6, REG_V14, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_SCALABLE, REG_V22, REG_P5, REG_V13, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadda, EA_SCALABLE, REG_V23, REG_P4, REG_V12, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1256,7 +1256,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1268,7 +1268,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1280,7 +1280,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1292,7 +1292,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1304,7 +1304,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1316,7 +1316,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1328,7 +1328,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1340,7 +1340,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ANDV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_1BYTE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_andv, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -3638,7 +3638,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3657,7 +3657,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3673,7 +3673,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3692,7 +3692,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3708,7 +3708,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3727,7 +3727,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3743,7 +3743,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3762,7 +3762,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3778,7 +3778,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3797,7 +3797,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3813,7 +3813,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3832,7 +3832,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3848,7 +3848,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3867,7 +3867,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3883,7 +3883,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3902,7 +3902,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3918,7 +3918,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3937,7 +3937,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3953,7 +3953,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3972,7 +3972,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -3991,7 +3991,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4007,7 +4007,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4023,7 +4023,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4039,7 +4039,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4055,7 +4055,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4071,7 +4071,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4087,7 +4087,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4103,7 +4103,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4119,7 +4119,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4135,7 +4135,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTA <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V31, REG_P7, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_CN_3A  CLASTA <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_2BYTE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_SCALABLE, REG_V12, REG_P1, REG_V15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTA <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R0, REG_P0, REG_V0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clasta, EA_4BYTE, REG_R1, REG_P2, REG_V3, INS_OPTS_SCALABLE_H);
@@ -4154,8 +4154,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4174,8 +4174,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4191,8 +4191,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4211,8 +4211,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4228,8 +4228,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4248,8 +4248,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4265,8 +4265,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4285,8 +4285,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4302,8 +4302,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4322,8 +4322,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4339,8 +4339,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4359,8 +4359,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4376,8 +4376,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4396,8 +4396,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4413,8 +4413,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4433,8 +4433,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4450,8 +4450,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4470,8 +4470,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4487,8 +4487,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4507,8 +4507,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4527,8 +4527,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4544,8 +4544,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4561,8 +4561,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4578,8 +4578,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4595,8 +4595,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4612,8 +4612,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4629,8 +4629,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4646,8 +4646,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4663,8 +4663,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -4680,8 +4680,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CM_3A  CLASTB <Zdn>.<T>, <Pg>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V30, REG_P6, REG_V30, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CN_3A  CLASTB <V><dn>, <Pg>, <V><dn>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V13, REG_P2, REG_V16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_SCALABLE, REG_V14, REG_P0, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CO_3A  CLASTB <R><dn>, <Pg>, <R><dn>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_4BYTE, REG_R23, REG_P5, REG_V12, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R(INS_sve_clastb, EA_8BYTE, REG_R3, REG_P6, REG_V9, INS_OPTS_SCALABLE_D);
@@ -7572,8 +7572,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7589,8 +7589,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7606,8 +7606,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7623,8 +7623,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7640,8 +7640,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7657,8 +7657,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7674,8 +7674,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7691,8 +7691,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7708,8 +7708,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7725,8 +7725,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7745,8 +7745,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7762,8 +7762,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7779,8 +7779,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7796,8 +7796,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7813,8 +7813,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7830,8 +7830,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7847,8 +7847,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7864,8 +7864,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7881,8 +7881,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7898,8 +7898,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTA <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_1BYTE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_2BYTE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V6, REG_P1, REG_V27, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_SCALABLE, REG_V5, REG_P2, REG_V26, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTA <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R1, REG_P5, REG_V23, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lasta, EA_4BYTE, REG_R0, REG_P6, REG_V22, INS_OPTS_SCALABLE_S);
@@ -7918,8 +7918,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -7935,8 +7935,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -7952,8 +7952,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -7969,8 +7969,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -7986,8 +7986,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8003,8 +8003,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8020,8 +8020,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8037,8 +8037,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8054,8 +8054,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8071,8 +8071,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8091,8 +8091,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8108,8 +8108,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8125,8 +8125,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8142,8 +8142,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8159,8 +8159,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8176,8 +8176,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8193,8 +8193,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8210,8 +8210,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8227,8 +8227,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -8244,8 +8244,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CR_3A  LASTB <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V4, REG_P3, REG_V25, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_SCALABLE, REG_V3, REG_P4, REG_V24, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_SIMD_SCALAR);
         ///    IF_SVE_CS_3A  LASTB <R><d>, <Pg>, <Zn>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_4BYTE, REG_R30, REG_P7, REG_V21, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_lastb, EA_8BYTE, REG_R29, REG_P0, REG_V20, INS_OPTS_SCALABLE_D);
@@ -21999,7 +21999,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; SMAX Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smax, EA_SCALABLE, REG_V24, REG_P0, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_ED_1A  SMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smax, EA_SCALABLE, REG_V0, -128, INS_OPTS_SCALABLE_B);
@@ -22022,7 +22022,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; SMAX Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smax, EA_SCALABLE, REG_V24, REG_P0, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_ED_1A  SMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smax, EA_SCALABLE, REG_V0, -128, INS_OPTS_SCALABLE_B);
@@ -22045,7 +22045,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; SMAX Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smax, EA_SCALABLE, REG_V24, REG_P0, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_ED_1A  SMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smax, EA_SCALABLE, REG_V0, -128, INS_OPTS_SCALABLE_B);
@@ -22068,7 +22068,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; SMAX Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smax, EA_SCALABLE, REG_V24, REG_P0, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_ED_1A  SMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smax, EA_SCALABLE, REG_V0, -128, INS_OPTS_SCALABLE_B);
@@ -22091,7 +22091,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; UMAX Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umax, EA_SCALABLE, REG_V15, REG_P4, REG_V2, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_ED_1A  UMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umax, EA_SCALABLE, REG_V4, 0, INS_OPTS_SCALABLE_B);
@@ -22114,7 +22114,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; UMAX Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umax, EA_SCALABLE, REG_V15, REG_P4, REG_V2, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_ED_1A  UMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umax, EA_SCALABLE, REG_V4, 0, INS_OPTS_SCALABLE_B);
@@ -22137,7 +22137,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; UMAX Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umax, EA_SCALABLE, REG_V15, REG_P4, REG_V2, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_ED_1A  UMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umax, EA_SCALABLE, REG_V4, 0, INS_OPTS_SCALABLE_B);
@@ -22160,7 +22160,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; UMAX Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMAX <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umax, EA_SCALABLE, REG_V15, REG_P4, REG_V2, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_ED_1A  UMAX <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umax, EA_SCALABLE, REG_V4, 0, INS_OPTS_SCALABLE_B);
@@ -22225,7 +22225,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_8BYTE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_SCALABLE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22237,7 +22237,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_8BYTE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_SCALABLE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22249,7 +22249,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_8BYTE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_SCALABLE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22261,7 +22261,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_8BYTE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_smaxv, EA_SCALABLE, REG_V15, REG_P7, REG_V4, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22273,7 +22273,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_2BYTE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_SCALABLE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22285,7 +22285,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_2BYTE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_SCALABLE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22297,7 +22297,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_2BYTE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_SCALABLE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22309,7 +22309,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_2BYTE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_umaxv, EA_SCALABLE, REG_V17, REG_P5, REG_V24, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22321,7 +22321,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxv, EA_4BYTE, REG_V23, REG_P5, REG_V5, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxv, EA_SCALABLE, REG_V23, REG_P5, REG_V5, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22333,7 +22333,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMAXV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxv, EA_4BYTE, REG_V23, REG_P5, REG_V5, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxv, EA_SCALABLE, REG_V23, REG_P5, REG_V5, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22397,7 +22397,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMAXNMV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxnmv, EA_2BYTE, REG_V22, REG_P6, REG_V6, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxnmv, EA_SCALABLE, REG_V22, REG_P6, REG_V6, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22409,7 +22409,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMAXNMV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxnmv, EA_2BYTE, REG_V22, REG_P6, REG_V6, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmaxnmv, EA_SCALABLE, REG_V22, REG_P6, REG_V6, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22431,7 +22431,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; SMIN Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smin, EA_SCALABLE, REG_V9, REG_P1, REG_V27, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_ED_1A  SMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smin, EA_SCALABLE, REG_V2, -128, INS_OPTS_SCALABLE_S);
@@ -22454,7 +22454,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; SMIN Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smin, EA_SCALABLE, REG_V9, REG_P1, REG_V27, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_ED_1A  SMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smin, EA_SCALABLE, REG_V2, -128, INS_OPTS_SCALABLE_S);
@@ -22477,7 +22477,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; SMIN Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smin, EA_SCALABLE, REG_V9, REG_P1, REG_V27, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_ED_1A  SMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smin, EA_SCALABLE, REG_V2, -128, INS_OPTS_SCALABLE_S);
@@ -22500,7 +22500,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; SMIN Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_smin, EA_SCALABLE, REG_V9, REG_P1, REG_V27, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_ED_1A  SMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_smin, EA_SCALABLE, REG_V2, -128, INS_OPTS_SCALABLE_S);
@@ -22523,7 +22523,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; UMIN Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umin, EA_SCALABLE, REG_V12, REG_P7, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_ED_1A  UMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umin, EA_SCALABLE, REG_V6, 0, INS_OPTS_SCALABLE_S);
@@ -22546,7 +22546,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; UMIN Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umin, EA_SCALABLE, REG_V12, REG_P7, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_ED_1A  UMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umin, EA_SCALABLE, REG_V6, 0, INS_OPTS_SCALABLE_S);
@@ -22569,7 +22569,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; UMIN Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umin, EA_SCALABLE, REG_V12, REG_P7, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_ED_1A  UMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umin, EA_SCALABLE, REG_V6, 0, INS_OPTS_SCALABLE_S);
@@ -22592,7 +22592,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; UMIN Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AD_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UMIN <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_umin, EA_SCALABLE, REG_V12, REG_P7, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_ED_1A  UMIN <Zdn>.<T>, <Zdn>.<T>, #<imm>
         ///        theEmitter->emitIns_R_I(INS_sve_umin, EA_SCALABLE, REG_V6, 0, INS_OPTS_SCALABLE_S);
@@ -22657,7 +22657,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_4BYTE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_SCALABLE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22669,7 +22669,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_4BYTE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_SCALABLE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22681,7 +22681,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_4BYTE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_SCALABLE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22693,7 +22693,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  SMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_4BYTE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sminv, EA_SCALABLE, REG_V16, REG_P6, REG_V14, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22705,7 +22705,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_1BYTE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_SCALABLE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22717,7 +22717,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_1BYTE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_SCALABLE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22729,7 +22729,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_1BYTE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_SCALABLE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22741,7 +22741,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AK_3A  UMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_1BYTE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uminv, EA_SCALABLE, REG_V18, REG_P4, REG_V31, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22753,7 +22753,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fminv, EA_4BYTE, REG_V25, REG_P3, REG_V3, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fminv, EA_SCALABLE, REG_V25, REG_P3, REG_V3, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22765,7 +22765,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMINV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fminv, EA_4BYTE, REG_V25, REG_P3, REG_V3, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fminv, EA_SCALABLE, REG_V25, REG_P3, REG_V3, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22829,7 +22829,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMINNMV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fminnmv, EA_8BYTE, REG_V24, REG_P4, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fminnmv, EA_SCALABLE, REG_V24, REG_P4, REG_V4, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -22841,7 +22841,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_HE_3A  FMINNMV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fminnmv, EA_8BYTE, REG_V24, REG_P4, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fminnmv, EA_SCALABLE, REG_V24, REG_P4, REG_V4, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24467,8 +24467,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24480,8 +24480,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24493,8 +24493,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24506,8 +24506,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24519,8 +24519,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24532,8 +24532,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24545,8 +24545,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24558,8 +24558,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  ORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_4BYTE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_8BYTE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V2, REG_P2, REG_V2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orv, EA_SCALABLE, REG_V3, REG_P3, REG_V3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -32797,7 +32797,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; SUBR Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -32821,7 +32821,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; SUBR Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -32845,7 +32845,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; SUBR Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -32869,7 +32869,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; SUBR Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -32893,7 +32893,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; SUBR Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -32917,7 +32917,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; SUBR Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -32941,7 +32941,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; SUBR Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -32965,7 +32965,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; SUBR Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AB_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
@@ -34511,7 +34511,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34523,7 +34523,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34535,7 +34535,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34547,7 +34547,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34559,7 +34559,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34571,7 +34571,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34583,7 +34583,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34595,7 +34595,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_AF_3A  EORV <V><d>, <Pg>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_2BYTE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eorv, EA_SCALABLE, REG_V1, REG_P1, REG_V1, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34776,7 +34776,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CH_2A  UUNPKHI <Zd>.<T>, <Zn>.<Tb>
-        ///        theEmitter->emitIns_R_R(INS_sve_uunpkhi, EA_SCALABLE, REG_V5, REG_V1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R(INS_sve_uunpkhi, EA_SCALABLE, REG_V5, REG_V1, INS_OPTS_SCALABLE_B);
         /// </summary>
         public static unsafe Vector<ushort> ZeroExtendWideningUpper(Vector<byte> value) => ZeroExtendWideningUpper(value);
 
@@ -34788,7 +34788,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CH_2A  UUNPKHI <Zd>.<T>, <Zn>.<Tb>
-        ///        theEmitter->emitIns_R_R(INS_sve_uunpkhi, EA_SCALABLE, REG_V5, REG_V1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R(INS_sve_uunpkhi, EA_SCALABLE, REG_V5, REG_V1, INS_OPTS_SCALABLE_B);
         /// </summary>
         public static unsafe Vector<uint> ZeroExtendWideningUpper(Vector<ushort> value) => ZeroExtendWideningUpper(value);
 
@@ -34800,7 +34800,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_CH_2A  UUNPKHI <Zd>.<T>, <Zn>.<Tb>
-        ///        theEmitter->emitIns_R_R(INS_sve_uunpkhi, EA_SCALABLE, REG_V5, REG_V1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R(INS_sve_uunpkhi, EA_SCALABLE, REG_V5, REG_V1, INS_OPTS_SCALABLE_B);
         /// </summary>
         public static unsafe Vector<ulong> ZeroExtendWideningUpper(Vector<uint> value) => ZeroExtendWideningUpper(value);
 
