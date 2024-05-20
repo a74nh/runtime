@@ -32,7 +32,6 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svfloat32_t svbfdot[_f32](svfloat32_t op1, svbfloat16_t op2, svbfloat16_t op3)
         ///   BFDOT Ztied1.S, Zop2.H, Zop3.H
-        ///   MOVPRFX Zresult, Zop1; BFDOT Zresult.S, Zop2.H, Zop3.H
         /// </summary>
         public static unsafe Vector<float> Bfloat16DotProduct(Vector<float> addend, Vector<bfloat16> left, Vector<bfloat16> right) { throw new PlatformNotSupportedException(); }
 
@@ -42,7 +41,6 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svfloat32_t svbfmmla[_f32](svfloat32_t op1, svbfloat16_t op2, svbfloat16_t op3)
         ///   BFMMLA Ztied1.S, Zop2.H, Zop3.H
-        ///   MOVPRFX Zresult, Zop1; BFMMLA Zresult.S, Zop2.H, Zop3.H
         /// </summary>
         public static unsafe Vector<float> Bfloat16MatrixMultiplyAccumulate(Vector<float> op1, Vector<bfloat16> op2, Vector<bfloat16> op3) { throw new PlatformNotSupportedException(); }
 
@@ -52,14 +50,12 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svfloat32_t svbfmlalb[_f32](svfloat32_t op1, svbfloat16_t op2, svbfloat16_t op3)
         ///   BFMLALB Ztied1.S, Zop2.H, Zop3.H
-        ///   MOVPRFX Zresult, Zop1; BFMLALB Zresult.S, Zop2.H, Zop3.H
         /// </summary>
         public static unsafe Vector<float> Bfloat16MultiplyAddWideningToSinglePrecisionLower(Vector<float> op1, Vector<bfloat16> op2, Vector<bfloat16> op3) { throw new PlatformNotSupportedException(); }
 
         /// <summary>
         /// svfloat32_t svbfmlalb_lane[_f32](svfloat32_t op1, svbfloat16_t op2, svbfloat16_t op3, uint64_t imm_index)
         ///   BFMLALB Ztied1.S, Zop2.H, Zop3.H[imm_index]
-        ///   MOVPRFX Zresult, Zop1; BFMLALB Zresult.S, Zop2.H, Zop3.H[imm_index]
         /// </summary>
         public static unsafe Vector<float> Bfloat16MultiplyAddWideningToSinglePrecisionLower(Vector<float> op1, Vector<bfloat16> op2, Vector<bfloat16> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
@@ -69,14 +65,12 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svfloat32_t svbfmlalt[_f32](svfloat32_t op1, svbfloat16_t op2, svbfloat16_t op3)
         ///   BFMLALT Ztied1.S, Zop2.H, Zop3.H
-        ///   MOVPRFX Zresult, Zop1; BFMLALT Zresult.S, Zop2.H, Zop3.H
         /// </summary>
         public static unsafe Vector<float> Bfloat16MultiplyAddWideningToSinglePrecisionUpper(Vector<float> op1, Vector<bfloat16> op2, Vector<bfloat16> op3) { throw new PlatformNotSupportedException(); }
 
         /// <summary>
         /// svfloat32_t svbfmlalt_lane[_f32](svfloat32_t op1, svbfloat16_t op2, svbfloat16_t op3, uint64_t imm_index)
         ///   BFMLALT Ztied1.S, Zop2.H, Zop3.H[imm_index]
-        ///   MOVPRFX Zresult, Zop1; BFMLALT Zresult.S, Zop2.H, Zop3.H[imm_index]
         /// </summary>
         public static unsafe Vector<float> Bfloat16MultiplyAddWideningToSinglePrecisionUpper(Vector<float> op1, Vector<bfloat16> op2, Vector<bfloat16> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
@@ -104,14 +98,12 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svbfloat16_t svclasta[_bf16](svbool_t pg, svbfloat16_t fallback, svbfloat16_t data)
         ///   CLASTA Ztied.H, Pg, Ztied.H, Zdata.H
-        ///   MOVPRFX Zresult, Zfallback; CLASTA Zresult.H, Pg, Zresult.H, Zdata.H
         /// </summary>
         public static unsafe Vector<bfloat16> ConditionalExtractAfterLastActiveElement(Vector<bfloat16> mask, Vector<bfloat16> defaultValue, Vector<bfloat16> data) { throw new PlatformNotSupportedException(); }
 
         /// <summary>
         /// svbfloat16_t svclasta[_bf16](svbool_t pg, svbfloat16_t fallback, svbfloat16_t data)
         ///   CLASTA Ztied.H, Pg, Ztied.H, Zdata.H
-        ///   MOVPRFX Zresult, Zfallback; CLASTA Zresult.H, Pg, Zresult.H, Zdata.H
         /// bfloat16_t svclasta[_n_bf16](svbool_t pg, bfloat16_t fallback, svbfloat16_t data)
         ///   CLASTA Wtied, Pg, Wtied, Zdata.H
         ///   CLASTA Htied, Pg, Htied, Zdata.H
@@ -124,7 +116,6 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svbfloat16_t svclasta[_bf16](svbool_t pg, svbfloat16_t fallback, svbfloat16_t data)
         ///   CLASTA Ztied.H, Pg, Ztied.H, Zdata.H
-        ///   MOVPRFX Zresult, Zfallback; CLASTA Zresult.H, Pg, Zresult.H, Zdata.H
         /// </summary>
         public static unsafe Vector<bfloat16> ConditionalExtractAfterLastActiveElementAndReplicate(Vector<bfloat16> mask, Vector<bfloat16> defaultScalar, Vector<bfloat16> data) { throw new PlatformNotSupportedException(); }
 
@@ -134,14 +125,12 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svbfloat16_t svclastb[_bf16](svbool_t pg, svbfloat16_t fallback, svbfloat16_t data)
         ///   CLASTB Ztied.H, Pg, Ztied.H, Zdata.H
-        ///   MOVPRFX Zresult, Zfallback; CLASTB Zresult.H, Pg, Zresult.H, Zdata.H
         /// </summary>
         public static unsafe Vector<bfloat16> ConditionalExtractLastActiveElement(Vector<bfloat16> mask, Vector<bfloat16> defaultValue, Vector<bfloat16> data) { throw new PlatformNotSupportedException(); }
 
         /// <summary>
         /// svbfloat16_t svclastb[_bf16](svbool_t pg, svbfloat16_t fallback, svbfloat16_t data)
         ///   CLASTB Ztied.H, Pg, Ztied.H, Zdata.H
-        ///   MOVPRFX Zresult, Zfallback; CLASTB Zresult.H, Pg, Zresult.H, Zdata.H
         /// bfloat16_t svclastb[_n_bf16](svbool_t pg, bfloat16_t fallback, svbfloat16_t data)
         ///   CLASTB Wtied, Pg, Wtied, Zdata.H
         ///   CLASTB Htied, Pg, Htied, Zdata.H
@@ -154,7 +143,6 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svbfloat16_t svclastb[_bf16](svbool_t pg, svbfloat16_t fallback, svbfloat16_t data)
         ///   CLASTB Ztied.H, Pg, Ztied.H, Zdata.H
-        ///   MOVPRFX Zresult, Zfallback; CLASTB Zresult.H, Pg, Zresult.H, Zdata.H
         /// </summary>
         public static unsafe Vector<bfloat16> ConditionalExtractLastActiveElementAndReplicate(Vector<bfloat16> mask, Vector<bfloat16> fallback, Vector<bfloat16> data) { throw new PlatformNotSupportedException(); }
 
@@ -173,12 +161,9 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svbfloat16_t svcvt_bf16[_f32]_m(svbfloat16_t inactive, svbool_t pg, svfloat32_t op)
         ///   BFCVT Ztied.H, Pg/M, Zop.S
-        ///   MOVPRFX Zresult, Zinactive; BFCVT Zresult.H, Pg/M, Zop.S
         /// svbfloat16_t svcvt_bf16[_f32]_x(svbool_t pg, svfloat32_t op)
         ///   BFCVT Ztied.H, Pg/M, Ztied.S
-        ///   MOVPRFX Zresult, Zop; BFCVT Zresult.H, Pg/M, Zop.S
         /// svbfloat16_t svcvt_bf16[_f32]_z(svbool_t pg, svfloat32_t op)
-        ///   MOVPRFX Zresult.S, Pg/Z, Zop.S; BFCVT Zresult.H, Pg/M, Zop.S
         /// </summary>
         public static unsafe Vector<bfloat16> ConvertToBFloat16(Vector<float> value) { throw new PlatformNotSupportedException(); }
 
@@ -225,7 +210,6 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svfloat32_t svbfdot_lane[_f32](svfloat32_t op1, svbfloat16_t op2, svbfloat16_t op3, uint64_t imm_index)
         ///   BFDOT Ztied1.S, Zop2.H, Zop3.H[imm_index]
-        ///   MOVPRFX Zresult, Zop1; BFDOT Zresult.S, Zop2.H, Zop3.H[imm_index]
         /// </summary>
         public static unsafe Vector<float> DotProductBySelectedScalar(Vector<float> addend, Vector<bfloat16> left, Vector<bfloat16> right, [ConstantExpected] byte rightIndex) { throw new PlatformNotSupportedException(); }
 
@@ -299,7 +283,6 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svbfloat16_t svext[_bf16](svbfloat16_t op1, svbfloat16_t op2, uint64_t imm3)
         ///   EXT Ztied1.B, Ztied1.B, Zop2.B, #imm3 * 2
-        ///   MOVPRFX Zresult, Zop1; EXT Zresult.B, Zresult.B, Zop2.B, #imm3 * 2
         /// </summary>
         public static unsafe Vector<bfloat16> ExtractVector(Vector<bfloat16> upper, Vector<bfloat16> lower, [ConstantExpected] byte index) { throw new PlatformNotSupportedException(); }
 
@@ -455,12 +438,9 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svuint16_t svcnt[_bf16]_m(svuint16_t inactive, svbool_t pg, svbfloat16_t op)
         ///   CNT Ztied.H, Pg/M, Zop.H
-        ///   MOVPRFX Zresult, Zinactive; CNT Zresult.H, Pg/M, Zop.H
         /// svuint16_t svcnt[_bf16]_x(svbool_t pg, svbfloat16_t op)
         ///   CNT Ztied.H, Pg/M, Ztied.H
-        ///   MOVPRFX Zresult, Zop; CNT Zresult.H, Pg/M, Zop.H
         /// svuint16_t svcnt[_bf16]_z(svbool_t pg, svbfloat16_t op)
-        ///   MOVPRFX Zresult.H, Pg/Z, Zop.H; CNT Zresult.H, Pg/M, Zop.H
         /// </summary>
         public static unsafe Vector<ushort> PopCount(Vector<bfloat16> value) { throw new PlatformNotSupportedException(); }
 
@@ -479,7 +459,6 @@ namespace System.Runtime.Intrinsics.Arm
         /// <summary>
         /// svbfloat16_t svsplice[_bf16](svbool_t pg, svbfloat16_t op1, svbfloat16_t op2)
         ///   SPLICE Ztied1.H, Pg, Ztied1.H, Zop2.H
-        ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.H, Pg, Zresult.H, Zop2.H
         /// </summary>
         public static unsafe Vector<bfloat16> Splice(Vector<bfloat16> mask, Vector<bfloat16> left, Vector<bfloat16> right) { throw new PlatformNotSupportedException(); }
 
