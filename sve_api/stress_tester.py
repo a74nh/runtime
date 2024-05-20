@@ -26,7 +26,7 @@ def invoke_test(env_vars, args):
 
     try:
         # Run the command and capture output and errors
-        result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env)
         if 'fail' in result.stdout.lower():
             print("Test failed:")
             output_batch_lines = False
