@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  DotProductSignedUnsigned : Dot product (signed × unsigned)
+        ///  Dot product (signed × unsigned)
 
         /// <summary>
         /// svint32_t svsudot[_s32](svint32_t op1, svint8_t op2, svuint8_t op3)
@@ -44,7 +44,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<int> DotProductSignedUnsigned(Vector<int> op1, Vector<sbyte> op2, Vector<byte> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  DotProductUnsignedSigned : Dot product (unsigned × signed)
+        ///  Dot product (unsigned × signed)
 
         /// <summary>
         /// svint32_t svusdot[_s32](svint32_t op1, svuint8_t op2, svint8_t op3)
@@ -61,7 +61,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<int> DotProductUnsignedSigned(Vector<int> op1, Vector<byte> op2, Vector<sbyte> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MatrixMultiplyAccumulate : Matrix multiply-accumulate
+        ///  Matrix multiply-accumulate
 
         /// <summary>
         /// svint32_t svmmla[_s32](svint32_t op1, svint8_t op2, svint8_t op3)
@@ -78,7 +78,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> MatrixMultiplyAccumulate(Vector<uint> op1, Vector<byte> op2, Vector<byte> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MatrixMultiplyAccumulateUnsignedSigned : Matrix multiply-accumulate (unsigned × signed)
+        ///  Matrix multiply-accumulate (unsigned × signed)
 
         /// <summary>
         /// svint32_t svusmmla[_s32](svint32_t op1, svuint8_t op2, svint8_t op3)

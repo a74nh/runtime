@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  AesInverseMixColumns : AES inverse mix columns
+        ///  AES inverse mix columns
 
         /// <summary>
         /// svuint8_t svaesimc[_u8](svuint8_t op)
@@ -36,7 +36,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<byte> AesInverseMixColumns(Vector<byte> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AesMixColumns : AES mix columns
+        ///  AES mix columns
 
         /// <summary>
         /// svuint8_t svaesmc[_u8](svuint8_t op)
@@ -45,7 +45,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<byte> AesMixColumns(Vector<byte> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AesSingleRoundDecryption : AES single round decryption
+        ///  AES single round decryption
 
         /// <summary>
         /// svuint8_t svaesd[_u8](svuint8_t op1, svuint8_t op2)
@@ -55,7 +55,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<byte> AesSingleRoundDecryption(Vector<byte> left, Vector<byte> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AesSingleRoundEncryption : AES single round encryption
+        ///  AES single round encryption
 
         /// <summary>
         /// svuint8_t svaese[_u8](svuint8_t op1, svuint8_t op2)
@@ -65,7 +65,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<byte> AesSingleRoundEncryption(Vector<byte> left, Vector<byte> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  PolynomialMultiplyWideningLower : Polynomial multiply long (bottom)
+        ///  Polynomial multiply long (bottom)
 
         /// <summary>
         /// svuint64_t svpmullb_pair[_u64](svuint64_t op1, svuint64_t op2)
@@ -74,7 +74,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> PolynomialMultiplyWideningLower(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  PolynomialMultiplyWideningUpper : Polynomial multiply long (top)
+        ///  Polynomial multiply long (top)
 
         /// <summary>
         /// svuint64_t svpmullt_pair[_u64](svuint64_t op1, svuint64_t op2)

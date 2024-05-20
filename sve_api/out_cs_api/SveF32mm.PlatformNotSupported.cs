@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  MatrixMultiplyAccumulate : Matrix multiply-accumulate
+        ///  Matrix multiply-accumulate
 
         /// <summary>
         /// svfloat32_t svmmla[_f32](svfloat32_t op1, svfloat32_t op2, svfloat32_t op3)

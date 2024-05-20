@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  AbsoluteDifferenceAdd : Absolute difference and accumulate
+        ///  Absolute difference and accumulate
 
         /// <summary>
         /// svuint8_t svaba[_u8](svuint8_t op1, svuint8_t op2, svuint8_t op3)
@@ -86,7 +86,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AbsoluteDifferenceAdd(Vector<ulong> addend, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AbsoluteDifferenceAddWideningLower : Absolute difference and accumulate long (bottom)
+        ///  Absolute difference and accumulate long (bottom)
 
         /// <summary>
         /// svint16_t svabalb[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -131,7 +131,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AbsoluteDifferenceAddWideningLower(Vector<ulong> addend, Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AbsoluteDifferenceAddWideningUpper : Absolute difference and accumulate long (top)
+        ///  Absolute difference and accumulate long (top)
 
         /// <summary>
         /// svint16_t svabalt[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -176,7 +176,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AbsoluteDifferenceAddWideningUpper(Vector<ulong> addend, Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AbsoluteDifferenceWideningLower : Absolute difference long (bottom)
+        ///  Absolute difference long (bottom)
 
         /// <summary>
         /// svint16_t svabdlb[_s16](svint8_t op1, svint8_t op2)
@@ -215,7 +215,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AbsoluteDifferenceWideningLower(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AbsoluteDifferenceWideningUpper : Absolute difference long (top)
+        ///  Absolute difference long (top)
 
         /// <summary>
         /// svint16_t svabdlt[_s16](svint8_t op1, svint8_t op2)
@@ -254,7 +254,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AbsoluteDifferenceWideningUpper(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddCarryWideningLower : Add with carry long (bottom)
+        ///  Add with carry long (bottom)
 
         /// <summary>
         /// svuint32_t svadclb[_u32](svuint32_t op1, svuint32_t op2, svuint32_t op3)
@@ -271,7 +271,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddCarryWideningLower(Vector<ulong> op1, Vector<ulong> op2, Vector<ulong> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddCarryWideningUpper : Add with carry long (top)
+        ///  Add with carry long (top)
 
         /// <summary>
         /// svuint32_t svadclt[_u32](svuint32_t op1, svuint32_t op2, svuint32_t op3)
@@ -288,7 +288,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddCarryWideningUpper(Vector<ulong> op1, Vector<ulong> op2, Vector<ulong> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddHighNarowingLower : Add narrow high part (bottom)
+        ///  Add narrow high part (bottom)
 
         /// <summary>
         /// svuint8_t svaddhnb[_u16](svuint16_t op1, svuint16_t op2)
@@ -327,7 +327,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> AddHighNarowingLower(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddHighNarowingUpper : Add narrow high part (top)
+        ///  Add narrow high part (top)
 
         /// <summary>
         /// svuint8_t svaddhnt[_u16](svuint8_t even, svuint16_t op1, svuint16_t op2)
@@ -366,7 +366,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> AddHighNarowingUpper(Vector<uint> even, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddPairwise : Add pairwise
+        ///  Add pairwise
 
         /// <summary>
         /// svuint8_t svaddp[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -469,7 +469,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddPairwise(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddPairwiseWidening : Add and accumulate long pairwise
+        ///  Add and accumulate long pairwise
 
         /// <summary>
         /// svint16_t svadalp[_s16]_m(svbool_t pg, svint16_t op1, svint8_t op2)
@@ -544,7 +544,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddPairwiseWidening(Vector<ulong> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddRotateComplex : Complex add with rotate
+        ///  Complex add with rotate
 
         /// <summary>
         /// svuint8_t svcadd[_u8](svuint8_t op1, svuint8_t op2, uint64_t imm_rotation)
@@ -603,7 +603,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddRotateComplex(Vector<ulong> left, Vector<ulong> right, [ConstantExpected] byte rotation) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddSaturate : Saturating add
+        ///  Saturating add
 
         /// <summary>
         /// svuint8_t svqadd[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -718,7 +718,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddSaturate(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddSaturateWithSignedAddend : Saturating add with signed addend
+        ///  Saturating add with signed addend
 
         /// <summary>
         /// svuint8_t svsqadd[_u8]_m(svbool_t pg, svuint8_t op1, svint8_t op2)
@@ -769,7 +769,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddSaturateWithSignedAddend(Vector<ulong> left, Vector<long> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddSaturateWithUnsignedAddend : Saturating add with unsigned addend
+        ///  Saturating add with unsigned addend
 
         /// <summary>
         /// svint16_t svuqadd[_s16]_m(svbool_t pg, svint16_t op1, svuint16_t op2)
@@ -820,7 +820,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> AddSaturateWithUnsignedAddend(Vector<sbyte> left, Vector<byte> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddWideLower : Add wide (bottom)
+        ///  Add wide (bottom)
 
         /// <summary>
         /// svint16_t svaddwb[_s16](svint16_t op1, svint8_t op2)
@@ -859,7 +859,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddWideLower(Vector<ulong> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddWideUpper : Add wide (top)
+        ///  Add wide (top)
 
         /// <summary>
         /// svint16_t svaddwt[_s16](svint16_t op1, svint8_t op2)
@@ -898,7 +898,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddWideUpper(Vector<ulong> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddWideningLower : Add long (bottom)
+        ///  Add long (bottom)
 
         /// <summary>
         /// svint16_t svaddlb[_s16](svint8_t op1, svint8_t op2)
@@ -937,7 +937,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddWideningLower(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddWideningLowerUpper : Add long (bottom + top)
+        ///  Add long (bottom + top)
 
         /// <summary>
         /// svint16_t svaddlbt[_s16](svint8_t op1, svint8_t op2)
@@ -958,7 +958,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> AddWideningLowerUpper(Vector<int> left, Vector<int> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  AddWideningUpper : Add long (top)
+        ///  Add long (top)
 
         /// <summary>
         /// svint16_t svaddlt[_s16](svint8_t op1, svint8_t op2)
@@ -997,7 +997,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> AddWideningUpper(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  BitwiseClearXor : Bitwise clear and exclusive OR
+        ///  Bitwise clear and exclusive OR
 
         /// <summary>
         /// svuint8_t svbcax[_u8](svuint8_t op1, svuint8_t op2, svuint8_t op3)
@@ -1056,7 +1056,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> BitwiseClearXor(Vector<ulong> xor, Vector<ulong> value, Vector<ulong> mask) { throw new PlatformNotSupportedException(); }
 
 
-        ///  BitwiseSelect : Bitwise select
+        ///  Bitwise select
 
         /// <summary>
         /// svuint8_t svbsl[_u8](svuint8_t op1, svuint8_t op2, svuint8_t op3)
@@ -1116,7 +1116,7 @@ namespace System.Runtime.Intrinsics.Arm
 
 
 
-        ///  BitwiseSelectLeftInverted : Bitwise select with first input inverted
+        ///  Bitwise select with first input inverted
 
         /// <summary>
         /// svuint8_t svbsl1n[_u8](svuint8_t op1, svuint8_t op2, svuint8_t op3)
@@ -1175,7 +1175,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> BitwiseSelectLeftInverted(Vector<ulong> select, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  BitwiseSelectRightInverted : Bitwise select with second input inverted
+        ///  Bitwise select with second input inverted
 
         /// <summary>
         /// svuint8_t svbsl2n[_u8](svuint8_t op1, svuint8_t op2, svuint8_t op3)
@@ -1234,7 +1234,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> BitwiseSelectRightInverted(Vector<ulong> select, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  CountMatchingElements : Count matching elements
+        ///  Count matching elements
 
         /// <summary>
         /// svuint32_t svhistcnt[_s32]_z(svbool_t pg, svint32_t op1, svint32_t op2)
@@ -1261,7 +1261,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> CountMatchingElements(Vector<ulong> mask, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  CountMatchingElementsIn128BitSegments : Count matching elements in 128-bit segments
+        ///  Count matching elements in 128-bit segments
 
         /// <summary>
         /// svuint8_t svhistseg[_s8](svint8_t op1, svint8_t op2)
@@ -1276,7 +1276,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<byte> CountMatchingElementsIn128BitSegments(Vector<byte> left, Vector<byte> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  CreateWhileGreaterThanMask : While decrementing scalar is greater than
+        ///  While decrementing scalar is greater than
 
         /// <summary>
         /// svbool_t svwhilegt_b8[_s32](int32_t op1, int32_t op2)
@@ -1375,7 +1375,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> CreateWhileGreaterThanMask(ulong left, ulong right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  CreateWhileGreaterThanOrEqualMask : While decrementing scalar is greater than or equal to
+        ///  While decrementing scalar is greater than or equal to
 
         /// <summary>
         /// svbool_t svwhilege_b8[_s32](int32_t op1, int32_t op2)
@@ -1474,7 +1474,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> CreateWhileGreaterThanOrEqualMask(ulong left, ulong right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  CreateWhileReadAfterWriteMask : While free of read-after-write conflicts
+        ///  While free of read-after-write conflicts
 
         /// <summary>
         /// svbool_t svwhilerw[_u8](const uint8_t *op1, const uint8_t *op2)
@@ -1537,7 +1537,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> CreateWhileReadAfterWriteMask(ulong* left, ulong* right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  CreateWhileWriteAfterReadMask : While free of write-after-read conflicts
+        ///  While free of write-after-read conflicts
 
         /// <summary>
         /// svbool_t svwhilewr[_u8](const uint8_t *op1, const uint8_t *op2)
@@ -1600,7 +1600,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> CreateWhileWriteAfterReadMask(ulong* left, ulong* right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  DotProductComplex : Complex dot product
+        ///  Complex dot product
 
         /// <summary>
         /// svint32_t svcdot[_s32](svint32_t op1, svint8_t op2, svint8_t op3, uint64_t imm_rotation)
@@ -1631,7 +1631,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> DotProductComplex(Vector<long> op1, Vector<short> op2, Vector<short> op3, ulong imm_index, [ConstantExpected] byte rotation) { throw new PlatformNotSupportedException(); }
 
 
-        ///  DownConvertNarrowingUpper : Down convert and narrow (top)
+        ///  Down convert and narrow (top)
 
         /// <summary>
         /// svfloat32_t svcvtnt_f32[_f64]_m(svfloat32_t even, svbool_t pg, svfloat64_t op)
@@ -1642,7 +1642,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<float> DownConvertNarrowingUpper(Vector<double> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  DownConvertRoundingOdd : Down convert, rounding to odd
+        ///  Down convert, rounding to odd
 
         /// <summary>
         /// svfloat32_t svcvtx_f32[_f64]_m(svfloat32_t inactive, svbool_t pg, svfloat64_t op)
@@ -1657,7 +1657,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<float> DownConvertRoundingOdd(Vector<double> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  DownConvertRoundingOddUpper : Down convert, rounding to odd (top)
+        ///  Down convert, rounding to odd (top)
 
         /// <summary>
         /// svfloat32_t svcvtxnt_f32[_f64]_m(svfloat32_t even, svbool_t pg, svfloat64_t op)
@@ -1668,7 +1668,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<float> DownConvertRoundingOddUpper(Vector<double> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorByteZeroExtendNonTemporal : Load 8-bit data and zero-extend, non-temporal
+        ///  Load 8-bit data and zero-extend, non-temporal
 
         /// <summary>
         /// svint32_t svldnt1ub_gather[_u32base]_s32(svbool_t pg, svuint32_t bases)
@@ -1731,7 +1731,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorByteZeroExtendNonTemporal(Vector<ulong> mask, byte* address, Vector<ulong> offsets) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorInt16SignExtendNonTemporal : Load 16-bit data and sign-extend, non-temporal
+        ///  Load 16-bit data and sign-extend, non-temporal
 
         /// <summary>
         /// svint32_t svldnt1sh_gather[_u32base]_s32(svbool_t pg, svuint32_t bases)
@@ -1782,7 +1782,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorInt16SignExtendNonTemporal(Vector<ulong> mask, short* address, Vector<ulong> indices) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorInt16WithByteOffsetsSignExtendNonTemporal : Load 16-bit data and sign-extend, non-temporal
+        ///  Load 16-bit data and sign-extend, non-temporal
 
         /// <summary>
         /// svint32_t svldnt1sh_gather_[u32]offset_s32(svbool_t pg, const int16_t *base, svuint32_t offsets)
@@ -1821,7 +1821,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorInt16WithByteOffsetsSignExtendNonTemporal(Vector<ulong> mask, short* address, Vector<ulong> offsets) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorInt32SignExtendNonTemporal : Load 32-bit data and sign-extend, non-temporal
+        ///  Load 32-bit data and sign-extend, non-temporal
 
         /// <summary>
         /// svint64_t svldnt1sw_gather_[s64]index_s64(svbool_t pg, const int32_t *base, svint64_t indices)
@@ -1896,7 +1896,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorInt32SignExtendNonTemporal(Vector<ulong> mask, int* address, Vector<ulong> indices) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorInt32WithByteOffsetsSignExtendNonTemporal : Load 32-bit data and sign-extend, non-temporal
+        ///  Load 32-bit data and sign-extend, non-temporal
 
         /// <summary>
         /// svint64_t svldnt1sw_gather_[s64]offset_s64(svbool_t pg, const int32_t *base, svint64_t offsets)
@@ -1947,7 +1947,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorInt32WithByteOffsetsSignExtendNonTemporal(Vector<ulong> mask, int* address, Vector<ulong> offsets) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorNonTemporal : Unextended load, non-temporal
+        ///  Unextended load, non-temporal
 
         /// <summary>
         /// svfloat64_t svldnt1_gather_[s64]offset[_f64](svbool_t pg, const float64_t *base, svint64_t offsets)
@@ -2076,7 +2076,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorNonTemporal(Vector<ulong> mask, ulong* address, Vector<ulong> indices) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorSByteSignExtendNonTemporal : Load 8-bit data and sign-extend, non-temporal
+        ///  Load 8-bit data and sign-extend, non-temporal
 
         /// <summary>
         /// svint32_t svldnt1sb_gather[_u32base]_s32(svbool_t pg, svuint32_t bases)
@@ -2139,7 +2139,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorSByteSignExtendNonTemporal(Vector<ulong> mask, sbyte* address, Vector<ulong> offsets) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorUInt16WithByteOffsetsZeroExtendNonTemporal : Load 16-bit data and zero-extend, non-temporal
+        ///  Load 16-bit data and zero-extend, non-temporal
 
         /// <summary>
         /// svint32_t svldnt1uh_gather_[u32]offset_s32(svbool_t pg, const uint16_t *base, svuint32_t offsets)
@@ -2178,7 +2178,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorUInt16WithByteOffsetsZeroExtendNonTemporal(Vector<ulong> mask, ushort* address, Vector<ulong> offsets) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorUInt16ZeroExtendNonTemporal : Load 16-bit data and zero-extend, non-temporal
+        ///  Load 16-bit data and zero-extend, non-temporal
 
         /// <summary>
         /// svint32_t svldnt1uh_gather[_u32base]_s32(svbool_t pg, svuint32_t bases)
@@ -2229,7 +2229,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorUInt16ZeroExtendNonTemporal(Vector<ulong> mask, ushort* address, Vector<ulong> indices) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorUInt32WithByteOffsetsZeroExtendNonTemporal : Load 32-bit data and zero-extend, non-temporal
+        ///  Load 32-bit data and zero-extend, non-temporal
 
         /// <summary>
         /// svint64_t svldnt1uw_gather_[s64]offset_s64(svbool_t pg, const uint32_t *base, svint64_t offsets)
@@ -2280,7 +2280,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorUInt32WithByteOffsetsZeroExtendNonTemporal(Vector<ulong> mask, uint* address, Vector<ulong> offsets) { throw new PlatformNotSupportedException(); }
 
 
-        ///  GatherVectorUInt32ZeroExtendNonTemporal : Load 32-bit data and zero-extend, non-temporal
+        ///  Load 32-bit data and zero-extend, non-temporal
 
         /// <summary>
         /// svint64_t svldnt1uw_gather_[s64]index_s64(svbool_t pg, const uint32_t *base, svint64_t indices)
@@ -2355,7 +2355,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherVectorUInt32ZeroExtendNonTemporal(Vector<ulong> mask, uint* address, Vector<ulong> indices) { throw new PlatformNotSupportedException(); }
 
 
-        ///  HalvingAdd : Halving add
+        ///  Halving add
 
         /// <summary>
         /// svuint8_t svhadd[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -2470,7 +2470,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> HalvingAdd(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  HalvingSubtract : Halving subtract
+        ///  Halving subtract
 
         /// <summary>
         /// svuint8_t svhsub[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -2585,7 +2585,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> HalvingSubtract(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  HalvingSubtractReversed : Halving subtract reversed
+        ///  Halving subtract reversed
 
         /// <summary>
         /// svuint8_t svhsubr[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -2700,7 +2700,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> HalvingSubtractReversed(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  InterleavingXorLowerUpper : Interleaving exclusive OR (bottom, top)
+        ///  Interleaving exclusive OR (bottom, top)
 
         /// <summary>
         /// svuint8_t sveorbt[_u8](svuint8_t odd, svuint8_t op1, svuint8_t op2)
@@ -2759,7 +2759,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> InterleavingXorLowerUpper(Vector<ulong> odd, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  InterleavingXorUpperLower : Interleaving exclusive OR (top, bottom)
+        ///  Interleaving exclusive OR (top, bottom)
 
         /// <summary>
         /// svuint8_t sveortb[_u8](svuint8_t even, svuint8_t op1, svuint8_t op2)
@@ -2818,7 +2818,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> InterleavingXorUpperLower(Vector<ulong> even, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Log2 : Base 2 logarithm as integer
+        ///  Base 2 logarithm as integer
 
         /// <summary>
         /// svint32_t svlogb[_f32]_m(svint32_t inactive, svbool_t pg, svfloat32_t op)
@@ -2845,7 +2845,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> Log2(Vector<double> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Match : Detect any matching elements
+        ///  Detect any matching elements
 
         /// <summary>
         /// svbool_t svmatch[_u8](svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -2872,7 +2872,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ushort> Match(Vector<ushort> mask, Vector<ushort> left, Vector<ushort> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MaxNumberPairwise : Maximum number pairwise
+        ///  Maximum number pairwise
 
         /// <summary>
         /// svfloat64_t svmaxnmp[_f64]_m(svbool_t pg, svfloat64_t op1, svfloat64_t op2)
@@ -2895,7 +2895,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<float> MaxNumberPairwise(Vector<float> left, Vector<float> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MaxPairwise : Maximum pairwise
+        ///  Maximum pairwise
 
         /// <summary>
         /// svuint8_t svmaxp[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -2998,7 +2998,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MaxPairwise(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MinNumberPairwise : Minimum number pairwise
+        ///  Minimum number pairwise
 
         /// <summary>
         /// svfloat64_t svminnmp[_f64]_m(svbool_t pg, svfloat64_t op1, svfloat64_t op2)
@@ -3021,7 +3021,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<float> MinNumberPairwise(Vector<float> left, Vector<float> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MinPairwise : Minimum pairwise
+        ///  Minimum pairwise
 
         /// <summary>
         /// svuint8_t svminp[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -3124,7 +3124,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MinPairwise(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MoveWideningLower : Move long (bottom)
+        ///  Move long (bottom)
 
         /// <summary>
         /// svint16_t svmovlb[_s16](svint8_t op)
@@ -3163,7 +3163,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MoveWideningLower(Vector<uint> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MoveWideningUpper : Move long (top)
+        ///  Move long (top)
 
         /// <summary>
         /// svint16_t svmovlt[_s16](svint8_t op)
@@ -3202,7 +3202,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MoveWideningUpper(Vector<uint> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyAddBySelectedScalar : Multiply-add, addend first
+        ///  Multiply-add, addend first
 
         /// <summary>
         /// svint16_t svmla_lane[_s16](svint16_t op1, svint16_t op2, svint16_t op3, uint64_t imm_index)
@@ -3247,7 +3247,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplyAddBySelectedScalar(Vector<ulong> addend, Vector<ulong> left, Vector<ulong> right, [ConstantExpected] byte rightIndex) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyAddRotateComplex : Complex multiply-add with rotate
+        ///  Complex multiply-add with rotate
 
         /// <summary>
         /// svuint8_t svcmla[_u8](svuint8_t op1, svuint8_t op2, svuint8_t op3, uint64_t imm_rotation)
@@ -3306,7 +3306,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplyAddRotateComplex(Vector<ulong> addend, Vector<ulong> left, Vector<ulong> right, [ConstantExpected] byte rotation) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyAddRotateComplexBySelectedScalar : Complex multiply-add with rotate
+        ///  Complex multiply-add with rotate
 
         /// <summary>
         /// svint16_t svcmla_lane[_s16](svint16_t op1, svint16_t op2, svint16_t op3, uint64_t imm_index, uint64_t imm_rotation)
@@ -3337,7 +3337,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> MultiplyAddRotateComplexBySelectedScalar(Vector<uint> addend, Vector<uint> left, Vector<uint> right, [ConstantExpected] byte rightIndex, [ConstantExpected] byte rotation) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyAddWideningLower : Multiply-add long (bottom)
+        ///  Multiply-add long (bottom)
 
         /// <summary>
         /// svint16_t svmlalb[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -3410,7 +3410,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplyAddWideningLower(Vector<ulong> op1, Vector<uint> op2, Vector<uint> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyAddWideningUpper : Multiply-add long (top)
+        ///  Multiply-add long (top)
 
         /// <summary>
         /// svint16_t svmlalt[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -3483,7 +3483,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplyAddWideningUpper(Vector<ulong> op1, Vector<uint> op2, Vector<uint> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyBySelectedScalar : Multiply
+        ///  Multiply
 
         /// <summary>
         /// svint16_t svmul_lane[_s16](svint16_t op1, svint16_t op2, uint64_t imm_index)
@@ -3522,7 +3522,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplyBySelectedScalar(Vector<ulong> left, Vector<ulong> right, [ConstantExpected] byte rightIndex) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplySubtractBySelectedScalar : Multiply-subtract, minuend first
+        ///  Multiply-subtract, minuend first
 
         /// <summary>
         /// svint16_t svmls_lane[_s16](svint16_t op1, svint16_t op2, svint16_t op3, uint64_t imm_index)
@@ -3567,7 +3567,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplySubtractBySelectedScalar(Vector<ulong> minuend, Vector<ulong> left, Vector<ulong> right, [ConstantExpected] byte rightIndex) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplySubtractWideningLower : Multiply-subtract long (bottom)
+        ///  Multiply-subtract long (bottom)
 
         /// <summary>
         /// svint16_t svmlslb[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -3640,7 +3640,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplySubtractWideningLower(Vector<ulong> op1, Vector<uint> op2, Vector<uint> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplySubtractWideningUpper : Multiply-subtract long (top)
+        ///  Multiply-subtract long (top)
 
         /// <summary>
         /// svint16_t svmlslt[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -3713,7 +3713,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplySubtractWideningUpper(Vector<ulong> op1, Vector<uint> op2, Vector<uint> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyWideningLower : Multiply long (bottom)
+        ///  Multiply long (bottom)
 
         /// <summary>
         /// svint16_t svmullb[_s16](svint8_t op1, svint8_t op2)
@@ -3776,7 +3776,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplyWideningLower(Vector<uint> op1, Vector<uint> op2, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  MultiplyWideningUpper : Multiply long (top)
+        ///  Multiply long (top)
 
         /// <summary>
         /// svint16_t svmullt[_s16](svint8_t op1, svint8_t op2)
@@ -3839,7 +3839,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> MultiplyWideningUpper(Vector<uint> op1, Vector<uint> op2, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  NoMatch : Detect no matching elements
+        ///  Detect no matching elements
 
         /// <summary>
         /// svbool_t svnmatch[_u8](svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -3866,7 +3866,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ushort> NoMatch(Vector<ushort> mask, Vector<ushort> left, Vector<ushort> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  PolynomialMultiply : Polynomial multiply
+        ///  Polynomial multiply
 
         /// <summary>
         /// svuint8_t svpmul[_u8](svuint8_t op1, svuint8_t op2)
@@ -3875,7 +3875,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<byte> PolynomialMultiply(Vector<byte> left, Vector<byte> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  PolynomialMultiplyWideningLower : Polynomial multiply long (bottom)
+        ///  Polynomial multiply long (bottom)
 
         /// <summary>
         /// svuint8_t svpmullb_pair[_u8](svuint8_t op1, svuint8_t op2)
@@ -3902,7 +3902,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> PolynomialMultiplyWideningLower(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  PolynomialMultiplyWideningUpper : Polynomial multiply long (top)
+        ///  Polynomial multiply long (top)
 
         /// <summary>
         /// svuint8_t svpmullt_pair[_u8](svuint8_t op1, svuint8_t op2)
@@ -3929,7 +3929,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> PolynomialMultiplyWideningUpper(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ReciprocalEstimate : Reciprocal estimate
+        ///  Reciprocal estimate
 
         /// <summary>
         /// svuint32_t svrecpe[_u32]_m(svuint32_t inactive, svbool_t pg, svuint32_t op)
@@ -3944,7 +3944,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ReciprocalEstimate(Vector<uint> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ReciprocalSqrtEstimate : Reciprocal square root estimate
+        ///  Reciprocal square root estimate
 
         /// <summary>
         /// svuint32_t svrsqrte[_u32]_m(svuint32_t inactive, svbool_t pg, svuint32_t op)
@@ -3959,7 +3959,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ReciprocalSqrtEstimate(Vector<uint> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  RoundingAddHighNarowingLower : Rounding add narrow high part (bottom)
+        ///  Rounding add narrow high part (bottom)
 
         /// <summary>
         /// svuint8_t svraddhnb[_u16](svuint16_t op1, svuint16_t op2)
@@ -3998,7 +3998,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> RoundingAddHighNarowingLower(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  RoundingAddHighNarowingUpper : Rounding add narrow high part (top)
+        ///  Rounding add narrow high part (top)
 
         /// <summary>
         /// svuint8_t svraddhnt[_u16](svuint8_t even, svuint16_t op1, svuint16_t op2)
@@ -4037,7 +4037,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> RoundingAddHighNarowingUpper(Vector<uint> even, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  RoundingHalvingAdd : Rounding halving add
+        ///  Rounding halving add
 
         /// <summary>
         /// svuint8_t svrhadd[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -4152,7 +4152,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> RoundingHalvingAdd(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  RoundingSubtractHighNarowingLower : Rounding subtract narrow high part (bottom)
+        ///  Rounding subtract narrow high part (bottom)
 
         /// <summary>
         /// svuint8_t svrsubhnb[_u16](svuint16_t op1, svuint16_t op2)
@@ -4191,7 +4191,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> RoundingSubtractHighNarowingLower(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  RoundingSubtractHighNarowingUpper : Rounding subtract narrow high part (top)
+        ///  Rounding subtract narrow high part (top)
 
         /// <summary>
         /// svuint8_t svrsubhnt[_u16](svuint8_t even, svuint16_t op1, svuint16_t op2)
@@ -4230,7 +4230,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> RoundingSubtractHighNarowingUpper(Vector<uint> even, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingAbs : Saturating absolute value
+        ///  Saturating absolute value
 
         /// <summary>
         /// svint16_t svqabs[_s16]_m(svint16_t inactive, svbool_t pg, svint16_t op)
@@ -4281,7 +4281,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingAbs(Vector<sbyte> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingComplexAddRotate : Saturating complex add with rotate
+        ///  Saturating complex add with rotate
 
         /// <summary>
         /// svint16_t svqcadd[_s16](svint16_t op1, svint16_t op2, uint64_t imm_rotation)
@@ -4312,7 +4312,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingComplexAddRotate(Vector<sbyte> op1, Vector<sbyte> op2, [ConstantExpected] byte rotation) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplyAddWideningLower : Saturating doubling multiply-add long (bottom)
+        ///  Saturating doubling multiply-add long (bottom)
 
         /// <summary>
         /// svint16_t svqdmlalb[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -4350,7 +4350,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplyAddWideningLower(Vector<long> op1, Vector<int> op2, Vector<int> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplyAddWideningLowerUpper : Saturating doubling multiply-add long (bottom × top)
+        ///  Saturating doubling multiply-add long (bottom × top)
 
         /// <summary>
         /// svint16_t svqdmlalbt[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -4374,7 +4374,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplyAddWideningLowerUpper(Vector<long> op1, Vector<int> op2, Vector<int> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplyAddWideningUpper : Saturating doubling multiply-add long (top)
+        ///  Saturating doubling multiply-add long (top)
 
         /// <summary>
         /// svint16_t svqdmlalt[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -4412,7 +4412,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplyAddWideningUpper(Vector<long> op1, Vector<int> op2, Vector<int> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplyHigh : Saturating doubling multiply high
+        ///  Saturating doubling multiply high
 
         /// <summary>
         /// svint16_t svqdmulh[_s16](svint16_t op1, svint16_t op2)
@@ -4457,7 +4457,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingDoublingMultiplyHigh(Vector<sbyte> left, Vector<sbyte> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplySubtractWideningLower : Saturating doubling multiply-subtract long (bottom)
+        ///  Saturating doubling multiply-subtract long (bottom)
 
         /// <summary>
         /// svint16_t svqdmlslb[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -4495,7 +4495,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplySubtractWideningLower(Vector<long> op1, Vector<int> op2, Vector<int> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplySubtractWideningLowerUpper : Saturating doubling multiply-subtract long (bottom × top)
+        ///  Saturating doubling multiply-subtract long (bottom × top)
 
         /// <summary>
         /// svint16_t svqdmlslbt[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -4519,7 +4519,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplySubtractWideningLowerUpper(Vector<long> op1, Vector<int> op2, Vector<int> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplySubtractWideningUpper : Saturating doubling multiply-subtract long (top)
+        ///  Saturating doubling multiply-subtract long (top)
 
         /// <summary>
         /// svint16_t svqdmlslt[_s16](svint16_t op1, svint8_t op2, svint8_t op3)
@@ -4557,7 +4557,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplySubtractWideningUpper(Vector<long> op1, Vector<int> op2, Vector<int> op3, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplyWideningLower : Saturating doubling multiply long (bottom)
+        ///  Saturating doubling multiply long (bottom)
 
         /// <summary>
         /// svint16_t svqdmullb[_s16](svint8_t op1, svint8_t op2)
@@ -4590,7 +4590,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplyWideningLower(Vector<int> op1, Vector<int> op2, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingDoublingMultiplyWideningUpper : Saturating doubling multiply long (top)
+        ///  Saturating doubling multiply long (top)
 
         /// <summary>
         /// svint16_t svqdmullt[_s16](svint8_t op1, svint8_t op2)
@@ -4623,7 +4623,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SaturatingDoublingMultiplyWideningUpper(Vector<int> op1, Vector<int> op2, ulong imm_index) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingExtractNarrowingLower : Saturating extract narrow (bottom)
+        ///  Saturating extract narrow (bottom)
 
         /// <summary>
         /// svuint8_t svqxtnb[_u16](svuint16_t op)
@@ -4662,7 +4662,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> SaturatingExtractNarrowingLower(Vector<ulong> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingExtractNarrowingUpper : Saturating extract narrow (top)
+        ///  Saturating extract narrow (top)
 
         /// <summary>
         /// svuint8_t svqxtnt[_u16](svuint8_t even, svuint16_t op)
@@ -4701,7 +4701,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> SaturatingExtractNarrowingUpper(Vector<uint> even, Vector<ulong> op) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingExtractUnsignedNarrowingLower : Saturating extract unsigned narrow (bottom)
+        ///  Saturating extract unsigned narrow (bottom)
 
         /// <summary>
         /// svuint8_t svqxtunb[_s16](svint16_t op)
@@ -4722,7 +4722,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> SaturatingExtractUnsignedNarrowingLower(Vector<long> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingExtractUnsignedNarrowingUpper : Saturating extract unsigned narrow (top)
+        ///  Saturating extract unsigned narrow (top)
 
         /// <summary>
         /// svuint8_t svqxtunt[_s16](svuint8_t even, svint16_t op)
@@ -4743,7 +4743,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> SaturatingExtractUnsignedNarrowingUpper(Vector<uint> even, Vector<long> op) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingNegate : Saturating negate
+        ///  Saturating negate
 
         /// <summary>
         /// svint16_t svqneg[_s16]_m(svint16_t inactive, svbool_t pg, svint16_t op)
@@ -4794,7 +4794,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingNegate(Vector<sbyte> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingRoundingDoublingComplexMultiplyAddHighRotate : Saturating rounding doubling complex multiply-add high with rotate
+        ///  Saturating rounding doubling complex multiply-add high with rotate
 
         /// <summary>
         /// svint16_t svqrdcmlah[_s16](svint16_t op1, svint16_t op2, svint16_t op3, uint64_t imm_rotation)
@@ -4839,7 +4839,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingRoundingDoublingComplexMultiplyAddHighRotate(Vector<sbyte> op1, Vector<sbyte> op2, Vector<sbyte> op3, [ConstantExpected] byte rotation) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingRoundingDoublingMultiplyAddHigh : Saturating rounding doubling multiply-add high
+        ///  Saturating rounding doubling multiply-add high
 
         /// <summary>
         /// svint16_t svqrdmlah[_s16](svint16_t op1, svint16_t op2, svint16_t op3)
@@ -4891,7 +4891,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingRoundingDoublingMultiplyAddHigh(Vector<sbyte> op1, Vector<sbyte> op2, Vector<sbyte> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingRoundingDoublingMultiplyHigh : Saturating rounding doubling multiply high
+        ///  Saturating rounding doubling multiply high
 
         /// <summary>
         /// svint16_t svqrdmulh[_s16](svint16_t op1, svint16_t op2)
@@ -4936,7 +4936,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingRoundingDoublingMultiplyHigh(Vector<sbyte> left, Vector<sbyte> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SaturatingRoundingDoublingMultiplySubtractHigh : Saturating rounding doubling multiply-subtract high
+        ///  Saturating rounding doubling multiply-subtract high
 
         /// <summary>
         /// svint16_t svqrdmlsh[_s16](svint16_t op1, svint16_t op2, svint16_t op3)
@@ -4988,7 +4988,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> SaturatingRoundingDoublingMultiplySubtractHigh(Vector<sbyte> op1, Vector<sbyte> op2, Vector<sbyte> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Scatter16BitNarrowing : Truncate to 16 bits and store, non-temporal
+        ///  Truncate to 16 bits and store, non-temporal
 
         /// <summary>
         /// void svstnt1h_scatter[_u32base_s32](svbool_t pg, svuint32_t bases, svint32_t data)
@@ -5015,7 +5015,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe void Scatter16BitNarrowing(Vector<ulong> mask, Vector<ulong> addresses, Vector<ulong> data) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Scatter16BitWithByteOffsetsNarrowing : Truncate to 16 bits and store, non-temporal
+        ///  Truncate to 16 bits and store, non-temporal
 
         /// <summary>
         /// void svstnt1h_scatter_[u32]offset[_s32](svbool_t pg, int16_t *base, svuint32_t offsets, svint32_t data)
@@ -5078,7 +5078,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe void Scatter16BitWithByteOffsetsNarrowing(Vector<ulong> mask, ushort* address, Vector<ulong> indices, Vector<ulong> data) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Scatter32BitNarrowing : Truncate to 32 bits and store, non-temporal
+        ///  Truncate to 32 bits and store, non-temporal
 
         /// <summary>
         /// void svstnt1w_scatter[_u64base_s64](svbool_t pg, svuint64_t bases, svint64_t data)
@@ -5093,7 +5093,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe void Scatter32BitNarrowing(Vector<ulong> mask, Vector<ulong> addresses, Vector<ulong> data) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Scatter32BitWithByteOffsetsNarrowing : Truncate to 32 bits and store, non-temporal
+        ///  Truncate to 32 bits and store, non-temporal
 
         /// <summary>
         /// void svstnt1w_scatter_[s64]offset[_s64](svbool_t pg, int32_t *base, svint64_t offsets, svint64_t data)
@@ -5144,7 +5144,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe void Scatter32BitWithByteOffsetsNarrowing(Vector<ulong> mask, uint* address, Vector<ulong> indices, Vector<ulong> data) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Scatter8BitNarrowing : Truncate to 8 bits and store, non-temporal
+        ///  Truncate to 8 bits and store, non-temporal
 
         /// <summary>
         /// void svstnt1b_scatter[_u32base_s32](svbool_t pg, svuint32_t bases, svint32_t data)
@@ -5171,7 +5171,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe void Scatter8BitNarrowing(Vector<ulong> mask, Vector<ulong> addresses, Vector<ulong> data) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Scatter8BitWithByteOffsetsNarrowing : Truncate to 8 bits and store, non-temporal
+        ///  Truncate to 8 bits and store, non-temporal
 
         /// <summary>
         /// void svstnt1b_scatter_[u32]offset[_s32](svbool_t pg, int8_t *base, svuint32_t offsets, svint32_t data)
@@ -5210,7 +5210,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe void Scatter8BitWithByteOffsetsNarrowing(Vector<ulong> mask, byte* address, Vector<ulong> offsets, Vector<ulong> data) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ScatterNonTemporal : Non-truncating store, non-temporal
+        ///  Non-truncating store, non-temporal
 
         /// <summary>
         /// void svstnt1_scatter_[s64]offset[_f64](svbool_t pg, float64_t *base, svint64_t offsets, svfloat64_t data)
@@ -5339,7 +5339,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe void ScatterNonTemporal(Vector<ulong> mask, ulong* base, Vector<ulong> indices, Vector<ulong> data) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftArithmeticRounded : Rounding shift left
+        ///  Rounding shift left
 
         /// <summary>
         /// svint16_t svrshl[_s16]_m(svbool_t pg, svint16_t op1, svint16_t op2)
@@ -5398,7 +5398,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftArithmeticRounded(Vector<sbyte> value, Vector<sbyte> count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftArithmeticRoundedSaturate : Saturating rounding shift left
+        ///  Saturating rounding shift left
 
         /// <summary>
         /// svint16_t svqrshl[_s16]_m(svbool_t pg, svint16_t op1, svint16_t op2)
@@ -5457,7 +5457,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftArithmeticRoundedSaturate(Vector<sbyte> value, Vector<sbyte> count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftArithmeticSaturate : Saturating shift left
+        ///  Saturating shift left
 
         /// <summary>
         /// svint16_t svqshl[_s16]_m(svbool_t pg, svint16_t op1, svint16_t op2)
@@ -5516,7 +5516,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftArithmeticSaturate(Vector<sbyte> value, Vector<sbyte> count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftLeftAndInsert : Shift left and insert
+        ///  Shift left and insert
 
         /// <summary>
         /// svuint8_t svsli[_n_u8](svuint8_t op1, svuint8_t op2, uint64_t imm3)
@@ -5567,7 +5567,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftLeftAndInsert(Vector<ulong> left, Vector<ulong> right, [ConstantExpected] byte shift) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftLeftLogicalSaturate : Saturating shift left
+        ///  Saturating shift left
 
         /// <summary>
         /// svuint8_t svqshl[_u8]_m(svbool_t pg, svuint8_t op1, svint8_t op2)
@@ -5626,7 +5626,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftLeftLogicalSaturate(Vector<ulong> value, Vector<long> count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftLeftLogicalSaturateUnsigned : Saturating shift left unsigned
+        ///  Saturating shift left unsigned
 
         /// <summary>
         /// svuint8_t svqshlu[_n_s8]_m(svbool_t pg, svint8_t op1, uint64_t imm2)
@@ -5677,7 +5677,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftLeftLogicalSaturateUnsigned(Vector<long> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftLeftLogicalWideningEven : Shift left long (bottom)
+        ///  Shift left long (bottom)
 
         /// <summary>
         /// svint16_t svshllb[_n_s16](svint8_t op1, uint64_t imm2)
@@ -5716,7 +5716,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftLeftLogicalWideningEven(Vector<uint> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftLeftLogicalWideningOdd : Shift left long (top)
+        ///  Shift left long (top)
 
         /// <summary>
         /// svint16_t svshllt[_n_s16](svint8_t op1, uint64_t imm2)
@@ -5755,7 +5755,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftLeftLogicalWideningOdd(Vector<uint> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftLogicalRounded : Rounding shift left
+        ///  Rounding shift left
 
         /// <summary>
         /// svuint8_t svrshl[_u8]_m(svbool_t pg, svuint8_t op1, svint8_t op2)
@@ -5814,7 +5814,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftLogicalRounded(Vector<ulong> value, Vector<long> count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftLogicalRoundedSaturate : Saturating rounding shift left
+        ///  Saturating rounding shift left
 
         /// <summary>
         /// svuint8_t svqrshl[_u8]_m(svbool_t pg, svuint8_t op1, svint8_t op2)
@@ -5873,7 +5873,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftLogicalRoundedSaturate(Vector<ulong> value, Vector<long> count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightAndInsert : Shift right and insert
+        ///  Shift right and insert
 
         /// <summary>
         /// svuint8_t svsri[_n_u8](svuint8_t op1, svuint8_t op2, uint64_t imm3)
@@ -5924,7 +5924,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftRightAndInsert(Vector<ulong> left, Vector<ulong> right, [ConstantExpected] byte shift) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticAdd : Shift right and accumulate
+        ///  Shift right and accumulate
 
         /// <summary>
         /// svint16_t svsra[_n_s16](svint16_t op1, svint16_t op2, uint64_t imm3)
@@ -5955,7 +5955,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftRightArithmeticAdd(Vector<sbyte> addend, Vector<sbyte> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticNarrowingSaturateEven : Saturating shift right narrow (bottom)
+        ///  Saturating shift right narrow (bottom)
 
         /// <summary>
         /// svuint8_t svqshrnb[_n_u16](svuint16_t op1, uint64_t imm2)
@@ -5994,7 +5994,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightArithmeticNarrowingSaturateEven(Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticNarrowingSaturateOdd : Saturating shift right narrow (top)
+        ///  Saturating shift right narrow (top)
 
         /// <summary>
         /// svuint8_t svqshrnt[_n_u16](svuint8_t even, svuint16_t op1, uint64_t imm2)
@@ -6033,7 +6033,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightArithmeticNarrowingSaturateOdd(Vector<uint> even, Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticNarrowingSaturateUnsignedEven : Saturating shift right unsigned narrow (bottom)
+        ///  Saturating shift right unsigned narrow (bottom)
 
         /// <summary>
         /// svuint8_t svqshrunb[_n_s16](svint16_t op1, uint64_t imm2)
@@ -6054,7 +6054,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightArithmeticNarrowingSaturateUnsignedEven(Vector<long> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticNarrowingSaturateUnsignedOdd : Saturating shift right unsigned narrow (top)
+        ///  Saturating shift right unsigned narrow (top)
 
         /// <summary>
         /// svuint8_t svqshrunt[_n_s16](svuint8_t even, svint16_t op1, uint64_t imm2)
@@ -6075,7 +6075,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightArithmeticNarrowingSaturateUnsignedOdd(Vector<uint> even, Vector<long> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticRounded : Rounding shift right
+        ///  Rounding shift right
 
         /// <summary>
         /// svint16_t svrshr[_n_s16]_m(svbool_t pg, svint16_t op1, uint64_t imm2)
@@ -6126,7 +6126,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftRightArithmeticRounded(Vector<sbyte> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticRoundedAdd : Rounding shift right and accumulate
+        ///  Rounding shift right and accumulate
 
         /// <summary>
         /// svint16_t svrsra[_n_s16](svint16_t op1, svint16_t op2, uint64_t imm3)
@@ -6157,7 +6157,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftRightArithmeticRoundedAdd(Vector<sbyte> addend, Vector<sbyte> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticRoundedNarrowingSaturateEven : Saturating rounding shift right narrow (bottom)
+        ///  Saturating rounding shift right narrow (bottom)
 
         /// <summary>
         /// svint16_t svqrshrnb[_n_s32](svint32_t op1, uint64_t imm2)
@@ -6178,7 +6178,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftRightArithmeticRoundedNarrowingSaturateEven(Vector<short> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticRoundedNarrowingSaturateOdd : Saturating rounding shift right narrow (top)
+        ///  Saturating rounding shift right narrow (top)
 
         /// <summary>
         /// svint16_t svqrshrnt[_n_s32](svint16_t even, svint32_t op1, uint64_t imm2)
@@ -6199,7 +6199,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<sbyte> ShiftRightArithmeticRoundedNarrowingSaturateOdd(Vector<sbyte> even, Vector<short> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticRoundedNarrowingSaturateUnsignedEven : Saturating rounding shift right unsigned narrow (bottom)
+        ///  Saturating rounding shift right unsigned narrow (bottom)
 
         /// <summary>
         /// svuint8_t svqrshrunb[_n_s16](svint16_t op1, uint64_t imm2)
@@ -6220,7 +6220,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightArithmeticRoundedNarrowingSaturateUnsignedEven(Vector<long> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightArithmeticRoundedNarrowingSaturateUnsignedOdd : Saturating rounding shift right unsigned narrow (top)
+        ///  Saturating rounding shift right unsigned narrow (top)
 
         /// <summary>
         /// svuint8_t svqrshrunt[_n_s16](svuint8_t even, svint16_t op1, uint64_t imm2)
@@ -6241,7 +6241,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightArithmeticRoundedNarrowingSaturateUnsignedOdd(Vector<uint> even, Vector<long> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalAdd : Shift right and accumulate
+        ///  Shift right and accumulate
 
         /// <summary>
         /// svuint8_t svsra[_n_u8](svuint8_t op1, svuint8_t op2, uint64_t imm3)
@@ -6272,7 +6272,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftRightLogicalAdd(Vector<ulong> addend, Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalNarrowingEven : Shift right narrow (bottom)
+        ///  Shift right narrow (bottom)
 
         /// <summary>
         /// svuint8_t svshrnb[_n_u16](svuint16_t op1, uint64_t imm2)
@@ -6311,7 +6311,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightLogicalNarrowingEven(Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalNarrowingOdd : Shift right narrow (top)
+        ///  Shift right narrow (top)
 
         /// <summary>
         /// svuint8_t svshrnt[_n_u16](svuint8_t even, svuint16_t op1, uint64_t imm2)
@@ -6350,7 +6350,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightLogicalNarrowingOdd(Vector<uint> even, Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalRounded : Rounding shift right
+        ///  Rounding shift right
 
         /// <summary>
         /// svuint8_t svrshr[_n_u8]_m(svbool_t pg, svuint8_t op1, uint64_t imm2)
@@ -6401,7 +6401,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftRightLogicalRounded(Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalRoundedAdd : Rounding shift right and accumulate
+        ///  Rounding shift right and accumulate
 
         /// <summary>
         /// svuint8_t svrsra[_n_u8](svuint8_t op1, svuint8_t op2, uint64_t imm3)
@@ -6432,7 +6432,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ShiftRightLogicalRoundedAdd(Vector<ulong> addend, Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalRoundedNarrowingEven : Rounding shift right narrow (bottom)
+        ///  Rounding shift right narrow (bottom)
 
         /// <summary>
         /// svuint8_t svrshrnb[_n_u16](svuint16_t op1, uint64_t imm2)
@@ -6471,7 +6471,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightLogicalRoundedNarrowingEven(Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalRoundedNarrowingOdd : Rounding shift right narrow (top)
+        ///  Rounding shift right narrow (top)
 
         /// <summary>
         /// svuint8_t svrshrnt[_n_u16](svuint8_t even, svuint16_t op1, uint64_t imm2)
@@ -6510,7 +6510,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightLogicalRoundedNarrowingOdd(Vector<uint> even, Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalRoundedNarrowingSaturateEven : Saturating rounding shift right narrow (bottom)
+        ///  Saturating rounding shift right narrow (bottom)
 
         /// <summary>
         /// svuint8_t svqrshrnb[_n_u16](svuint16_t op1, uint64_t imm2)
@@ -6531,7 +6531,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightLogicalRoundedNarrowingSaturateEven(Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  ShiftRightLogicalRoundedNarrowingSaturateOdd : Saturating rounding shift right narrow (top)
+        ///  Saturating rounding shift right narrow (top)
 
         /// <summary>
         /// svuint8_t svqrshrnt[_n_u16](svuint8_t even, svuint16_t op1, uint64_t imm2)
@@ -6552,7 +6552,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> ShiftRightLogicalRoundedNarrowingSaturateOdd(Vector<uint> even, Vector<ulong> value, [ConstantExpected] byte count) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractHighNarowingLower : Subtract narrow high part (bottom)
+        ///  Subtract narrow high part (bottom)
 
         /// <summary>
         /// svuint8_t svsubhnb[_u16](svuint16_t op1, svuint16_t op2)
@@ -6591,7 +6591,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> SubtractHighNarowingLower(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractHighNarowingUpper : Subtract narrow high part (top)
+        ///  Subtract narrow high part (top)
 
         /// <summary>
         /// svuint8_t svsubhnt[_u16](svuint8_t even, svuint16_t op1, svuint16_t op2)
@@ -6630,7 +6630,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> SubtractHighNarowingUpper(Vector<uint> even, Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractSaturate : Saturating subtract
+        ///  Saturating subtract
 
         /// <summary>
         /// svuint8_t svqsub[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -6745,7 +6745,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractSaturate(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractSaturateReversed : Saturating subtract reversed
+        ///  Saturating subtract reversed
 
         /// <summary>
         /// svuint8_t svqsubr[_u8]_m(svbool_t pg, svuint8_t op1, svuint8_t op2)
@@ -6860,7 +6860,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractSaturateReversed(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWideLower : Subtract wide (bottom)
+        ///  Subtract wide (bottom)
 
         /// <summary>
         /// svint16_t svsubwb[_s16](svint16_t op1, svint8_t op2)
@@ -6899,7 +6899,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractWideLower(Vector<ulong> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWideUpper : Subtract wide (top)
+        ///  Subtract wide (top)
 
         /// <summary>
         /// svint16_t svsubwt[_s16](svint16_t op1, svint8_t op2)
@@ -6938,7 +6938,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractWideUpper(Vector<ulong> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWideningLower : Subtract long (bottom)
+        ///  Subtract long (bottom)
 
         /// <summary>
         /// svint16_t svsublb[_s16](svint8_t op1, svint8_t op2)
@@ -6977,7 +6977,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractWideningLower(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWideningLowerUpper : Subtract long (bottom - top)
+        ///  Subtract long (bottom - top)
 
         /// <summary>
         /// svint16_t svsublbt[_s16](svint8_t op1, svint8_t op2)
@@ -6998,7 +6998,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SubtractWideningLowerUpper(Vector<int> left, Vector<int> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWideningUpper : Subtract long (top)
+        ///  Subtract long (top)
 
         /// <summary>
         /// svint16_t svsublt[_s16](svint8_t op1, svint8_t op2)
@@ -7037,7 +7037,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractWideningUpper(Vector<uint> left, Vector<uint> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWideningUpperLower : Subtract long (top - bottom)
+        ///  Subtract long (top - bottom)
 
         /// <summary>
         /// svint16_t svsubltb[_s16](svint8_t op1, svint8_t op2)
@@ -7058,7 +7058,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<long> SubtractWideningUpperLower(Vector<int> left, Vector<int> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWithBorrowWideningLower : Subtract with borrow long (bottom)
+        ///  Subtract with borrow long (bottom)
 
         /// <summary>
         /// svuint32_t svsbclb[_u32](svuint32_t op1, svuint32_t op2, svuint32_t op3)
@@ -7075,7 +7075,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractWithBorrowWideningLower(Vector<ulong> op1, Vector<ulong> op2, Vector<ulong> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  SubtractWithBorrowWideningUpper : Subtract with borrow long (top)
+        ///  Subtract with borrow long (top)
 
         /// <summary>
         /// svuint32_t svsbclt[_u32](svuint32_t op1, svuint32_t op2, svuint32_t op3)
@@ -7092,7 +7092,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> SubtractWithBorrowWideningUpper(Vector<ulong> op1, Vector<ulong> op2, Vector<ulong> op3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  UpConvertWideningUpper : Up convert long (top)
+        ///  Up convert long (top)
 
         /// <summary>
         /// svfloat64_t svcvtlt_f64[_f32]_m(svfloat64_t inactive, svbool_t pg, svfloat32_t op)
@@ -7103,7 +7103,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<double> UpConvertWideningUpper(Vector<float> value) { throw new PlatformNotSupportedException(); }
 
 
-        ///  VectorTableLookup : Table lookup in two-vector table
+        ///  Table lookup in two-vector table
 
         /// <summary>
         /// svuint8_t svtbl2[_u8](svuint8x2_t data, svuint8_t indices)
@@ -7166,7 +7166,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> VectorTableLookup((Vector<ulong> data1, Vector<ulong> data2), Vector<ulong> indices) { throw new PlatformNotSupportedException(); }
 
 
-        ///  VectorTableLookupExtension : Table lookup in single-vector table (merging)
+        ///  Table lookup in single-vector table (merging)
 
         /// <summary>
         /// svuint8_t svtbx[_u8](svuint8_t fallback, svuint8_t data, svuint8_t indices)
@@ -7229,7 +7229,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> VectorTableLookupExtension(Vector<ulong> fallback, Vector<ulong> data, Vector<ulong> indices) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Xor : Bitwise exclusive OR of three vectors
+        ///  Bitwise exclusive OR of three vectors
 
         /// <summary>
         /// svuint8_t sveor3[_u8](svuint8_t op1, svuint8_t op2, svuint8_t op3)
@@ -7304,7 +7304,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> Xor(Vector<ulong> value1, Vector<ulong> value2, Vector<ulong> value3) { throw new PlatformNotSupportedException(); }
 
 
-        ///  XorRotateRight : Bitwise exclusive OR and rotate right
+        ///  Bitwise exclusive OR and rotate right
 
         /// <summary>
         /// svuint8_t svxar[_n_u8](svuint8_t op1, svuint8_t op2, uint64_t imm3)
