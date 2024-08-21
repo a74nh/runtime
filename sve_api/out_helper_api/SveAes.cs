@@ -88,7 +88,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   PMULLB Zresult.Q, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_FN_3A  PMULLB <Zd>.<T>, <Zn>.<Tb>, <Zm>.<Tb>
+        ///    IF_SVE_FL_3A  PMULLB <Zd>.<T>, <Zn>.<Tb>, <Zm>.<Tb>
         ///        theEmitter->emitIns_R_R_R(INS_sve_pmullb, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_FN_3B  PMULLB <Zd>.Q, <Zn>.D, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_pmullb, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
@@ -103,7 +103,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   PMULLT Zresult.Q, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_FN_3A  PMULLT <Zd>.<T>, <Zn>.<Tb>, <Zm>.<Tb>
+        ///    IF_SVE_FL_3A  PMULLT <Zd>.<T>, <Zn>.<Tb>, <Zm>.<Tb>
         ///        theEmitter->emitIns_R_R_R(INS_sve_pmullt, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_FN_3B  PMULLT <Zd>.Q, <Zn>.D, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_pmullt, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);

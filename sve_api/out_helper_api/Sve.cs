@@ -149,6 +149,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facgt, EA_SCALABLE, REG_P15, REG_P1, REG_V20, REG_V21, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> AbsoluteCompareGreaterThan(Vector<float> left, Vector<float> right) => AbsoluteCompareGreaterThan(left, right);
 
@@ -161,6 +163,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facgt, EA_SCALABLE, REG_P15, REG_P1, REG_V20, REG_V21, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> AbsoluteCompareGreaterThan(Vector<double> left, Vector<double> right) => AbsoluteCompareGreaterThan(left, right);
 
@@ -176,6 +180,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facge, EA_SCALABLE, REG_P0, REG_P0, REG_V10, REG_V31, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> AbsoluteCompareGreaterThanOrEqual(Vector<float> left, Vector<float> right) => AbsoluteCompareGreaterThanOrEqual(left, right);
 
@@ -188,6 +194,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facge, EA_SCALABLE, REG_P0, REG_P0, REG_V10, REG_V31, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> AbsoluteCompareGreaterThanOrEqual(Vector<double> left, Vector<double> right) => AbsoluteCompareGreaterThanOrEqual(left, right);
 
@@ -203,6 +211,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facgt, EA_SCALABLE, REG_P15, REG_P1, REG_V20, REG_V21, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> AbsoluteCompareLessThan(Vector<float> left, Vector<float> right) => AbsoluteCompareLessThan(left, right);
 
@@ -215,6 +225,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facgt, EA_SCALABLE, REG_P15, REG_P1, REG_V20, REG_V21, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> AbsoluteCompareLessThan(Vector<double> left, Vector<double> right) => AbsoluteCompareLessThan(left, right);
 
@@ -230,6 +242,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facge, EA_SCALABLE, REG_P0, REG_P0, REG_V10, REG_V31, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> AbsoluteCompareLessThanOrEqual(Vector<float> left, Vector<float> right) => AbsoluteCompareLessThanOrEqual(left, right);
 
@@ -242,6 +256,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_facge, EA_SCALABLE, REG_P0, REG_P0, REG_V10, REG_V31, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> AbsoluteCompareLessThanOrEqual(Vector<double> left, Vector<double> right) => AbsoluteCompareLessThanOrEqual(left, right);
 
@@ -467,7 +483,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -491,7 +507,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -515,7 +531,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -539,7 +555,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -563,7 +579,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -587,7 +603,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -611,7 +627,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -635,7 +651,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  ADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V5, REG_P6, REG_V7, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  ADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_add, EA_SCALABLE, REG_V0, REG_V0, REG_V0, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  ADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_add, EA_SCALABLE, REG_V0, 0, INS_OPTS_SCALABLE_B);
         ///
@@ -659,8 +675,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fadd, EA_SCALABLE, REG_V25, REG_P2, REG_V10, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_HM_2A  FADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <const>
         ///        theEmitter->emitIns_R_R_F(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_P0, 0.5, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_F(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_P1, 1.0, INS_OPTS_SCALABLE_H);
@@ -685,8 +701,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fadd, EA_SCALABLE, REG_V25, REG_P2, REG_V10, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_HM_2A  FADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <const>
         ///        theEmitter->emitIns_R_R_F(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_P0, 0.5, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_F(INS_sve_fadd, EA_SCALABLE, REG_V0, REG_P1, 1.0, INS_OPTS_SCALABLE_H);
@@ -836,10 +852,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_GP_3A  FCADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>, <const>
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 90, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 270, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 270, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 270, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -857,10 +873,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_GP_3A  FCADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>, <const>
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 90, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 270, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 270, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 270, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_fcadd, EA_SCALABLE, REG_V0, REG_P1, REG_V2, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -874,10 +890,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQADD Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V28, REG_P1, REG_V23, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  SQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  SQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqadd, EA_SCALABLE, REG_V1, 5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -888,10 +904,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQADD Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V28, REG_P1, REG_V23, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  SQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  SQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqadd, EA_SCALABLE, REG_V1, 5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -902,10 +918,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQADD Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V28, REG_P1, REG_V23, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  SQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  SQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqadd, EA_SCALABLE, REG_V1, 5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -916,10 +932,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQADD Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V28, REG_P1, REG_V23, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AT_3A  SQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqadd, EA_SCALABLE, REG_V3, REG_V31, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  SQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqadd, EA_SCALABLE, REG_V1, 5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -930,10 +946,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQADD Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V0, REG_P3, REG_V27, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AT_3A  UQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  UQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqadd, EA_SCALABLE, REG_V5, 1280, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -944,10 +960,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQADD Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V0, REG_P3, REG_V27, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AT_3A  UQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  UQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqadd, EA_SCALABLE, REG_V5, 1280, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -958,10 +974,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQADD Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V0, REG_P3, REG_V27, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AT_3A  UQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  UQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqadd, EA_SCALABLE, REG_V5, 1280, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -972,10 +988,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQADD Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQADD <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V0, REG_P3, REG_V27, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AT_3A  UQADD <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqadd, EA_SCALABLE, REG_V23, REG_V28, REG_V29, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_EC_1A  UQADD <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqadd, EA_SCALABLE, REG_V5, 1280, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -1037,8 +1053,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1066,8 +1082,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1095,8 +1111,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1124,8 +1140,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1153,8 +1169,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1182,8 +1198,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1211,8 +1227,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1240,8 +1256,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  AND <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V0, 0x00000000000000AA, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_and, EA_SCALABLE, REG_V2, 0x000000000000FF00, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  AND <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  AND <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_and, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1358,6 +1374,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> AndNot(Vector<sbyte> left, Vector<sbyte> right) => AndNot(left, right);
 
@@ -1370,6 +1388,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> AndNot(Vector<short> left, Vector<short> right) => AndNot(left, right);
 
@@ -1382,6 +1402,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> AndNot(Vector<int> left, Vector<int> right) => AndNot(left, right);
 
@@ -1394,6 +1416,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> AndNot(Vector<long> left, Vector<long> right) => AndNot(left, right);
 
@@ -1406,6 +1430,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> AndNot(Vector<byte> left, Vector<byte> right) => AndNot(left, right);
 
@@ -1418,6 +1444,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> AndNot(Vector<ushort> left, Vector<ushort> right) => AndNot(left, right);
 
@@ -1430,6 +1458,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> AndNot(Vector<uint> left, Vector<uint> right) => AndNot(left, right);
 
@@ -1442,6 +1472,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nand, EA_SCALABLE, REG_P1, REG_P7, REG_P2, REG_P15, INS_OPTS_SCALABLE_B); /* NAND <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> AndNot(Vector<ulong> left, Vector<ulong> right) => AndNot(left, right);
 
@@ -1468,8 +1500,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1495,8 +1527,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1522,8 +1554,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1549,8 +1581,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1576,8 +1608,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1603,8 +1635,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1630,8 +1662,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1657,8 +1689,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  BIC <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V1, 0xFFFFFFFFFFFFFF55, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_I(INS_sve_bic, EA_SCALABLE, REG_V3, 0xFFFFFFFFFFFF00FF, INS_OPTS_SCALABLE_H);
-        ///    IF_SVE_AU_3A  BIC <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  BIC <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_bic, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -1897,6 +1929,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareEqual(Vector<sbyte> left, Vector<sbyte> right) => CompareEqual(left, right);
 
@@ -1913,6 +1947,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareEqual(Vector<sbyte> left, Vector<long> right) => CompareEqual(left, right);
 
@@ -1929,6 +1965,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareEqual(Vector<short> left, Vector<short> right) => CompareEqual(left, right);
 
@@ -1945,6 +1983,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareEqual(Vector<short> left, Vector<long> right) => CompareEqual(left, right);
 
@@ -1961,6 +2001,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareEqual(Vector<int> left, Vector<int> right) => CompareEqual(left, right);
 
@@ -1977,6 +2019,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareEqual(Vector<int> left, Vector<long> right) => CompareEqual(left, right);
 
@@ -1993,6 +2037,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CompareEqual(Vector<long> left, Vector<long> right) => CompareEqual(left, right);
 
@@ -2009,6 +2055,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareEqual(Vector<byte> left, Vector<byte> right) => CompareEqual(left, right);
 
@@ -2025,6 +2073,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareEqual(Vector<ushort> left, Vector<ushort> right) => CompareEqual(left, right);
 
@@ -2041,6 +2091,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareEqual(Vector<uint> left, Vector<uint> right) => CompareEqual(left, right);
 
@@ -2057,6 +2109,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpeq, EA_SCALABLE, REG_P15, REG_P0, REG_V31, 8, INS_OPTS_SCALABLE_B); /* CMPEQ <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CompareEqual(Vector<ulong> left, Vector<ulong> right) => CompareEqual(left, right);
 
@@ -2071,6 +2125,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmeq, EA_SCALABLE, REG_P2, REG_P3, REG_V4, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> CompareEqual(Vector<float> left, Vector<float> right) => CompareEqual(left, right);
 
@@ -2085,6 +2141,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmeq, EA_SCALABLE, REG_P2, REG_P3, REG_V4, INS_OPTS_SCALABLE_H);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> CompareEqual(Vector<double> left, Vector<double> right) => CompareEqual(left, right);
 
@@ -2104,6 +2162,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareGreaterThan(Vector<sbyte> left, Vector<sbyte> right) => CompareGreaterThan(left, right);
 
@@ -2120,6 +2180,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareGreaterThan(Vector<sbyte> left, Vector<long> right) => CompareGreaterThan(left, right);
 
@@ -2136,6 +2198,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareGreaterThan(Vector<short> left, Vector<short> right) => CompareGreaterThan(left, right);
 
@@ -2152,6 +2216,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareGreaterThan(Vector<short> left, Vector<long> right) => CompareGreaterThan(left, right);
 
@@ -2168,6 +2234,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareGreaterThan(Vector<int> left, Vector<int> right) => CompareGreaterThan(left, right);
 
@@ -2184,6 +2252,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareGreaterThan(Vector<int> left, Vector<long> right) => CompareGreaterThan(left, right);
 
@@ -2200,6 +2270,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CompareGreaterThan(Vector<long> left, Vector<long> right) => CompareGreaterThan(left, right);
 
@@ -2216,6 +2288,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareGreaterThan(Vector<byte> left, Vector<byte> right) => CompareGreaterThan(left, right);
 
@@ -2232,6 +2306,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareGreaterThan(Vector<byte> left, Vector<ulong> right) => CompareGreaterThan(left, right);
 
@@ -2248,6 +2324,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareGreaterThan(Vector<ushort> left, Vector<ushort> right) => CompareGreaterThan(left, right);
 
@@ -2264,6 +2342,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareGreaterThan(Vector<ushort> left, Vector<ulong> right) => CompareGreaterThan(left, right);
 
@@ -2280,6 +2360,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareGreaterThan(Vector<uint> left, Vector<uint> right) => CompareGreaterThan(left, right);
 
@@ -2296,6 +2378,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareGreaterThan(Vector<uint> left, Vector<ulong> right) => CompareGreaterThan(left, right);
 
@@ -2312,6 +2396,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CompareGreaterThan(Vector<ulong> left, Vector<ulong> right) => CompareGreaterThan(left, right);
 
@@ -2326,6 +2412,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmgt, EA_SCALABLE, REG_P11, REG_P5, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> CompareGreaterThan(Vector<float> left, Vector<float> right) => CompareGreaterThan(left, right);
 
@@ -2340,6 +2428,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmgt, EA_SCALABLE, REG_P11, REG_P5, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> CompareGreaterThan(Vector<double> left, Vector<double> right) => CompareGreaterThan(left, right);
 
@@ -2359,6 +2449,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareGreaterThanOrEqual(Vector<sbyte> left, Vector<sbyte> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2375,6 +2467,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareGreaterThanOrEqual(Vector<sbyte> left, Vector<long> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2391,6 +2485,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareGreaterThanOrEqual(Vector<short> left, Vector<short> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2407,6 +2503,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareGreaterThanOrEqual(Vector<short> left, Vector<long> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2423,6 +2521,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareGreaterThanOrEqual(Vector<int> left, Vector<int> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2439,6 +2539,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareGreaterThanOrEqual(Vector<int> left, Vector<long> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2455,6 +2557,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CompareGreaterThanOrEqual(Vector<long> left, Vector<long> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2471,6 +2575,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareGreaterThanOrEqual(Vector<byte> left, Vector<byte> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2487,6 +2593,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareGreaterThanOrEqual(Vector<byte> left, Vector<ulong> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2503,6 +2611,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareGreaterThanOrEqual(Vector<ushort> left, Vector<ushort> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2519,6 +2629,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareGreaterThanOrEqual(Vector<ushort> left, Vector<ulong> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2535,6 +2647,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareGreaterThanOrEqual(Vector<uint> left, Vector<uint> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2551,6 +2665,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareGreaterThanOrEqual(Vector<uint> left, Vector<ulong> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2567,6 +2683,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CompareGreaterThanOrEqual(Vector<ulong> left, Vector<ulong> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2581,6 +2699,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmge, EA_SCALABLE, REG_P1, REG_P2, REG_V3, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> CompareGreaterThanOrEqual(Vector<float> left, Vector<float> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2595,6 +2715,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmge, EA_SCALABLE, REG_P1, REG_P2, REG_V3, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> CompareGreaterThanOrEqual(Vector<double> left, Vector<double> right) => CompareGreaterThanOrEqual(left, right);
 
@@ -2614,6 +2736,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareLessThan(Vector<sbyte> left, Vector<sbyte> right) => CompareLessThan(left, right);
 
@@ -2630,6 +2754,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmplt, EA_SCALABLE, REG_P7, REG_P2, REG_V8, -16, INS_OPTS_SCALABLE_B); /* CMPLT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareLessThan(Vector<sbyte> left, Vector<long> right) => CompareLessThan(left, right);
 
@@ -2646,6 +2772,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareLessThan(Vector<short> left, Vector<short> right) => CompareLessThan(left, right);
 
@@ -2662,6 +2790,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmplt, EA_SCALABLE, REG_P7, REG_P2, REG_V8, -16, INS_OPTS_SCALABLE_B); /* CMPLT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareLessThan(Vector<short> left, Vector<long> right) => CompareLessThan(left, right);
 
@@ -2678,6 +2808,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareLessThan(Vector<int> left, Vector<int> right) => CompareLessThan(left, right);
 
@@ -2694,6 +2826,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmplt, EA_SCALABLE, REG_P7, REG_P2, REG_V8, -16, INS_OPTS_SCALABLE_B); /* CMPLT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareLessThan(Vector<int> left, Vector<long> right) => CompareLessThan(left, right);
 
@@ -2710,6 +2844,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpgt, EA_SCALABLE, REG_P10, REG_P1, REG_V18, 4, INS_OPTS_SCALABLE_S); /* CMPGT <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CompareLessThan(Vector<long> left, Vector<long> right) => CompareLessThan(left, right);
 
@@ -2726,6 +2862,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareLessThan(Vector<byte> left, Vector<byte> right) => CompareLessThan(left, right);
 
@@ -2742,6 +2880,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmplo, EA_SCALABLE, REG_P8, REG_P5, REG_V21, 64, INS_OPTS_SCALABLE_S); /* CMPLO <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareLessThan(Vector<byte> left, Vector<ulong> right) => CompareLessThan(left, right);
 
@@ -2758,6 +2898,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareLessThan(Vector<ushort> left, Vector<ushort> right) => CompareLessThan(left, right);
 
@@ -2774,6 +2916,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmplo, EA_SCALABLE, REG_P8, REG_P5, REG_V21, 64, INS_OPTS_SCALABLE_S); /* CMPLO <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareLessThan(Vector<ushort> left, Vector<ulong> right) => CompareLessThan(left, right);
 
@@ -2790,6 +2934,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareLessThan(Vector<uint> left, Vector<uint> right) => CompareLessThan(left, right);
 
@@ -2806,6 +2952,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmplo, EA_SCALABLE, REG_P8, REG_P5, REG_V21, 64, INS_OPTS_SCALABLE_S); /* CMPLO <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareLessThan(Vector<uint> left, Vector<ulong> right) => CompareLessThan(left, right);
 
@@ -2822,6 +2970,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphi, EA_SCALABLE, REG_P15, REG_P7, REG_V19, 0, INS_OPTS_SCALABLE_B); /* CMPHI <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CompareLessThan(Vector<ulong> left, Vector<ulong> right) => CompareLessThan(left, right);
 
@@ -2836,6 +2986,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmgt, EA_SCALABLE, REG_P11, REG_P5, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> CompareLessThan(Vector<float> left, Vector<float> right) => CompareLessThan(left, right);
 
@@ -2850,6 +3002,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmgt, EA_SCALABLE, REG_P11, REG_P5, REG_V2, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> CompareLessThan(Vector<double> left, Vector<double> right) => CompareLessThan(left, right);
 
@@ -2869,6 +3023,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareLessThanOrEqual(Vector<sbyte> left, Vector<sbyte> right) => CompareLessThanOrEqual(left, right);
 
@@ -2885,6 +3041,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmple, EA_SCALABLE, REG_P8, REG_P6, REG_V11, 15, INS_OPTS_SCALABLE_D); /* CMPLE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareLessThanOrEqual(Vector<sbyte> left, Vector<long> right) => CompareLessThanOrEqual(left, right);
 
@@ -2901,6 +3059,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareLessThanOrEqual(Vector<short> left, Vector<short> right) => CompareLessThanOrEqual(left, right);
 
@@ -2917,6 +3077,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmple, EA_SCALABLE, REG_P8, REG_P6, REG_V11, 15, INS_OPTS_SCALABLE_D); /* CMPLE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareLessThanOrEqual(Vector<short> left, Vector<long> right) => CompareLessThanOrEqual(left, right);
 
@@ -2933,6 +3095,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareLessThanOrEqual(Vector<int> left, Vector<int> right) => CompareLessThanOrEqual(left, right);
 
@@ -2949,6 +3113,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmple, EA_SCALABLE, REG_P8, REG_P6, REG_V11, 15, INS_OPTS_SCALABLE_D); /* CMPLE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareLessThanOrEqual(Vector<int> left, Vector<long> right) => CompareLessThanOrEqual(left, right);
 
@@ -2965,6 +3131,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpge, EA_SCALABLE, REG_P11, REG_P7, REG_V21, 1, INS_OPTS_SCALABLE_H); /* CMPGE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CompareLessThanOrEqual(Vector<long> left, Vector<long> right) => CompareLessThanOrEqual(left, right);
 
@@ -2981,6 +3149,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareLessThanOrEqual(Vector<byte> left, Vector<byte> right) => CompareLessThanOrEqual(left, right);
 
@@ -2997,6 +3167,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpls, EA_SCALABLE, REG_P0, REG_P3, REG_V9, 127, INS_OPTS_SCALABLE_D); /* CMPLS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareLessThanOrEqual(Vector<byte> left, Vector<ulong> right) => CompareLessThanOrEqual(left, right);
 
@@ -3013,6 +3185,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareLessThanOrEqual(Vector<ushort> left, Vector<ushort> right) => CompareLessThanOrEqual(left, right);
 
@@ -3029,6 +3203,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpls, EA_SCALABLE, REG_P0, REG_P3, REG_V9, 127, INS_OPTS_SCALABLE_D); /* CMPLS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareLessThanOrEqual(Vector<ushort> left, Vector<ulong> right) => CompareLessThanOrEqual(left, right);
 
@@ -3045,6 +3221,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareLessThanOrEqual(Vector<uint> left, Vector<uint> right) => CompareLessThanOrEqual(left, right);
 
@@ -3061,6 +3239,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpls, EA_SCALABLE, REG_P0, REG_P3, REG_V9, 127, INS_OPTS_SCALABLE_D); /* CMPLS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareLessThanOrEqual(Vector<uint> left, Vector<ulong> right) => CompareLessThanOrEqual(left, right);
 
@@ -3077,6 +3257,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmphs, EA_SCALABLE, REG_P11, REG_P1, REG_V0, 36, INS_OPTS_SCALABLE_H); /* CMPHS <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CompareLessThanOrEqual(Vector<ulong> left, Vector<ulong> right) => CompareLessThanOrEqual(left, right);
 
@@ -3091,6 +3273,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmge, EA_SCALABLE, REG_P1, REG_P2, REG_V3, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> CompareLessThanOrEqual(Vector<float> left, Vector<float> right) => CompareLessThanOrEqual(left, right);
 
@@ -3105,6 +3289,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmge, EA_SCALABLE, REG_P1, REG_P2, REG_V3, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> CompareLessThanOrEqual(Vector<double> left, Vector<double> right) => CompareLessThanOrEqual(left, right);
 
@@ -3124,6 +3310,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareNotEqualTo(Vector<sbyte> left, Vector<sbyte> right) => CompareNotEqualTo(left, right);
 
@@ -3140,6 +3328,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CompareNotEqualTo(Vector<sbyte> left, Vector<long> right) => CompareNotEqualTo(left, right);
 
@@ -3156,6 +3346,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareNotEqualTo(Vector<short> left, Vector<short> right) => CompareNotEqualTo(left, right);
 
@@ -3172,6 +3364,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CompareNotEqualTo(Vector<short> left, Vector<long> right) => CompareNotEqualTo(left, right);
 
@@ -3188,6 +3382,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareNotEqualTo(Vector<int> left, Vector<int> right) => CompareNotEqualTo(left, right);
 
@@ -3204,6 +3400,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CompareNotEqualTo(Vector<int> left, Vector<long> right) => CompareNotEqualTo(left, right);
 
@@ -3220,6 +3418,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CompareNotEqualTo(Vector<long> left, Vector<long> right) => CompareNotEqualTo(left, right);
 
@@ -3236,6 +3436,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CompareNotEqualTo(Vector<byte> left, Vector<byte> right) => CompareNotEqualTo(left, right);
 
@@ -3252,6 +3454,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CompareNotEqualTo(Vector<ushort> left, Vector<ushort> right) => CompareNotEqualTo(left, right);
 
@@ -3268,6 +3472,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CompareNotEqualTo(Vector<uint> left, Vector<uint> right) => CompareNotEqualTo(left, right);
 
@@ -3284,6 +3490,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_cmpne, EA_SCALABLE, REG_P0, REG_P5, REG_V0, -14, INS_OPTS_SCALABLE_H); /* CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, #<imm> */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CompareNotEqualTo(Vector<ulong> left, Vector<ulong> right) => CompareNotEqualTo(left, right);
 
@@ -3298,6 +3506,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmne, EA_SCALABLE, REG_P1, REG_P0, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> CompareNotEqualTo(Vector<float> left, Vector<float> right) => CompareNotEqualTo(left, right);
 
@@ -3312,6 +3522,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_fcmne, EA_SCALABLE, REG_P1, REG_P0, REG_V5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> CompareNotEqualTo(Vector<double> left, Vector<double> right) => CompareNotEqualTo(left, right);
 
@@ -3327,6 +3539,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_fcmuo, EA_SCALABLE, REG_P5, REG_P2, REG_V31, REG_V20, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> CompareUnordered(Vector<float> left, Vector<float> right) => CompareUnordered(left, right);
 
@@ -3339,6 +3553,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_fcmuo, EA_SCALABLE, REG_P5, REG_P2, REG_V31, REG_V20, INS_OPTS_SCALABLE_S);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> CompareUnordered(Vector<double> left, Vector<double> right) => CompareUnordered(left, right);
 
@@ -4701,8 +4917,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<sbyte> ConditionalSelect(Vector<sbyte> mask, Vector<sbyte> left, Vector<sbyte> right) => ConditionalSelect(mask, left, right);
 
@@ -4716,8 +4932,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<short> ConditionalSelect(Vector<short> mask, Vector<short> left, Vector<short> right) => ConditionalSelect(mask, left, right);
 
@@ -4731,8 +4947,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<int> ConditionalSelect(Vector<int> mask, Vector<int> left, Vector<int> right) => ConditionalSelect(mask, left, right);
 
@@ -4746,8 +4962,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<long> ConditionalSelect(Vector<long> mask, Vector<long> left, Vector<long> right) => ConditionalSelect(mask, left, right);
 
@@ -4761,8 +4977,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<byte> ConditionalSelect(Vector<byte> mask, Vector<byte> left, Vector<byte> right) => ConditionalSelect(mask, left, right);
 
@@ -4776,8 +4992,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<ushort> ConditionalSelect(Vector<ushort> mask, Vector<ushort> left, Vector<ushort> right) => ConditionalSelect(mask, left, right);
 
@@ -4791,8 +5007,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<uint> ConditionalSelect(Vector<uint> mask, Vector<uint> left, Vector<uint> right) => ConditionalSelect(mask, left, right);
 
@@ -4806,8 +5022,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<ulong> ConditionalSelect(Vector<ulong> mask, Vector<ulong> left, Vector<ulong> right) => ConditionalSelect(mask, left, right);
 
@@ -4819,8 +5035,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<float> ConditionalSelect(Vector<float> mask, Vector<float> left, Vector<float> right) => ConditionalSelect(mask, left, right);
 
@@ -4832,8 +5048,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_CZ_4A  CMPNE <Pd>.<T>, <Pg>/Z, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_P4, REG_P6, REG_P13, REG_P10, INS_OPTS_SCALABLE_B); /* SEL <Pd>.B, <Pg>, <Pn>.B, <Pm>.B */
         ///    IF_SVE_CW_4A  SEL <Zd>.<T>, <Pv>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V29, REG_P15, REG_V28, REG_V4, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R(INS_sve_sel, EA_SCALABLE, REG_V5, REG_P13, REG_V27, REG_V5, INS_OPTS_SCALABLE_S);
         /// </summary>
         public static unsafe Vector<double> ConditionalSelect(Vector<double> mask, Vector<double> left, Vector<double> right) => ConditionalSelect(mask, left, right);
 
@@ -5474,6 +5690,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CreateBreakAfterPropagateMask(Vector<sbyte> mask, Vector<sbyte> left, Vector<sbyte> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5484,6 +5702,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CreateBreakAfterPropagateMask(Vector<short> mask, Vector<short> left, Vector<short> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5494,6 +5714,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CreateBreakAfterPropagateMask(Vector<int> mask, Vector<int> left, Vector<int> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5504,6 +5726,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CreateBreakAfterPropagateMask(Vector<long> mask, Vector<long> left, Vector<long> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5514,6 +5738,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CreateBreakAfterPropagateMask(Vector<byte> mask, Vector<byte> left, Vector<byte> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5524,6 +5750,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CreateBreakAfterPropagateMask(Vector<ushort> mask, Vector<ushort> left, Vector<ushort> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5534,6 +5762,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CreateBreakAfterPropagateMask(Vector<uint> mask, Vector<uint> left, Vector<uint> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5544,6 +5774,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPA <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpa, EA_SCALABLE, REG_P0, REG_P1, REG_P10, REG_P15, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CreateBreakAfterPropagateMask(Vector<ulong> mask, Vector<ulong> left, Vector<ulong> right) => CreateBreakAfterPropagateMask(mask, left, right);
 
@@ -5680,6 +5912,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CreateBreakBeforePropagateMask(Vector<sbyte> mask, Vector<sbyte> left, Vector<sbyte> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5690,6 +5924,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CreateBreakBeforePropagateMask(Vector<short> mask, Vector<short> left, Vector<short> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5700,6 +5936,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CreateBreakBeforePropagateMask(Vector<int> mask, Vector<int> left, Vector<int> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5710,6 +5948,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CreateBreakBeforePropagateMask(Vector<long> mask, Vector<long> left, Vector<long> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5720,6 +5960,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CreateBreakBeforePropagateMask(Vector<byte> mask, Vector<byte> left, Vector<byte> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5730,6 +5972,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CreateBreakBeforePropagateMask(Vector<ushort> mask, Vector<ushort> left, Vector<ushort> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5740,6 +5984,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CreateBreakBeforePropagateMask(Vector<uint> mask, Vector<uint> left, Vector<uint> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5750,6 +5996,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_DA_4A  BRKPB <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_brkpb, EA_SCALABLE, REG_P7, REG_P8, REG_P11, REG_P13, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CreateBreakBeforePropagateMask(Vector<ulong> mask, Vector<ulong> left, Vector<ulong> right) => CreateBreakBeforePropagateMask(mask, left, right);
 
@@ -5765,6 +6013,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> CreateBreakPropagateMask(Vector<sbyte> totalMask, Vector<sbyte> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -5777,6 +6027,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> CreateBreakPropagateMask(Vector<short> totalMask, Vector<short> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -5789,6 +6041,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> CreateBreakPropagateMask(Vector<int> totalMask, Vector<int> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -5801,6 +6055,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> CreateBreakPropagateMask(Vector<long> totalMask, Vector<long> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -5813,6 +6069,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> CreateBreakPropagateMask(Vector<byte> totalMask, Vector<byte> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -5825,6 +6083,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> CreateBreakPropagateMask(Vector<ushort> totalMask, Vector<ushort> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -5837,6 +6097,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> CreateBreakPropagateMask(Vector<uint> totalMask, Vector<uint> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -5849,6 +6111,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R(INS_sve_brkn, EA_SCALABLE, REG_P0, REG_P8, REG_P15, INS_OPTS_SCALABLE_B);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> CreateBreakPropagateMask(Vector<ulong> totalMask, Vector<ulong> fromMask) => CreateBreakPropagateMask(totalMask, fromMask);
 
@@ -6975,11 +7239,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V1, REG_V2, REG_V0, 0, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V3, REG_V4, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  SDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  SDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  SDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -6998,11 +7262,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V1, REG_V2, REG_V0, 0, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V3, REG_V4, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  SDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  SDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  SDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -7021,11 +7285,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V5, REG_V6, REG_V2, 2, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V7, REG_V8, REG_V3, 3, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  UDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  UDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  UDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_udot, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -7044,11 +7308,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V5, REG_V6, REG_V2, 2, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V7, REG_V8, REG_V3, 3, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  UDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  UDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  UDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_udot, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -7070,11 +7334,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V1, REG_V2, REG_V0, 0, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V3, REG_V4, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  SDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  SDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  SDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -7093,11 +7357,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V1, REG_V2, REG_V0, 0, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V3, REG_V4, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  SDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V9, REG_V10, REG_V4, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V11, REG_V12, REG_V5, 1, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  SDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_sdot, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  SDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_sdot, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -7116,11 +7380,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V5, REG_V6, REG_V2, 2, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V7, REG_V8, REG_V3, 3, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  UDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  UDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  UDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_udot, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -7139,11 +7403,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V5, REG_V6, REG_V2, 2, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V7, REG_V8, REG_V3, 3, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EY_3A  UDOT <Zda>.S, <Zn>.B, <Zm>.B[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_B);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V13, REG_V14, REG_V6, 2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V15, REG_V16, REG_V7, 3, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EY_3B  UDOT <Zda>.D, <Zn>.H, <Zm>.H[<imm>]
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0);
-        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_I(INS_sve_udot, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EF_3A  UDOT <Zda>.S, <Zn>.H, <Zm>.H
         ///        theEmitter->emitIns_R_R_R(INS_sve_udot, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -10007,6 +10271,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVector(Vector<int> mask, int* address, Vector<int> indices) => GatherVector(mask, address, indices);
 
@@ -10042,6 +10308,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVector(Vector<int> mask, Vector<uint> addresses) => GatherVector(mask, addresses);
 
@@ -10077,6 +10345,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVector(Vector<int> mask, int* address, Vector<uint> indices) => GatherVector(mask, address, indices);
 
@@ -10105,6 +10375,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVector(Vector<long> mask, long* address, Vector<long> indices) => GatherVector(mask, address, indices);
 
@@ -10133,6 +10405,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVector(Vector<long> mask, Vector<ulong> addresses) => GatherVector(mask, addresses);
 
@@ -10161,6 +10435,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVector(Vector<long> mask, long* address, Vector<ulong> indices) => GatherVector(mask, address, indices);
 
@@ -10196,6 +10472,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVector(Vector<uint> mask, uint* address, Vector<int> indices) => GatherVector(mask, address, indices);
 
@@ -10231,6 +10509,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVector(Vector<uint> mask, Vector<uint> addresses) => GatherVector(mask, addresses);
 
@@ -10266,6 +10546,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVector(Vector<uint> mask, uint* address, Vector<uint> indices) => GatherVector(mask, address, indices);
 
@@ -10294,6 +10576,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVector(Vector<ulong> mask, ulong* address, Vector<long> indices) => GatherVector(mask, address, indices);
 
@@ -10322,6 +10606,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVector(Vector<ulong> mask, Vector<ulong> addresses) => GatherVector(mask, addresses);
 
@@ -10350,6 +10636,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVector(Vector<ulong> mask, ulong* address, Vector<ulong> indices) => GatherVector(mask, address, indices);
 
@@ -10385,6 +10673,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVector(Vector<float> mask, float* address, Vector<int> indices) => GatherVector(mask, address, indices);
 
@@ -10420,6 +10710,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVector(Vector<float> mask, Vector<uint> addresses) => GatherVector(mask, addresses);
 
@@ -10455,6 +10747,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVector(Vector<float> mask, float* address, Vector<uint> indices) => GatherVector(mask, address, indices);
 
@@ -10483,6 +10777,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVector(Vector<double> mask, double* address, Vector<long> indices) => GatherVector(mask, address, indices);
 
@@ -10511,6 +10807,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVector(Vector<double> mask, Vector<ulong> addresses) => GatherVector(mask, addresses);
 
@@ -10539,6 +10837,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVector(Vector<double> mask, double* address, Vector<ulong> indices) => GatherVector(mask, address, indices);
 
@@ -10571,6 +10871,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorByteZeroExtend(Vector<int> mask, byte* address, Vector<int> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10600,6 +10902,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorByteZeroExtend(Vector<int> mask, Vector<uint> addresses) => GatherVectorByteZeroExtend(mask, addresses);
 
@@ -10629,6 +10933,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorByteZeroExtend(Vector<int> mask, byte* address, Vector<uint> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10658,6 +10964,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorByteZeroExtend(Vector<long> mask, byte* address, Vector<long> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10687,6 +10995,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorByteZeroExtend(Vector<long> mask, Vector<ulong> addresses) => GatherVectorByteZeroExtend(mask, addresses);
 
@@ -10716,6 +11026,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorByteZeroExtend(Vector<long> mask, byte* address, Vector<ulong> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10745,6 +11057,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorByteZeroExtend(Vector<uint> mask, byte* address, Vector<int> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10774,6 +11088,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorByteZeroExtend(Vector<uint> mask, Vector<uint> addresses) => GatherVectorByteZeroExtend(mask, addresses);
 
@@ -10803,6 +11119,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorByteZeroExtend(Vector<uint> mask, byte* address, Vector<uint> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10832,6 +11150,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorByteZeroExtend(Vector<ulong> mask, byte* address, Vector<long> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10861,6 +11181,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorByteZeroExtend(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorByteZeroExtend(mask, addresses);
 
@@ -10890,6 +11212,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorByteZeroExtend(Vector<ulong> mask, byte* address, Vector<ulong> indices) => GatherVectorByteZeroExtend(mask, address, indices);
 
@@ -10917,6 +11241,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorByteZeroExtendFirstFaulting(Vector<int> mask, byte* address, Vector<int> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -10941,6 +11267,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorByteZeroExtendFirstFaulting(Vector<int> mask, Vector<uint> addresses) => GatherVectorByteZeroExtendFirstFaulting(mask, addresses);
 
@@ -10965,6 +11293,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorByteZeroExtendFirstFaulting(Vector<int> mask, byte* address, Vector<uint> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -10989,6 +11319,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorByteZeroExtendFirstFaulting(Vector<long> mask, byte* address, Vector<long> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -11013,6 +11345,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorByteZeroExtendFirstFaulting(Vector<long> mask, Vector<ulong> addresses) => GatherVectorByteZeroExtendFirstFaulting(mask, addresses);
 
@@ -11037,6 +11371,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorByteZeroExtendFirstFaulting(Vector<long> mask, byte* address, Vector<ulong> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -11061,6 +11397,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorByteZeroExtendFirstFaulting(Vector<uint> mask, byte* address, Vector<int> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -11085,6 +11423,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorByteZeroExtendFirstFaulting(Vector<uint> mask, Vector<uint> addresses) => GatherVectorByteZeroExtendFirstFaulting(mask, addresses);
 
@@ -11109,6 +11449,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorByteZeroExtendFirstFaulting(Vector<uint> mask, byte* address, Vector<uint> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -11133,6 +11475,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorByteZeroExtendFirstFaulting(Vector<ulong> mask, byte* address, Vector<long> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -11157,6 +11501,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorByteZeroExtendFirstFaulting(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorByteZeroExtendFirstFaulting(mask, addresses);
 
@@ -11181,6 +11527,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorByteZeroExtendFirstFaulting(Vector<ulong> mask, byte* address, Vector<ulong> offsets) => GatherVectorByteZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -11215,6 +11563,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorFirstFaulting(Vector<int> mask, Vector<uint> addresses) => GatherVectorFirstFaulting(mask, addresses);
 
@@ -11246,6 +11596,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorFirstFaulting(Vector<int> mask, int* address, Vector<int> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11277,6 +11629,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorFirstFaulting(Vector<int> mask, int* address, Vector<uint> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11299,6 +11653,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorFirstFaulting(Vector<long> mask, Vector<ulong> addresses) => GatherVectorFirstFaulting(mask, addresses);
 
@@ -11321,6 +11677,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorFirstFaulting(Vector<long> mask, long* address, Vector<long> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11343,6 +11701,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorFirstFaulting(Vector<long> mask, long* address, Vector<ulong> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11374,6 +11734,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorFirstFaulting(Vector<uint> mask, Vector<uint> addresses) => GatherVectorFirstFaulting(mask, addresses);
 
@@ -11405,6 +11767,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorFirstFaulting(Vector<uint> mask, uint* address, Vector<int> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11436,6 +11800,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorFirstFaulting(Vector<uint> mask, uint* address, Vector<uint> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11458,6 +11824,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorFirstFaulting(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorFirstFaulting(mask, addresses);
 
@@ -11480,6 +11848,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorFirstFaulting(Vector<ulong> mask, ulong* address, Vector<long> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11502,6 +11872,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorFirstFaulting(Vector<ulong> mask, ulong* address, Vector<ulong> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11533,6 +11905,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVectorFirstFaulting(Vector<float> mask, float* address, Vector<int> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11564,6 +11938,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVectorFirstFaulting(Vector<float> mask, Vector<uint> addresses) => GatherVectorFirstFaulting(mask, addresses);
 
@@ -11595,6 +11971,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVectorFirstFaulting(Vector<float> mask, float* address, Vector<uint> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11617,6 +11995,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVectorFirstFaulting(Vector<double> mask, double* address, Vector<long> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11639,6 +12019,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVectorFirstFaulting(Vector<double> mask, Vector<ulong> addresses) => GatherVectorFirstFaulting(mask, addresses);
 
@@ -11661,6 +12043,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVectorFirstFaulting(Vector<double> mask, double* address, Vector<ulong> indices) => GatherVectorFirstFaulting(mask, address, indices);
 
@@ -11697,6 +12081,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16SignExtend(Vector<int> mask, short* address, Vector<int> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -11730,6 +12116,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16SignExtend(Vector<int> mask, Vector<uint> addresses) => GatherVectorInt16SignExtend(mask, addresses);
 
@@ -11763,6 +12151,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16SignExtend(Vector<int> mask, short* address, Vector<uint> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -11796,6 +12186,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16SignExtend(Vector<long> mask, short* address, Vector<long> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -11829,6 +12221,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16SignExtend(Vector<long> mask, Vector<ulong> addresses) => GatherVectorInt16SignExtend(mask, addresses);
 
@@ -11862,6 +12256,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16SignExtend(Vector<long> mask, short* address, Vector<ulong> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -11895,6 +12291,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16SignExtend(Vector<uint> mask, short* address, Vector<int> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -11928,6 +12326,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16SignExtend(Vector<uint> mask, Vector<uint> addresses) => GatherVectorInt16SignExtend(mask, addresses);
 
@@ -11961,6 +12361,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16SignExtend(Vector<uint> mask, short* address, Vector<uint> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -11994,6 +12396,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16SignExtend(Vector<ulong> mask, short* address, Vector<long> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -12027,6 +12431,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16SignExtend(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorInt16SignExtend(mask, addresses);
 
@@ -12060,6 +12466,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16SignExtend(Vector<ulong> mask, short* address, Vector<ulong> indices) => GatherVectorInt16SignExtend(mask, address, indices);
 
@@ -12093,6 +12501,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16SignExtendFirstFaulting(Vector<int> mask, short* address, Vector<int> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12123,6 +12533,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16SignExtendFirstFaulting(Vector<int> mask, Vector<uint> addresses) => GatherVectorInt16SignExtendFirstFaulting(mask, addresses);
 
@@ -12153,6 +12565,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16SignExtendFirstFaulting(Vector<int> mask, short* address, Vector<uint> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12183,6 +12597,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16SignExtendFirstFaulting(Vector<long> mask, short* address, Vector<long> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12213,6 +12629,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16SignExtendFirstFaulting(Vector<long> mask, Vector<ulong> addresses) => GatherVectorInt16SignExtendFirstFaulting(mask, addresses);
 
@@ -12243,6 +12661,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16SignExtendFirstFaulting(Vector<long> mask, short* address, Vector<ulong> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12273,6 +12693,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16SignExtendFirstFaulting(Vector<uint> mask, short* address, Vector<int> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12303,6 +12725,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16SignExtendFirstFaulting(Vector<uint> mask, Vector<uint> addresses) => GatherVectorInt16SignExtendFirstFaulting(mask, addresses);
 
@@ -12333,6 +12757,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16SignExtendFirstFaulting(Vector<uint> mask, short* address, Vector<uint> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12363,6 +12789,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16SignExtendFirstFaulting(Vector<ulong> mask, short* address, Vector<long> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12393,6 +12821,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16SignExtendFirstFaulting(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorInt16SignExtendFirstFaulting(mask, addresses);
 
@@ -12423,6 +12853,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16SignExtendFirstFaulting(Vector<ulong> mask, short* address, Vector<ulong> indices) => GatherVectorInt16SignExtendFirstFaulting(mask, address, indices);
 
@@ -12459,6 +12891,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16WithByteOffsetsSignExtend(Vector<int> mask, short* address, Vector<int> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12492,6 +12926,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16WithByteOffsetsSignExtend(Vector<int> mask, short* address, Vector<uint> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12525,6 +12961,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16WithByteOffsetsSignExtend(Vector<long> mask, short* address, Vector<long> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12558,6 +12996,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16WithByteOffsetsSignExtend(Vector<long> mask, short* address, Vector<ulong> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12591,6 +13031,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16WithByteOffsetsSignExtend(Vector<uint> mask, short* address, Vector<int> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12624,6 +13066,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16WithByteOffsetsSignExtend(Vector<uint> mask, short* address, Vector<uint> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12657,6 +13101,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16WithByteOffsetsSignExtend(Vector<ulong> mask, short* address, Vector<long> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12690,6 +13136,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16WithByteOffsetsSignExtend(Vector<ulong> mask, short* address, Vector<ulong> offsets) => GatherVectorInt16WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -12723,6 +13171,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<int> mask, short* address, Vector<int> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12753,6 +13203,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<int> mask, short* address, Vector<uint> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12783,6 +13235,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<long> mask, short* address, Vector<long> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12813,6 +13267,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<long> mask, short* address, Vector<ulong> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12843,6 +13299,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<uint> mask, short* address, Vector<int> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12873,6 +13331,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<uint> mask, short* address, Vector<uint> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12903,6 +13363,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<ulong> mask, short* address, Vector<long> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12933,6 +13395,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(Vector<ulong> mask, short* address, Vector<ulong> offsets) => GatherVectorInt16WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -12960,6 +13424,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32SignExtend(Vector<int> mask, int* address, Vector<int> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -12984,6 +13450,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32SignExtend(Vector<int> mask, Vector<uint> addresses) => GatherVectorInt32SignExtend(mask, addresses);
 
@@ -13008,6 +13476,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32SignExtend(Vector<int> mask, int* address, Vector<uint> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -13032,6 +13502,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32SignExtend(Vector<long> mask, int* address, Vector<long> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -13056,6 +13528,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32SignExtend(Vector<long> mask, Vector<ulong> addresses) => GatherVectorInt32SignExtend(mask, addresses);
 
@@ -13080,6 +13554,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32SignExtend(Vector<long> mask, int* address, Vector<ulong> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -13104,6 +13580,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32SignExtend(Vector<uint> mask, int* address, Vector<int> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -13128,6 +13606,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32SignExtend(Vector<uint> mask, Vector<uint> addresses) => GatherVectorInt32SignExtend(mask, addresses);
 
@@ -13152,6 +13632,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32SignExtend(Vector<uint> mask, int* address, Vector<uint> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -13176,6 +13658,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32SignExtend(Vector<ulong> mask, int* address, Vector<long> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -13200,6 +13684,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32SignExtend(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorInt32SignExtend(mask, addresses);
 
@@ -13224,6 +13710,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32SignExtend(Vector<ulong> mask, int* address, Vector<ulong> indices) => GatherVectorInt32SignExtend(mask, address, indices);
 
@@ -13250,6 +13738,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32SignExtendFirstFaulting(Vector<int> mask, int* address, Vector<int> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13273,6 +13763,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32SignExtendFirstFaulting(Vector<int> mask, Vector<uint> addresses) => GatherVectorInt32SignExtendFirstFaulting(mask, addresses);
 
@@ -13296,6 +13788,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32SignExtendFirstFaulting(Vector<int> mask, int* address, Vector<uint> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13319,6 +13813,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32SignExtendFirstFaulting(Vector<long> mask, int* address, Vector<long> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13342,6 +13838,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32SignExtendFirstFaulting(Vector<long> mask, Vector<ulong> addresses) => GatherVectorInt32SignExtendFirstFaulting(mask, addresses);
 
@@ -13365,6 +13863,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32SignExtendFirstFaulting(Vector<long> mask, int* address, Vector<ulong> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13388,6 +13888,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32SignExtendFirstFaulting(Vector<uint> mask, int* address, Vector<int> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13411,6 +13913,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32SignExtendFirstFaulting(Vector<uint> mask, Vector<uint> addresses) => GatherVectorInt32SignExtendFirstFaulting(mask, addresses);
 
@@ -13434,6 +13938,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32SignExtendFirstFaulting(Vector<uint> mask, int* address, Vector<uint> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13457,6 +13963,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32SignExtendFirstFaulting(Vector<ulong> mask, int* address, Vector<long> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13480,6 +13988,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32SignExtendFirstFaulting(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorInt32SignExtendFirstFaulting(mask, addresses);
 
@@ -13503,6 +14013,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32SignExtendFirstFaulting(Vector<ulong> mask, int* address, Vector<ulong> indices) => GatherVectorInt32SignExtendFirstFaulting(mask, address, indices);
 
@@ -13530,6 +14042,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32WithByteOffsetsSignExtend(Vector<int> mask, int* address, Vector<int> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13554,6 +14068,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32WithByteOffsetsSignExtend(Vector<int> mask, int* address, Vector<uint> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13578,6 +14094,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32WithByteOffsetsSignExtend(Vector<long> mask, int* address, Vector<long> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13602,6 +14120,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32WithByteOffsetsSignExtend(Vector<long> mask, int* address, Vector<ulong> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13626,6 +14146,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32WithByteOffsetsSignExtend(Vector<uint> mask, int* address, Vector<int> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13650,6 +14172,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32WithByteOffsetsSignExtend(Vector<uint> mask, int* address, Vector<uint> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13674,6 +14198,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32WithByteOffsetsSignExtend(Vector<ulong> mask, int* address, Vector<long> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13698,6 +14224,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32WithByteOffsetsSignExtend(Vector<ulong> mask, int* address, Vector<ulong> offsets) => GatherVectorInt32WithByteOffsetsSignExtend(mask, address, offsets);
 
@@ -13724,6 +14252,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<int> mask, int* address, Vector<int> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13747,6 +14277,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<int> mask, int* address, Vector<uint> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13770,6 +14302,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<long> mask, int* address, Vector<long> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13793,6 +14327,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<long> mask, int* address, Vector<ulong> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13816,6 +14352,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<uint> mask, int* address, Vector<int> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13839,6 +14377,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<uint> mask, int* address, Vector<uint> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13862,6 +14402,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<ulong> mask, int* address, Vector<long> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13885,6 +14427,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(Vector<ulong> mask, int* address, Vector<ulong> offsets) => GatherVectorInt32WithByteOffsetsSignExtendFirstFaulting(mask, address, offsets);
 
@@ -13915,6 +14459,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorSByteSignExtend(Vector<int> mask, sbyte* address, Vector<int> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -13942,6 +14488,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorSByteSignExtend(Vector<int> mask, Vector<uint> addresses) => GatherVectorSByteSignExtend(mask, addresses);
 
@@ -13969,6 +14517,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorSByteSignExtend(Vector<int> mask, sbyte* address, Vector<uint> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -13996,6 +14546,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorSByteSignExtend(Vector<long> mask, sbyte* address, Vector<long> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -14023,6 +14575,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorSByteSignExtend(Vector<long> mask, Vector<ulong> addresses) => GatherVectorSByteSignExtend(mask, addresses);
 
@@ -14050,6 +14604,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorSByteSignExtend(Vector<long> mask, sbyte* address, Vector<ulong> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -14077,6 +14633,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorSByteSignExtend(Vector<uint> mask, sbyte* address, Vector<int> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -14104,6 +14662,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorSByteSignExtend(Vector<uint> mask, Vector<uint> addresses) => GatherVectorSByteSignExtend(mask, addresses);
 
@@ -14131,6 +14691,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorSByteSignExtend(Vector<uint> mask, sbyte* address, Vector<uint> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -14158,6 +14720,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorSByteSignExtend(Vector<ulong> mask, sbyte* address, Vector<long> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -14185,6 +14749,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorSByteSignExtend(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorSByteSignExtend(mask, addresses);
 
@@ -14212,6 +14778,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorSByteSignExtend(Vector<ulong> mask, sbyte* address, Vector<ulong> indices) => GatherVectorSByteSignExtend(mask, address, indices);
 
@@ -14238,6 +14806,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorSByteSignExtendFirstFaulting(Vector<int> mask, sbyte* address, Vector<int> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14261,6 +14831,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorSByteSignExtendFirstFaulting(Vector<int> mask, Vector<uint> addresses) => GatherVectorSByteSignExtendFirstFaulting(mask, addresses);
 
@@ -14284,6 +14856,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorSByteSignExtendFirstFaulting(Vector<int> mask, sbyte* address, Vector<uint> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14307,6 +14881,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorSByteSignExtendFirstFaulting(Vector<long> mask, sbyte* address, Vector<long> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14330,6 +14906,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorSByteSignExtendFirstFaulting(Vector<long> mask, Vector<ulong> addresses) => GatherVectorSByteSignExtendFirstFaulting(mask, addresses);
 
@@ -14353,6 +14931,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorSByteSignExtendFirstFaulting(Vector<long> mask, sbyte* address, Vector<ulong> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14376,6 +14956,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorSByteSignExtendFirstFaulting(Vector<uint> mask, sbyte* address, Vector<int> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14399,6 +14981,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorSByteSignExtendFirstFaulting(Vector<uint> mask, Vector<uint> addresses) => GatherVectorSByteSignExtendFirstFaulting(mask, addresses);
 
@@ -14422,6 +15006,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorSByteSignExtendFirstFaulting(Vector<uint> mask, sbyte* address, Vector<uint> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14445,6 +15031,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorSByteSignExtendFirstFaulting(Vector<ulong> mask, sbyte* address, Vector<long> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14468,6 +15056,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorSByteSignExtendFirstFaulting(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorSByteSignExtendFirstFaulting(mask, addresses);
 
@@ -14491,6 +15081,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorSByteSignExtendFirstFaulting(Vector<ulong> mask, sbyte* address, Vector<ulong> offsets) => GatherVectorSByteSignExtendFirstFaulting(mask, address, offsets);
 
@@ -14529,6 +15121,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<int> mask, ushort* address, Vector<int> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14564,6 +15158,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<int> mask, ushort* address, Vector<uint> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14599,6 +15195,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<long> mask, ushort* address, Vector<long> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14634,6 +15232,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<long> mask, ushort* address, Vector<ulong> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14669,6 +15269,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<uint> mask, ushort* address, Vector<int> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14704,6 +15306,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<uint> mask, ushort* address, Vector<uint> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14739,6 +15343,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<ulong> mask, ushort* address, Vector<long> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14774,6 +15380,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16WithByteOffsetsZeroExtend(Vector<ulong> mask, ushort* address, Vector<ulong> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -14809,6 +15417,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<int> mask, ushort* address, Vector<int> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -14841,6 +15451,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<int> mask, ushort* address, Vector<uint> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -14873,6 +15485,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<long> mask, ushort* address, Vector<long> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -14905,6 +15519,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<long> mask, ushort* address, Vector<ulong> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -14937,6 +15553,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<uint> mask, ushort* address, Vector<int> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -14969,6 +15587,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<uint> mask, ushort* address, Vector<uint> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -15001,6 +15621,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<ulong> mask, ushort* address, Vector<long> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -15033,6 +15655,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(Vector<ulong> mask, ushort* address, Vector<ulong> offsets) => GatherVectorUInt16WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -15071,6 +15695,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16ZeroExtend(Vector<int> mask, ushort* address, Vector<int> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15106,6 +15732,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16ZeroExtend(Vector<int> mask, Vector<uint> addresses) => GatherVectorUInt16ZeroExtend(mask, addresses);
 
@@ -15141,6 +15769,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16ZeroExtend(Vector<int> mask, ushort* address, Vector<uint> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15176,6 +15806,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16ZeroExtend(Vector<long> mask, ushort* address, Vector<long> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15211,6 +15843,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16ZeroExtend(Vector<long> mask, Vector<ulong> addresses) => GatherVectorUInt16ZeroExtend(mask, addresses);
 
@@ -15246,6 +15880,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16ZeroExtend(Vector<long> mask, ushort* address, Vector<ulong> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15281,6 +15917,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16ZeroExtend(Vector<uint> mask, ushort* address, Vector<int> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15316,6 +15954,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16ZeroExtend(Vector<uint> mask, Vector<uint> addresses) => GatherVectorUInt16ZeroExtend(mask, addresses);
 
@@ -15351,6 +15991,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16ZeroExtend(Vector<uint> mask, ushort* address, Vector<uint> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15386,6 +16028,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16ZeroExtend(Vector<ulong> mask, ushort* address, Vector<long> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15421,6 +16065,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16ZeroExtend(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorUInt16ZeroExtend(mask, addresses);
 
@@ -15456,6 +16102,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16ZeroExtend(Vector<ulong> mask, ushort* address, Vector<ulong> indices) => GatherVectorUInt16ZeroExtend(mask, address, indices);
 
@@ -15491,6 +16139,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<int> mask, ushort* address, Vector<int> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15523,6 +16173,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<int> mask, Vector<uint> addresses) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, addresses);
 
@@ -15555,6 +16207,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<int> mask, ushort* address, Vector<uint> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15587,6 +16241,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<long> mask, ushort* address, Vector<long> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15619,6 +16275,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<long> mask, Vector<ulong> addresses) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, addresses);
 
@@ -15651,6 +16309,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<long> mask, ushort* address, Vector<ulong> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15683,6 +16343,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<uint> mask, ushort* address, Vector<int> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15715,6 +16377,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<uint> mask, Vector<uint> addresses) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, addresses);
 
@@ -15747,6 +16411,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<uint> mask, ushort* address, Vector<uint> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15779,6 +16445,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<ulong> mask, ushort* address, Vector<long> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15811,6 +16479,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, addresses);
 
@@ -15843,6 +16513,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt16ZeroExtendFirstFaulting(Vector<ulong> mask, ushort* address, Vector<ulong> indices) => GatherVectorUInt16ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -15881,6 +16553,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<int> mask, uint* address, Vector<int> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -15916,6 +16590,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<int> mask, uint* address, Vector<uint> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -15951,6 +16627,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<long> mask, uint* address, Vector<long> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -15986,6 +16664,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<long> mask, uint* address, Vector<ulong> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -16021,6 +16701,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<uint> mask, uint* address, Vector<int> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -16056,6 +16738,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<uint> mask, uint* address, Vector<uint> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -16091,6 +16775,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<ulong> mask, uint* address, Vector<long> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -16126,6 +16812,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32WithByteOffsetsZeroExtend(Vector<ulong> mask, uint* address, Vector<ulong> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtend(mask, address, offsets);
 
@@ -16160,6 +16848,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<int> mask, uint* address, Vector<int> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16191,6 +16881,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<int> mask, uint* address, Vector<uint> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16222,6 +16914,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<long> mask, uint* address, Vector<long> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16253,6 +16947,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<long> mask, uint* address, Vector<ulong> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16284,6 +16980,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<uint> mask, uint* address, Vector<int> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16315,6 +17013,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<uint> mask, uint* address, Vector<uint> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16346,6 +17046,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<ulong> mask, uint* address, Vector<long> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16377,6 +17079,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(Vector<ulong> mask, uint* address, Vector<ulong> offsets) => GatherVectorUInt32WithByteOffsetsZeroExtendFirstFaulting(mask, address, offsets);
 
@@ -16415,6 +17119,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32ZeroExtend(Vector<int> mask, uint* address, Vector<int> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16450,6 +17156,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32ZeroExtend(Vector<int> mask, Vector<uint> addresses) => GatherVectorUInt32ZeroExtend(mask, addresses);
 
@@ -16485,6 +17193,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32ZeroExtend(Vector<int> mask, uint* address, Vector<uint> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16520,6 +17230,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32ZeroExtend(Vector<long> mask, uint* address, Vector<long> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16555,6 +17267,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32ZeroExtend(Vector<long> mask, Vector<ulong> addresses) => GatherVectorUInt32ZeroExtend(mask, addresses);
 
@@ -16590,6 +17304,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32ZeroExtend(Vector<long> mask, uint* address, Vector<ulong> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16625,6 +17341,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32ZeroExtend(Vector<uint> mask, uint* address, Vector<int> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16660,6 +17378,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32ZeroExtend(Vector<uint> mask, Vector<uint> addresses) => GatherVectorUInt32ZeroExtend(mask, addresses);
 
@@ -16695,6 +17415,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32ZeroExtend(Vector<uint> mask, uint* address, Vector<uint> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16730,6 +17452,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32ZeroExtend(Vector<ulong> mask, uint* address, Vector<long> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16765,6 +17489,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32ZeroExtend(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorUInt32ZeroExtend(mask, addresses);
 
@@ -16800,6 +17526,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32ZeroExtend(Vector<ulong> mask, uint* address, Vector<ulong> indices) => GatherVectorUInt32ZeroExtend(mask, address, indices);
 
@@ -16834,6 +17562,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<int> mask, uint* address, Vector<int> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -16865,6 +17595,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<int> mask, Vector<uint> addresses) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, addresses);
 
@@ -16896,6 +17628,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<int> mask, uint* address, Vector<uint> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -16927,6 +17661,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<long> mask, uint* address, Vector<long> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -16958,6 +17694,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<long> mask, Vector<ulong> addresses) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, addresses);
 
@@ -16989,6 +17727,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<long> mask, uint* address, Vector<ulong> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -17020,6 +17760,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<uint> mask, uint* address, Vector<int> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -17051,6 +17793,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<uint> mask, Vector<uint> addresses) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, addresses);
 
@@ -17082,6 +17826,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<uint> mask, uint* address, Vector<uint> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -17113,6 +17859,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<ulong> mask, uint* address, Vector<long> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -17144,6 +17892,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<ulong> mask, Vector<ulong> addresses) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, addresses);
 
@@ -17175,6 +17925,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorUInt32ZeroExtendFirstFaulting(Vector<ulong> mask, uint* address, Vector<ulong> indices) => GatherVectorUInt32ZeroExtendFirstFaulting(mask, address, indices);
 
@@ -17209,6 +17961,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorWithByteOffsetFirstFaulting(Vector<int> mask, int* address, Vector<int> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17240,6 +17994,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorWithByteOffsetFirstFaulting(Vector<int> mask, int* address, Vector<uint> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17262,6 +18018,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorWithByteOffsetFirstFaulting(Vector<long> mask, long* address, Vector<long> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17284,6 +18042,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorWithByteOffsetFirstFaulting(Vector<long> mask, long* address, Vector<ulong> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17315,6 +18075,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorWithByteOffsetFirstFaulting(Vector<uint> mask, uint* address, Vector<int> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17346,6 +18108,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorWithByteOffsetFirstFaulting(Vector<uint> mask, uint* address, Vector<uint> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17368,6 +18132,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorWithByteOffsetFirstFaulting(Vector<ulong> mask, ulong* address, Vector<long> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17390,6 +18156,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorWithByteOffsetFirstFaulting(Vector<ulong> mask, ulong* address, Vector<ulong> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17421,6 +18189,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVectorWithByteOffsetFirstFaulting(Vector<float> mask, float* address, Vector<int> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17452,6 +18222,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVectorWithByteOffsetFirstFaulting(Vector<float> mask, float* address, Vector<uint> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17474,6 +18246,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVectorWithByteOffsetFirstFaulting(Vector<double> mask, double* address, Vector<long> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17496,6 +18270,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVectorWithByteOffsetFirstFaulting(Vector<double> mask, double* address, Vector<ulong> offsets) => GatherVectorWithByteOffsetFirstFaulting(mask, address, offsets);
 
@@ -17534,6 +18310,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorWithByteOffsets(Vector<int> mask, int* address, Vector<int> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17569,6 +18347,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> GatherVectorWithByteOffsets(Vector<int> mask, int* address, Vector<uint> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17597,6 +18377,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorWithByteOffsets(Vector<long> mask, long* address, Vector<long> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17625,6 +18407,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> GatherVectorWithByteOffsets(Vector<long> mask, long* address, Vector<ulong> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17660,6 +18444,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorWithByteOffsets(Vector<uint> mask, uint* address, Vector<int> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17695,6 +18481,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> GatherVectorWithByteOffsets(Vector<uint> mask, uint* address, Vector<uint> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17723,6 +18511,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorWithByteOffsets(Vector<ulong> mask, ulong* address, Vector<long> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17751,6 +18541,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> GatherVectorWithByteOffsets(Vector<ulong> mask, ulong* address, Vector<ulong> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17786,6 +18578,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVectorWithByteOffsets(Vector<float> mask, float* address, Vector<int> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17821,6 +18615,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> GatherVectorWithByteOffsets(Vector<float> mask, float* address, Vector<uint> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17849,6 +18645,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVectorWithByteOffsets(Vector<double> mask, double* address, Vector<long> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17877,6 +18675,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> GatherVectorWithByteOffsets(Vector<double> mask, double* address, Vector<ulong> offsets) => GatherVectorWithByteOffsets(mask, address, offsets);
 
@@ -17889,16 +18689,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<sbyte> mask, Vector<sbyte> from) => GetActiveElementCount(mask, from);
 
@@ -17908,16 +18708,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<short> mask, Vector<short> from) => GetActiveElementCount(mask, from);
 
@@ -17927,16 +18727,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<int> mask, Vector<int> from) => GetActiveElementCount(mask, from);
 
@@ -17946,16 +18746,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<long> mask, Vector<long> from) => GetActiveElementCount(mask, from);
 
@@ -17965,16 +18765,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<byte> mask, Vector<byte> from) => GetActiveElementCount(mask, from);
 
@@ -17984,16 +18784,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<ushort> mask, Vector<ushort> from) => GetActiveElementCount(mask, from);
 
@@ -18003,16 +18803,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<uint> mask, Vector<uint> from) => GetActiveElementCount(mask, from);
 
@@ -18022,16 +18822,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<ulong> mask, Vector<ulong> from) => GetActiveElementCount(mask, from);
 
@@ -18041,16 +18841,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<float> mask, Vector<float> from) => GetActiveElementCount(mask, from);
 
@@ -18060,16 +18860,16 @@ namespace System.Runtime.Intrinsics.Arm
         ///
         /// codegenarm64test:
         ///    IF_SVE_DK_3A  CNTP <Xd>, <Pg>, <Pn>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_8BYTE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_cntp, EA_SCALABLE, REG_R29, REG_P0, REG_P15, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_DL_2A  CNTP <Xd>, <PNn>.<T>, <vl>
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
-        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_8BYTE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R0, REG_P0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R1, REG_P1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R2, REG_P2, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R3, REG_P3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R4, REG_P4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R5, REG_P5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_VL_4X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R6, REG_P6, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_2X);
+        ///        theEmitter->emitIns_R_R(INS_sve_cntp, EA_SCALABLE, REG_R7, REG_P7, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_VL_4X);
         /// </summary>
         public static unsafe ulong GetActiveElementCount(Vector<double> mask, Vector<double> from) => GetActiveElementCount(mask, from);
 
@@ -18643,6 +19443,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> LoadVector(Vector<sbyte> mask, sbyte* address) => LoadVector(mask, address);
 
@@ -18679,6 +19481,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVector(Vector<short> mask, short* address) => LoadVector(mask, address);
 
@@ -18715,6 +19519,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVector(Vector<int> mask, int* address) => LoadVector(mask, address);
 
@@ -18744,6 +19550,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVector(Vector<long> mask, long* address) => LoadVector(mask, address);
 
@@ -18774,6 +19582,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> LoadVector(Vector<byte> mask, byte* address) => LoadVector(mask, address);
 
@@ -18810,6 +19620,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVector(Vector<ushort> mask, ushort* address) => LoadVector(mask, address);
 
@@ -18846,6 +19658,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVector(Vector<uint> mask, uint* address) => LoadVector(mask, address);
 
@@ -18875,6 +19689,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVector(Vector<ulong> mask, ulong* address) => LoadVector(mask, address);
 
@@ -18911,6 +19727,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> LoadVector(Vector<float> mask, float* address) => LoadVector(mask, address);
 
@@ -18940,6 +19758,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1d, EA_SCALABLE, REG_V0, REG_P1, REG_R3, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1d, EA_SCALABLE, REG_V1, REG_P2, REG_V3, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> LoadVector(Vector<double> mask, double* address) => LoadVector(mask, address);
 
@@ -18957,6 +19777,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqb, EA_SCALABLE, REG_V6, REG_P7, REG_R8, 64, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IP_4A  LD1RQB {<Zt>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqb, EA_SCALABLE, REG_V3, REG_P1, REG_R4, REG_R2, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> LoadVector128AndReplicateToVector(Vector<sbyte> mask, sbyte* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -18971,6 +19793,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqh, EA_SCALABLE, REG_V4, REG_P5, REG_R6, 112, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IP_4A  LD1RQH {<Zt>.H }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #1]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqh, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_R4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVector128AndReplicateToVector(Vector<short> mask, short* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -18985,6 +19809,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqw, EA_SCALABLE, REG_V31, REG_P2, REG_R1, -16, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IP_4A  LD1RQW {<Zt>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #2]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqw, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R3, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVector128AndReplicateToVector(Vector<int> mask, int* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -18999,6 +19825,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqd, EA_SCALABLE, REG_V9, REG_P0, REG_R1, -128, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IP_4A  LD1RQD {<Zt>.D }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #3]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqd, EA_SCALABLE, REG_V2, REG_P3, REG_R1, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVector128AndReplicateToVector(Vector<long> mask, long* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -19013,6 +19841,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqb, EA_SCALABLE, REG_V6, REG_P7, REG_R8, 64, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IP_4A  LD1RQB {<Zt>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqb, EA_SCALABLE, REG_V3, REG_P1, REG_R4, REG_R2, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> LoadVector128AndReplicateToVector(Vector<byte> mask, byte* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -19027,6 +19857,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqh, EA_SCALABLE, REG_V4, REG_P5, REG_R6, 112, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IP_4A  LD1RQH {<Zt>.H }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #1]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqh, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_R4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVector128AndReplicateToVector(Vector<ushort> mask, ushort* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -19041,6 +19873,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqw, EA_SCALABLE, REG_V31, REG_P2, REG_R1, -16, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IP_4A  LD1RQW {<Zt>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #2]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqw, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R3, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVector128AndReplicateToVector(Vector<uint> mask, uint* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -19055,6 +19889,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqd, EA_SCALABLE, REG_V9, REG_P0, REG_R1, -128, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IP_4A  LD1RQD {<Zt>.D }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #3]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqd, EA_SCALABLE, REG_V2, REG_P3, REG_R1, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVector128AndReplicateToVector(Vector<ulong> mask, ulong* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -19069,6 +19905,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqw, EA_SCALABLE, REG_V31, REG_P2, REG_R1, -16, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IP_4A  LD1RQW {<Zt>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #2]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqw, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R3, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> LoadVector128AndReplicateToVector(Vector<float> mask, float* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -19083,6 +19921,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1rqd, EA_SCALABLE, REG_V9, REG_P0, REG_R1, -128, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IP_4A  LD1RQD {<Zt>.D }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #3]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1rqd, EA_SCALABLE, REG_V2, REG_P3, REG_R1, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> LoadVector128AndReplicateToVector(Vector<double> mask, double* address) => LoadVector128AndReplicateToVector(mask, address);
 
@@ -19101,6 +19941,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorByteNonFaultingZeroExtendToInt16(byte* address) => LoadVectorByteNonFaultingZeroExtendToInt16(address);
 
@@ -19119,6 +19961,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorByteNonFaultingZeroExtendToInt32(byte* address) => LoadVectorByteNonFaultingZeroExtendToInt32(address);
 
@@ -19137,6 +19981,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorByteNonFaultingZeroExtendToInt64(byte* address) => LoadVectorByteNonFaultingZeroExtendToInt64(address);
 
@@ -19155,6 +20001,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorByteNonFaultingZeroExtendToUInt16(byte* address) => LoadVectorByteNonFaultingZeroExtendToUInt16(address);
 
@@ -19173,6 +20021,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorByteNonFaultingZeroExtendToUInt32(byte* address) => LoadVectorByteNonFaultingZeroExtendToUInt32(address);
 
@@ -19191,6 +20041,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorByteNonFaultingZeroExtendToUInt64(byte* address) => LoadVectorByteNonFaultingZeroExtendToUInt64(address);
 
@@ -19219,6 +20071,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorByteZeroExtendFirstFaulting(Vector<short> mask, byte* address) => LoadVectorByteZeroExtendFirstFaulting(mask, address);
 
@@ -19244,6 +20098,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorByteZeroExtendFirstFaulting(Vector<int> mask, byte* address) => LoadVectorByteZeroExtendFirstFaulting(mask, address);
 
@@ -19269,6 +20125,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorByteZeroExtendFirstFaulting(Vector<long> mask, byte* address) => LoadVectorByteZeroExtendFirstFaulting(mask, address);
 
@@ -19294,6 +20152,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorByteZeroExtendFirstFaulting(Vector<ushort> mask, byte* address) => LoadVectorByteZeroExtendFirstFaulting(mask, address);
 
@@ -19319,6 +20179,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorByteZeroExtendFirstFaulting(Vector<uint> mask, byte* address) => LoadVectorByteZeroExtendFirstFaulting(mask, address);
 
@@ -19344,6 +20206,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorByteZeroExtendFirstFaulting(Vector<ulong> mask, byte* address) => LoadVectorByteZeroExtendFirstFaulting(mask, address);
 
@@ -19377,6 +20241,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorByteZeroExtendToInt16(Vector<short> mask, byte* address) => LoadVectorByteZeroExtendToInt16(mask, address);
 
@@ -19410,6 +20276,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorByteZeroExtendToInt32(Vector<int> mask, byte* address) => LoadVectorByteZeroExtendToInt32(mask, address);
 
@@ -19443,6 +20311,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorByteZeroExtendToInt64(Vector<long> mask, byte* address) => LoadVectorByteZeroExtendToInt64(mask, address);
 
@@ -19476,6 +20346,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorByteZeroExtendToUInt16(Vector<ushort> mask, byte* address) => LoadVectorByteZeroExtendToUInt16(mask, address);
 
@@ -19509,6 +20381,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorByteZeroExtendToUInt32(Vector<uint> mask, byte* address) => LoadVectorByteZeroExtendToUInt32(mask, address);
 
@@ -19542,6 +20416,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1b, EA_SCALABLE, REG_V0, REG_P0, REG_V1, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorByteZeroExtendToUInt64(Vector<ulong> mask, byte* address) => LoadVectorByteZeroExtendToUInt64(mask, address);
 
@@ -19570,6 +20446,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> LoadVectorFirstFaulting(Vector<sbyte> mask, sbyte* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19603,6 +20481,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorFirstFaulting(Vector<short> mask, short* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19635,6 +20515,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorFirstFaulting(Vector<int> mask, int* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19658,6 +20540,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorFirstFaulting(Vector<long> mask, long* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19683,6 +20567,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1B {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1b, EA_SCALABLE, REG_V4, REG_P3, REG_V1, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> LoadVectorFirstFaulting(Vector<byte> mask, byte* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19716,6 +20602,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorFirstFaulting(Vector<ushort> mask, ushort* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19748,6 +20636,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorFirstFaulting(Vector<uint> mask, uint* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19771,6 +20661,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorFirstFaulting(Vector<ulong> mask, ulong* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19803,6 +20695,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> LoadVectorFirstFaulting(Vector<float> mask, float* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19826,6 +20720,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1d, EA_SCALABLE, REG_V2, REG_P6, REG_R5, REG_V4, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1d, EA_SCALABLE, REG_V7, REG_P3, REG_V1, 248, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> LoadVectorFirstFaulting(Vector<double> mask, double* address) => LoadVectorFirstFaulting(mask, address);
 
@@ -19842,6 +20738,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sh, EA_SCALABLE, REG_V0, REG_P1, REG_R5, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorInt16NonFaultingSignExtendToInt32(short* address) => LoadVectorInt16NonFaultingSignExtendToInt32(address);
 
@@ -19858,6 +20756,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sh, EA_SCALABLE, REG_V0, REG_P1, REG_R5, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorInt16NonFaultingSignExtendToInt64(short* address) => LoadVectorInt16NonFaultingSignExtendToInt64(address);
 
@@ -19874,6 +20774,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sh, EA_SCALABLE, REG_V0, REG_P1, REG_R5, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorInt16NonFaultingSignExtendToUInt32(short* address) => LoadVectorInt16NonFaultingSignExtendToUInt32(address);
 
@@ -19890,6 +20792,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sh, EA_SCALABLE, REG_V0, REG_P1, REG_R5, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorInt16NonFaultingSignExtendToUInt64(short* address) => LoadVectorInt16NonFaultingSignExtendToUInt64(address);
 
@@ -19924,6 +20828,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorInt16SignExtendFirstFaulting(Vector<int> mask, short* address) => LoadVectorInt16SignExtendFirstFaulting(mask, address);
 
@@ -19955,6 +20861,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorInt16SignExtendFirstFaulting(Vector<long> mask, short* address) => LoadVectorInt16SignExtendFirstFaulting(mask, address);
 
@@ -19986,6 +20894,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorInt16SignExtendFirstFaulting(Vector<uint> mask, short* address) => LoadVectorInt16SignExtendFirstFaulting(mask, address);
 
@@ -20017,6 +20927,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sh, EA_SCALABLE, REG_V3, REG_P5, REG_V4, 62, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorInt16SignExtendFirstFaulting(Vector<ulong> mask, short* address) => LoadVectorInt16SignExtendFirstFaulting(mask, address);
 
@@ -20054,6 +20966,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorInt16SignExtendToInt32(Vector<int> mask, short* address) => LoadVectorInt16SignExtendToInt32(mask, address);
 
@@ -20091,6 +21005,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorInt16SignExtendToInt64(Vector<long> mask, short* address) => LoadVectorInt16SignExtendToInt64(mask, address);
 
@@ -20128,6 +21044,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorInt16SignExtendToUInt32(Vector<uint> mask, short* address) => LoadVectorInt16SignExtendToUInt32(mask, address);
 
@@ -20165,6 +21083,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1SH {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sh, EA_SCALABLE, REG_V2, REG_P4, REG_V3, 2, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorInt16SignExtendToUInt64(Vector<ulong> mask, short* address) => LoadVectorInt16SignExtendToUInt64(mask, address);
 
@@ -20181,6 +21101,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sw, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorInt32NonFaultingSignExtendToInt64(int* address) => LoadVectorInt32NonFaultingSignExtendToInt64(address);
 
@@ -20197,6 +21119,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sw, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorInt32NonFaultingSignExtendToUInt64(int* address) => LoadVectorInt32NonFaultingSignExtendToUInt64(address);
 
@@ -20224,6 +21148,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorInt32SignExtendFirstFaulting(Vector<long> mask, int* address) => LoadVectorInt32SignExtendFirstFaulting(mask, address);
 
@@ -20248,6 +21174,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldff1sw, EA_SCALABLE, REG_V3, REG_P4, REG_R6, REG_V5, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LDFF1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sw, EA_SCALABLE, REG_V2, REG_P0, REG_V4, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorInt32SignExtendFirstFaulting(Vector<ulong> mask, int* address) => LoadVectorInt32SignExtendFirstFaulting(mask, address);
 
@@ -20276,6 +21204,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorInt32SignExtendToInt64(Vector<long> mask, int* address) => LoadVectorInt32SignExtendToInt64(mask, address);
 
@@ -20304,6 +21234,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld1sw, EA_SCALABLE, REG_V1, REG_P2, REG_R3, REG_V0, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IV_3A  LD1SW {<Zt>.D }, <Pg>/Z, [<Zn>.D{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sw, EA_SCALABLE, REG_V6, REG_P5, REG_V4, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorInt32SignExtendToUInt64(Vector<ulong> mask, int* address) => LoadVectorInt32SignExtendToUInt64(mask, address);
 
@@ -20322,6 +21254,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> LoadVectorNonFaulting(sbyte* address) => LoadVectorNonFaulting(address);
 
@@ -20336,6 +21270,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1h, EA_SCALABLE, REG_V1, REG_P3, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorNonFaulting(short* address) => LoadVectorNonFaulting(address);
 
@@ -20349,6 +21285,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1w, EA_SCALABLE, REG_V0, REG_P2, REG_R4, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorNonFaulting(int* address) => LoadVectorNonFaulting(address);
 
@@ -20362,6 +21300,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1d, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorNonFaulting(long* address) => LoadVectorNonFaulting(address);
 
@@ -20377,6 +21317,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1b, EA_SCALABLE, REG_V2, REG_P5, REG_R3, 1, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> LoadVectorNonFaulting(byte* address) => LoadVectorNonFaulting(address);
 
@@ -20391,6 +21333,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1h, EA_SCALABLE, REG_V1, REG_P3, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorNonFaulting(ushort* address) => LoadVectorNonFaulting(address);
 
@@ -20404,6 +21348,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1w, EA_SCALABLE, REG_V0, REG_P2, REG_R4, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorNonFaulting(uint* address) => LoadVectorNonFaulting(address);
 
@@ -20417,6 +21363,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1d, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorNonFaulting(ulong* address) => LoadVectorNonFaulting(address);
 
@@ -20430,6 +21378,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1w, EA_SCALABLE, REG_V0, REG_P2, REG_R4, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> LoadVectorNonFaulting(float* address) => LoadVectorNonFaulting(address);
 
@@ -20443,6 +21393,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1d, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> LoadVectorNonFaulting(double* address) => LoadVectorNonFaulting(address);
 
@@ -20463,6 +21415,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1b, EA_SCALABLE, REG_V0, REG_P2, REG_V4, REG_R3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IN_4A  LDNT1B {<Zt>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1b, EA_SCALABLE, REG_V4, REG_P2, REG_R1, REG_R3, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> LoadVectorNonTemporal(Vector<sbyte> mask, sbyte* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20480,6 +21434,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1h, EA_SCALABLE, REG_V1, REG_P4, REG_V3, REG_R2, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IN_4A  LDNT1H {<Zt>.H }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #1]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1h, EA_SCALABLE, REG_V0, REG_P3, REG_R4, REG_R5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorNonTemporal(Vector<short> mask, short* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20497,6 +21453,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1w, EA_SCALABLE, REG_V4, REG_P1, REG_V2, REG_ZR, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IN_4A  LDNT1W {<Zt>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #2]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1w, EA_SCALABLE, REG_V2, REG_P0, REG_R3, REG_R1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorNonTemporal(Vector<int> mask, int* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20512,6 +21470,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1d, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
         ///    IF_SVE_IX_4A  LDNT1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, <Xm>}]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1d, EA_SCALABLE, REG_V4, REG_P2, REG_V1, REG_R3, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorNonTemporal(Vector<long> mask, long* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20529,6 +21489,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1b, EA_SCALABLE, REG_V0, REG_P2, REG_V4, REG_R3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IN_4A  LDNT1B {<Zt>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1b, EA_SCALABLE, REG_V4, REG_P2, REG_R1, REG_R3, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> LoadVectorNonTemporal(Vector<byte> mask, byte* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20546,6 +21508,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1h, EA_SCALABLE, REG_V1, REG_P4, REG_V3, REG_R2, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IN_4A  LDNT1H {<Zt>.H }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #1]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1h, EA_SCALABLE, REG_V0, REG_P3, REG_R4, REG_R5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorNonTemporal(Vector<ushort> mask, ushort* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20563,6 +21527,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1w, EA_SCALABLE, REG_V4, REG_P1, REG_V2, REG_ZR, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IN_4A  LDNT1W {<Zt>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #2]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1w, EA_SCALABLE, REG_V2, REG_P0, REG_R3, REG_R1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorNonTemporal(Vector<uint> mask, uint* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20578,6 +21544,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1d, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
         ///    IF_SVE_IX_4A  LDNT1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, <Xm>}]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1d, EA_SCALABLE, REG_V4, REG_P2, REG_V1, REG_R3, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorNonTemporal(Vector<ulong> mask, ulong* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20595,6 +21563,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1w, EA_SCALABLE, REG_V4, REG_P1, REG_V2, REG_ZR, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IN_4A  LDNT1W {<Zt>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL #2]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1w, EA_SCALABLE, REG_V2, REG_P0, REG_R3, REG_R1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<float> LoadVectorNonTemporal(Vector<float> mask, float* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20610,6 +21580,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1d, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
         ///    IF_SVE_IX_4A  LDNT1D {<Zt>.D }, <Pg>/Z, [<Zn>.D{, <Xm>}]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ldnt1d, EA_SCALABLE, REG_V4, REG_P2, REG_V1, REG_R3, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<double> LoadVectorNonTemporal(Vector<double> mask, double* address) => LoadVectorNonTemporal(mask, address);
 
@@ -20627,6 +21599,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sb, EA_SCALABLE, REG_V0, REG_P4, REG_R1, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorSByteNonFaultingSignExtendToInt16(sbyte* address) => LoadVectorSByteNonFaultingSignExtendToInt16(address);
 
@@ -20644,6 +21618,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sb, EA_SCALABLE, REG_V0, REG_P4, REG_R1, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorSByteNonFaultingSignExtendToInt32(sbyte* address) => LoadVectorSByteNonFaultingSignExtendToInt32(address);
 
@@ -20661,6 +21637,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sb, EA_SCALABLE, REG_V0, REG_P4, REG_R1, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorSByteNonFaultingSignExtendToInt64(sbyte* address) => LoadVectorSByteNonFaultingSignExtendToInt64(address);
 
@@ -20678,6 +21656,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sb, EA_SCALABLE, REG_V0, REG_P4, REG_R1, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorSByteNonFaultingSignExtendToUInt16(sbyte* address) => LoadVectorSByteNonFaultingSignExtendToUInt16(address);
 
@@ -20695,6 +21675,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sb, EA_SCALABLE, REG_V0, REG_P4, REG_R1, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorSByteNonFaultingSignExtendToUInt32(sbyte* address) => LoadVectorSByteNonFaultingSignExtendToUInt32(address);
 
@@ -20712,6 +21694,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1sb, EA_SCALABLE, REG_V0, REG_P4, REG_R1, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorSByteNonFaultingSignExtendToUInt64(sbyte* address) => LoadVectorSByteNonFaultingSignExtendToUInt64(address);
 
@@ -20739,6 +21723,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorSByteSignExtendFirstFaulting(Vector<short> mask, sbyte* address) => LoadVectorSByteSignExtendFirstFaulting(mask, address);
 
@@ -20763,6 +21749,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorSByteSignExtendFirstFaulting(Vector<int> mask, sbyte* address) => LoadVectorSByteSignExtendFirstFaulting(mask, address);
 
@@ -20787,6 +21775,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorSByteSignExtendFirstFaulting(Vector<long> mask, sbyte* address) => LoadVectorSByteSignExtendFirstFaulting(mask, address);
 
@@ -20811,6 +21801,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorSByteSignExtendFirstFaulting(Vector<ushort> mask, sbyte* address) => LoadVectorSByteSignExtendFirstFaulting(mask, address);
 
@@ -20835,6 +21827,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorSByteSignExtendFirstFaulting(Vector<uint> mask, sbyte* address) => LoadVectorSByteSignExtendFirstFaulting(mask, address);
 
@@ -20859,6 +21853,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LDFF1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1sb, EA_SCALABLE, REG_V2, REG_P6, REG_V0, 31, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorSByteSignExtendFirstFaulting(Vector<ulong> mask, sbyte* address) => LoadVectorSByteSignExtendFirstFaulting(mask, address);
 
@@ -20890,6 +21886,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> LoadVectorSByteSignExtendToInt16(Vector<short> mask, sbyte* address) => LoadVectorSByteSignExtendToInt16(mask, address);
 
@@ -20921,6 +21919,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorSByteSignExtendToInt32(Vector<int> mask, sbyte* address) => LoadVectorSByteSignExtendToInt32(mask, address);
 
@@ -20952,6 +21952,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorSByteSignExtendToInt64(Vector<long> mask, sbyte* address) => LoadVectorSByteSignExtendToInt64(mask, address);
 
@@ -20983,6 +21985,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> LoadVectorSByteSignExtendToUInt16(Vector<ushort> mask, sbyte* address) => LoadVectorSByteSignExtendToUInt16(mask, address);
 
@@ -21014,6 +22018,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorSByteSignExtendToUInt32(Vector<uint> mask, sbyte* address) => LoadVectorSByteSignExtendToUInt32(mask, address);
 
@@ -21045,6 +22051,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_B  LD1SB {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1sb, EA_SCALABLE, REG_V2, REG_P7, REG_V3, 5, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorSByteSignExtendToUInt64(Vector<ulong> mask, sbyte* address) => LoadVectorSByteSignExtendToUInt64(mask, address);
 
@@ -21062,6 +22070,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1h, EA_SCALABLE, REG_V1, REG_P3, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorUInt16NonFaultingZeroExtendToInt32(ushort* address) => LoadVectorUInt16NonFaultingZeroExtendToInt32(address);
 
@@ -21079,6 +22089,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1h, EA_SCALABLE, REG_V1, REG_P3, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorUInt16NonFaultingZeroExtendToInt64(ushort* address) => LoadVectorUInt16NonFaultingZeroExtendToInt64(address);
 
@@ -21096,6 +22108,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1h, EA_SCALABLE, REG_V1, REG_P3, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorUInt16NonFaultingZeroExtendToUInt32(ushort* address) => LoadVectorUInt16NonFaultingZeroExtendToUInt32(address);
 
@@ -21113,6 +22127,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1h, EA_SCALABLE, REG_V1, REG_P3, REG_R2, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorUInt16NonFaultingZeroExtendToUInt64(ushort* address) => LoadVectorUInt16NonFaultingZeroExtendToUInt64(address);
 
@@ -21149,6 +22165,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorUInt16ZeroExtendFirstFaulting(Vector<int> mask, ushort* address) => LoadVectorUInt16ZeroExtendFirstFaulting(mask, address);
 
@@ -21182,6 +22200,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorUInt16ZeroExtendFirstFaulting(Vector<long> mask, ushort* address) => LoadVectorUInt16ZeroExtendFirstFaulting(mask, address);
 
@@ -21215,6 +22235,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorUInt16ZeroExtendFirstFaulting(Vector<uint> mask, ushort* address) => LoadVectorUInt16ZeroExtendFirstFaulting(mask, address);
 
@@ -21248,6 +22270,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1h, EA_SCALABLE, REG_V4, REG_P7, REG_V3, 6, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorUInt16ZeroExtendFirstFaulting(Vector<ulong> mask, ushort* address) => LoadVectorUInt16ZeroExtendFirstFaulting(mask, address);
 
@@ -21287,6 +22311,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> LoadVectorUInt16ZeroExtendToInt32(Vector<int> mask, ushort* address) => LoadVectorUInt16ZeroExtendToInt32(mask, address);
 
@@ -21326,6 +22352,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorUInt16ZeroExtendToInt64(Vector<long> mask, ushort* address) => LoadVectorUInt16ZeroExtendToInt64(mask, address);
 
@@ -21365,6 +22393,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> LoadVectorUInt16ZeroExtendToUInt32(Vector<uint> mask, ushort* address) => LoadVectorUInt16ZeroExtendToUInt32(mask, address);
 
@@ -21404,6 +22434,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1H {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1h, EA_SCALABLE, REG_V1, REG_P0, REG_V2, 0, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorUInt16ZeroExtendToUInt64(Vector<ulong> mask, ushort* address) => LoadVectorUInt16ZeroExtendToUInt64(mask, address);
 
@@ -21420,6 +22452,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1w, EA_SCALABLE, REG_V0, REG_P2, REG_R4, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorUInt32NonFaultingZeroExtendToInt64(uint* address) => LoadVectorUInt32NonFaultingZeroExtendToInt64(address);
 
@@ -21436,6 +22470,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldnf1w, EA_SCALABLE, REG_V0, REG_P2, REG_R4, 5, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorUInt32NonFaultingZeroExtendToUInt64(uint* address) => LoadVectorUInt32NonFaultingZeroExtendToUInt64(address);
 
@@ -21471,6 +22507,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorUInt32ZeroExtendFirstFaulting(Vector<long> mask, uint* address) => LoadVectorUInt32ZeroExtendFirstFaulting(mask, address);
 
@@ -21503,6 +22541,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LDFF1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ldff1w, EA_SCALABLE, REG_V2, REG_P1, REG_V3, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorUInt32ZeroExtendFirstFaulting(Vector<ulong> mask, uint* address) => LoadVectorUInt32ZeroExtendFirstFaulting(mask, address);
 
@@ -21542,6 +22582,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> LoadVectorUInt32ZeroExtendToInt64(Vector<long> mask, uint* address) => LoadVectorUInt32ZeroExtendToInt64(mask, address);
 
@@ -21581,6 +22623,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_HX_3A_E  LD1W {<Zt>.S }, <Pg>/Z, [<Zn>.S{, #<imm>}]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld1w, EA_SCALABLE, REG_V1, REG_P2, REG_V9, 124, INS_OPTS_SCALABLE_D);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> LoadVectorUInt32ZeroExtendToUInt64(Vector<ulong> mask, uint* address) => LoadVectorUInt32ZeroExtendToUInt64(mask, address);
 
@@ -21597,6 +22641,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2b, EA_SCALABLE, REG_V0, REG_P1, REG_R2, -16, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IT_4A  LD2B {<Zt1>.B, <Zt2>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2b, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R3, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<sbyte>, Vector<sbyte>) LoadVectorx2(Vector<sbyte> mask, sbyte* address) => LoadVectorx2(mask, address);
 
@@ -21610,6 +22656,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2h, EA_SCALABLE, REG_V6, REG_P5, REG_R4, 8, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IT_4A  LD2H {<Zt1>.H, <Zt2>.H }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2h, EA_SCALABLE, REG_V8, REG_P5, REG_R9, REG_R10, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<short>, Vector<short>) LoadVectorx2(Vector<short> mask, short* address) => LoadVectorx2(mask, address);
 
@@ -21623,6 +22671,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2w, EA_SCALABLE, REG_V0, REG_P0, REG_R1, 2, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD2W {<Zt1>.S, <Zt2>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2w, EA_SCALABLE, REG_V6, REG_P5, REG_R4, REG_R7, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<int>, Vector<int>) LoadVectorx2(Vector<int> mask, int* address) => LoadVectorx2(mask, address);
 
@@ -21636,6 +22686,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2d, EA_SCALABLE, REG_V4, REG_P5, REG_R7, 14, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD2D {<Zt1>.D, <Zt2>.D }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2d, EA_SCALABLE, REG_V7, REG_P6, REG_R5, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<long>, Vector<long>) LoadVectorx2(Vector<long> mask, long* address) => LoadVectorx2(mask, address);
 
@@ -21649,6 +22701,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2b, EA_SCALABLE, REG_V0, REG_P1, REG_R2, -16, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IT_4A  LD2B {<Zt1>.B, <Zt2>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2b, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R3, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<byte>, Vector<byte>) LoadVectorx2(Vector<byte> mask, byte* address) => LoadVectorx2(mask, address);
 
@@ -21662,6 +22716,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2h, EA_SCALABLE, REG_V6, REG_P5, REG_R4, 8, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IT_4A  LD2H {<Zt1>.H, <Zt2>.H }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2h, EA_SCALABLE, REG_V8, REG_P5, REG_R9, REG_R10, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<ushort>, Vector<ushort>) LoadVectorx2(Vector<ushort> mask, ushort* address) => LoadVectorx2(mask, address);
 
@@ -21675,6 +22731,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2w, EA_SCALABLE, REG_V0, REG_P0, REG_R1, 2, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD2W {<Zt1>.S, <Zt2>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2w, EA_SCALABLE, REG_V6, REG_P5, REG_R4, REG_R7, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<uint>, Vector<uint>) LoadVectorx2(Vector<uint> mask, uint* address) => LoadVectorx2(mask, address);
 
@@ -21688,6 +22746,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2d, EA_SCALABLE, REG_V4, REG_P5, REG_R7, 14, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD2D {<Zt1>.D, <Zt2>.D }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2d, EA_SCALABLE, REG_V7, REG_P6, REG_R5, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<ulong>, Vector<ulong>) LoadVectorx2(Vector<ulong> mask, ulong* address) => LoadVectorx2(mask, address);
 
@@ -21701,6 +22761,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2w, EA_SCALABLE, REG_V0, REG_P0, REG_R1, 2, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD2W {<Zt1>.S, <Zt2>.S }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2w, EA_SCALABLE, REG_V6, REG_P5, REG_R4, REG_R7, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<float>, Vector<float>) LoadVectorx2(Vector<float> mask, float* address) => LoadVectorx2(mask, address);
 
@@ -21714,6 +22776,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld2d, EA_SCALABLE, REG_V4, REG_P5, REG_R7, 14, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD2D {<Zt1>.D, <Zt2>.D }, <Pg>/Z, [<Xn|SP>, <Xm>, LSL
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld2d, EA_SCALABLE, REG_V7, REG_P6, REG_R5, REG_R4, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<double>, Vector<double>) LoadVectorx2(Vector<double> mask, double* address) => LoadVectorx2(mask, address);
 
@@ -21730,6 +22794,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3b, EA_SCALABLE, REG_V0, REG_P0, REG_R0, 21, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IT_4A  LD3B {<Zt1>.B, <Zt2>.B, <Zt3>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3b, EA_SCALABLE, REG_V1, REG_P0, REG_R3, REG_R2, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<sbyte>, Vector<sbyte>, Vector<sbyte>) LoadVectorx3(Vector<sbyte> mask, sbyte* address) => LoadVectorx3(mask, address);
 
@@ -21743,6 +22809,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3h, EA_SCALABLE, REG_V0, REG_P0, REG_R0, 21, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IT_4A  LD3H {<Zt1>.H, <Zt2>.H, <Zt3>.H }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3h, EA_SCALABLE, REG_V30, REG_P2, REG_R9, REG_R4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<short>, Vector<short>, Vector<short>) LoadVectorx3(Vector<short> mask, short* address) => LoadVectorx3(mask, address);
 
@@ -21756,6 +22824,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3w, EA_SCALABLE, REG_V0, REG_P0, REG_R0, -24, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD3W {<Zt1>.S, <Zt2>.S, <Zt3>.S }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3w, EA_SCALABLE, REG_V1, REG_P3, REG_R2, REG_R4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<int>, Vector<int>, Vector<int>) LoadVectorx3(Vector<int> mask, int* address) => LoadVectorx3(mask, address);
 
@@ -21769,6 +22839,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3d, EA_SCALABLE, REG_V0, REG_P0, REG_R0, -24, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD3D {<Zt1>.D, <Zt2>.D, <Zt3>.D }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3d, EA_SCALABLE, REG_V4, REG_P3, REG_R8, REG_R1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<long>, Vector<long>, Vector<long>) LoadVectorx3(Vector<long> mask, long* address) => LoadVectorx3(mask, address);
 
@@ -21782,6 +22854,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3b, EA_SCALABLE, REG_V0, REG_P0, REG_R0, 21, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IT_4A  LD3B {<Zt1>.B, <Zt2>.B, <Zt3>.B }, <Pg>/Z, [<Xn|SP>, <Xm>]
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3b, EA_SCALABLE, REG_V1, REG_P0, REG_R3, REG_R2, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<byte>, Vector<byte>, Vector<byte>) LoadVectorx3(Vector<byte> mask, byte* address) => LoadVectorx3(mask, address);
 
@@ -21795,6 +22869,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3h, EA_SCALABLE, REG_V0, REG_P0, REG_R0, 21, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IT_4A  LD3H {<Zt1>.H, <Zt2>.H, <Zt3>.H }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3h, EA_SCALABLE, REG_V30, REG_P2, REG_R9, REG_R4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<ushort>, Vector<ushort>, Vector<ushort>) LoadVectorx3(Vector<ushort> mask, ushort* address) => LoadVectorx3(mask, address);
 
@@ -21808,6 +22884,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3w, EA_SCALABLE, REG_V0, REG_P0, REG_R0, -24, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD3W {<Zt1>.S, <Zt2>.S, <Zt3>.S }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3w, EA_SCALABLE, REG_V1, REG_P3, REG_R2, REG_R4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<uint>, Vector<uint>, Vector<uint>) LoadVectorx3(Vector<uint> mask, uint* address) => LoadVectorx3(mask, address);
 
@@ -21821,6 +22899,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3d, EA_SCALABLE, REG_V0, REG_P0, REG_R0, -24, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD3D {<Zt1>.D, <Zt2>.D, <Zt3>.D }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3d, EA_SCALABLE, REG_V4, REG_P3, REG_R8, REG_R1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>) LoadVectorx3(Vector<ulong> mask, ulong* address) => LoadVectorx3(mask, address);
 
@@ -21834,6 +22914,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3w, EA_SCALABLE, REG_V0, REG_P0, REG_R0, -24, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD3W {<Zt1>.S, <Zt2>.S, <Zt3>.S }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3w, EA_SCALABLE, REG_V1, REG_P3, REG_R2, REG_R4, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<float>, Vector<float>, Vector<float>) LoadVectorx3(Vector<float> mask, float* address) => LoadVectorx3(mask, address);
 
@@ -21847,6 +22929,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld3d, EA_SCALABLE, REG_V0, REG_P0, REG_R0, -24, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD3D {<Zt1>.D, <Zt2>.D, <Zt3>.D }, <Pg>/Z, [<Xn|SP>,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld3d, EA_SCALABLE, REG_V4, REG_P3, REG_R8, REG_R1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<double>, Vector<double>, Vector<double>) LoadVectorx3(Vector<double> mask, double* address) => LoadVectorx3(mask, address);
 
@@ -21863,6 +22947,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4b, EA_SCALABLE, REG_V31, REG_P2, REG_R1, -32, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IT_4A  LD4B {<Zt1>.B, <Zt2>.B, <Zt3>.B, <Zt4>.B }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4b, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R3, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<sbyte>, Vector<sbyte>, Vector<sbyte>, Vector<sbyte>) LoadVectorx4(Vector<sbyte> mask, sbyte* address) => LoadVectorx4(mask, address);
 
@@ -21876,6 +22962,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4h, EA_SCALABLE, REG_V5, REG_P4, REG_R3, -32, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IT_4A  LD4H {<Zt1>.H, <Zt2>.H, <Zt3>.H, <Zt4>.H }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4h, EA_SCALABLE, REG_V13, REG_P6, REG_R5, REG_R4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<short>, Vector<short>, Vector<short>, Vector<short>) LoadVectorx4(Vector<short> mask, short* address) => LoadVectorx4(mask, address);
 
@@ -21889,6 +22977,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4w, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 28, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD4W {<Zt1>.S, <Zt2>.S, <Zt3>.S, <Zt4>.S }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4w, EA_SCALABLE, REG_V10, REG_P3, REG_R2, REG_R5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<int>, Vector<int>, Vector<int>, Vector<int>) LoadVectorx4(Vector<int> mask, int* address) => LoadVectorx4(mask, address);
 
@@ -21902,6 +22992,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4d, EA_SCALABLE, REG_V8, REG_P0, REG_R0, 28, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD4D {<Zt1>.D, <Zt2>.D, <Zt3>.D, <Zt4>.D }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4d, EA_SCALABLE, REG_V0, REG_P3, REG_R2, REG_R1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<long>, Vector<long>, Vector<long>, Vector<long>) LoadVectorx4(Vector<long> mask, long* address) => LoadVectorx4(mask, address);
 
@@ -21915,6 +23007,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4b, EA_SCALABLE, REG_V31, REG_P2, REG_R1, -32, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_IT_4A  LD4B {<Zt1>.B, <Zt2>.B, <Zt3>.B, <Zt4>.B }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4b, EA_SCALABLE, REG_V0, REG_P1, REG_R2, REG_R3, INS_OPTS_SCALABLE_B);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<byte>, Vector<byte>, Vector<byte>, Vector<byte>) LoadVectorx4(Vector<byte> mask, byte* address) => LoadVectorx4(mask, address);
 
@@ -21928,6 +23022,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4h, EA_SCALABLE, REG_V5, REG_P4, REG_R3, -32, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_IT_4A  LD4H {<Zt1>.H, <Zt2>.H, <Zt3>.H, <Zt4>.H }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4h, EA_SCALABLE, REG_V13, REG_P6, REG_R5, REG_R4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<ushort>, Vector<ushort>, Vector<ushort>, Vector<ushort>) LoadVectorx4(Vector<ushort> mask, ushort* address) => LoadVectorx4(mask, address);
 
@@ -21941,6 +23037,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4w, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 28, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD4W {<Zt1>.S, <Zt2>.S, <Zt3>.S, <Zt4>.S }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4w, EA_SCALABLE, REG_V10, REG_P3, REG_R2, REG_R5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<uint>, Vector<uint>, Vector<uint>, Vector<uint>) LoadVectorx4(Vector<uint> mask, uint* address) => LoadVectorx4(mask, address);
 
@@ -21954,6 +23052,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4d, EA_SCALABLE, REG_V8, REG_P0, REG_R0, 28, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD4D {<Zt1>.D, <Zt2>.D, <Zt3>.D, <Zt4>.D }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4d, EA_SCALABLE, REG_V0, REG_P3, REG_R2, REG_R1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>, Vector<ulong>) LoadVectorx4(Vector<ulong> mask, ulong* address) => LoadVectorx4(mask, address);
 
@@ -21967,6 +23067,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4w, EA_SCALABLE, REG_V0, REG_P1, REG_R2, 28, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_IT_4A  LD4W {<Zt1>.S, <Zt2>.S, <Zt3>.S, <Zt4>.S }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4w, EA_SCALABLE, REG_V10, REG_P3, REG_R2, REG_R5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<float>, Vector<float>, Vector<float>, Vector<float>) LoadVectorx4(Vector<float> mask, float* address) => LoadVectorx4(mask, address);
 
@@ -21980,6 +23082,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_ld4d, EA_SCALABLE, REG_V8, REG_P0, REG_R0, 28, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_IT_4A  LD4D {<Zt1>.D, <Zt2>.D, <Zt3>.D, <Zt4>.D }, <Pg>/Z,
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_ld4d, EA_SCALABLE, REG_V0, REG_P3, REG_R2, REG_R1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_LSL_N);
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe (Vector<double>, Vector<double>, Vector<double>, Vector<double>) LoadVectorx4(Vector<double> mask, double* address) => LoadVectorx4(mask, address);
 
@@ -22864,10 +23968,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; MUL Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -22906,10 +24010,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; MUL Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -22948,10 +24052,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; MUL Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -22990,10 +24094,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; MUL Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -23032,10 +24136,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; MUL Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -23074,10 +24178,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; MUL Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -23116,10 +24220,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; MUL Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -23158,10 +24262,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; MUL Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_AE_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  MUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_P1, REG_V3, INS_OPTS_SCALABLE_D);
-        ///    IF_SVE_BD_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  MUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_mul, EA_SCALABLE, REG_V5, REG_V0, REG_V31, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_FD_3A  MUL <Zd>.H, <Zn>.H, <Zm>.H[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V0, REG_V1, REG_V1, 1, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_mul, EA_SCALABLE, REG_V2, REG_V3, REG_V3, 3, INS_OPTS_SCALABLE_H);
@@ -23203,8 +24307,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FMUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V2, REG_P6, REG_V1, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_GX_3A  FMUL <Zda>.S, <Zn>.S, <Zm>.S[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V0, REG_V2, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V4, REG_V6, REG_V3, 1, INS_OPTS_SCALABLE_S);
@@ -23239,8 +24343,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FMUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V2, REG_P6, REG_V1, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_GX_3A  FMUL <Zda>.S, <Zn>.S, <Zm>.S[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V0, REG_V2, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V4, REG_V6, REG_V3, 1, INS_OPTS_SCALABLE_S);
@@ -23528,14 +24632,14 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_GV_3A  FCMLA <Zda>.S, <Zn>.S, <Zm>.S[<imm>], <const>
         ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0, 0, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, 90, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, 180, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, 270, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, 2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, 3, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_GT_4A  FCMLA <Zda>.<T>, <Pg>/M, <Zn>.<T>, <Zm>.<T>, <const>
         ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P1, REG_V3, REG_V4, 0, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_P2, REG_V1, REG_V5, 90, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 180, INS_OPTS_SCALABLE_D);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 270, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_P2, REG_V1, REG_V5, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 2, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -23554,14 +24658,14 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_GV_3A  FCMLA <Zda>.S, <Zn>.S, <Zm>.S[<imm>], <const>
         ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0, 0, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, 90, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, 180, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, 270, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, 2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, 3, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_GT_4A  FCMLA <Zda>.<T>, <Pg>/M, <Zn>.<T>, <Zm>.<T>, <const>
         ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P1, REG_V3, REG_V4, 0, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_P2, REG_V1, REG_V5, 90, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 180, INS_OPTS_SCALABLE_D);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 270, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_P2, REG_V1, REG_V5, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 2, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 3, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -23578,14 +24682,14 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_GV_3A  FCMLA <Zda>.S, <Zn>.S, <Zm>.S[<imm>], <const>
         ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_V1, REG_V0, 0, 0, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, 90, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, 180, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, 270, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_V3, REG_V5, 1, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V4, REG_V5, REG_V10, 0, 2, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_I_I(INS_sve_fcmla, EA_SCALABLE, REG_V6, REG_V7, REG_V15, 1, 3, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_GT_4A  FCMLA <Zda>.<T>, <Pg>/M, <Zn>.<T>, <Zm>.<T>, <const>
         ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P1, REG_V3, REG_V4, 0, INS_OPTS_SCALABLE_H);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_P2, REG_V1, REG_V5, 90, INS_OPTS_SCALABLE_S);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 180, INS_OPTS_SCALABLE_D);
-        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 270, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V0, REG_P2, REG_V1, REG_V5, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 2, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_R_R_I(INS_sve_fcmla, EA_SCALABLE, REG_V2, REG_P3, REG_V0, REG_V6, 3, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<float> MultiplyAddRotateComplexBySelectedScalar(Vector<float> addend, Vector<float> left, Vector<float> right, [ConstantExpected] byte rightIndex, [ConstantExpected] byte rotation) => MultiplyAddRotateComplexBySelectedScalar(addend, left, right, rightIndex, rotation);
 
@@ -23599,8 +24703,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FMUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V2, REG_P6, REG_V1, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_GX_3A  FMUL <Zda>.S, <Zn>.S, <Zm>.S[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V0, REG_V2, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V4, REG_V6, REG_V3, 1, INS_OPTS_SCALABLE_S);
@@ -23624,8 +24728,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FMUL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V2, REG_P6, REG_V1, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fmul, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_GX_3A  FMUL <Zda>.S, <Zn>.S, <Zm>.S[<imm>]
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V0, REG_V2, REG_V1, 0, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_R_I(INS_sve_fmul, EA_SCALABLE, REG_V4, REG_V6, REG_V3, 1, INS_OPTS_SCALABLE_S);
@@ -24256,7 +25360,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24284,7 +25388,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24312,7 +25416,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24340,7 +25444,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24368,7 +25472,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24396,7 +25500,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24424,7 +25528,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24452,7 +25556,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_BS_1A  ORR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_orr, EA_SCALABLE, REG_V6, 0x00FFFFF000000000, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AU_3A  ORR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_orr, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -24579,6 +25683,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<sbyte> OrNot(Vector<sbyte> left, Vector<sbyte> right) => OrNot(left, right);
 
@@ -24593,6 +25699,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<short> OrNot(Vector<short> left, Vector<short> right) => OrNot(left, right);
 
@@ -24607,6 +25715,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<int> OrNot(Vector<int> left, Vector<int> right) => OrNot(left, right);
 
@@ -24621,6 +25731,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<long> OrNot(Vector<long> left, Vector<long> right) => OrNot(left, right);
 
@@ -24635,6 +25747,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<byte> OrNot(Vector<byte> left, Vector<byte> right) => OrNot(left, right);
 
@@ -24649,6 +25763,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ushort> OrNot(Vector<ushort> left, Vector<ushort> right) => OrNot(left, right);
 
@@ -24663,6 +25779,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<uint> OrNot(Vector<uint> left, Vector<uint> right) => OrNot(left, right);
 
@@ -24677,6 +25795,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_nor, EA_SCALABLE, REG_P5, REG_P13, REG_P10, REG_P7, INS_OPTS_SCALABLE_B); /* NOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///
         /// Embedded arg1 mask predicate
+        ///
+        /// is Zeroing predicate
         /// </summary>
         public static unsafe Vector<ulong> OrNot(Vector<ulong> left, Vector<ulong> right) => OrNot(left, right);
 
@@ -25074,8 +26194,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FRSQRTS Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_HK_3A  FRSQRTS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_frsqrts, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FRSQRTS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_frsqrts, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_H);
         /// </summary>
         public static unsafe Vector<float> ReciprocalSqrtStep(Vector<float> left, Vector<float> right) => ReciprocalSqrtStep(left, right);
 
@@ -25084,8 +26204,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FRSQRTS Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_HK_3A  FRSQRTS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_frsqrts, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FRSQRTS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_frsqrts, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_H);
         /// </summary>
         public static unsafe Vector<double> ReciprocalSqrtStep(Vector<double> left, Vector<double> right) => ReciprocalSqrtStep(left, right);
 
@@ -25097,8 +26217,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FRECPS Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_HK_3A  FRECPS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_frecps, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FRECPS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_frecps, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<float> ReciprocalStep(Vector<float> left, Vector<float> right) => ReciprocalStep(left, right);
 
@@ -25107,8 +26227,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FRECPS Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_HK_3A  FRECPS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_frecps, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FRECPS <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_frecps, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<double> ReciprocalStep(Vector<double> left, Vector<double> right) => ReciprocalStep(left, right);
 
@@ -25297,10 +26417,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<sbyte> ReverseElement(Vector<sbyte> value) => ReverseElement(value);
 
@@ -25315,10 +26435,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<short> ReverseElement(Vector<short> value) => ReverseElement(value);
 
@@ -25333,10 +26453,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<int> ReverseElement(Vector<int> value) => ReverseElement(value);
 
@@ -25351,10 +26471,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<long> ReverseElement(Vector<long> value) => ReverseElement(value);
 
@@ -25371,10 +26491,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<byte> ReverseElement(Vector<byte> value) => ReverseElement(value);
 
@@ -25391,10 +26511,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<ushort> ReverseElement(Vector<ushort> value) => ReverseElement(value);
 
@@ -25411,10 +26531,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<uint> ReverseElement(Vector<uint> value) => ReverseElement(value);
 
@@ -25431,10 +26551,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<ulong> ReverseElement(Vector<ulong> value) => ReverseElement(value);
 
@@ -25449,10 +26569,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<float> ReverseElement(Vector<float> value) => ReverseElement(value);
 
@@ -25467,10 +26587,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P3, REG_P7, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_P0, REG_P6, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_CG_2A  REV <Zd>.<T>, <Zn>.<T>
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V3, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V4, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V7, REG_V1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R(INS_sve_rev, EA_SCALABLE, REG_V2, REG_V5, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<double> ReverseElement(Vector<double> value) => ReverseElement(value);
 
@@ -29699,33 +30819,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; LSLR Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -29742,33 +30862,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop1.B; LSL Zresult.B, Pg/M, Zresult.B, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -29787,33 +30907,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; LSLR Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -29830,33 +30950,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop1.H; LSL Zresult.H, Pg/M, Zresult.H, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -29875,33 +30995,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; LSLR Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -29918,33 +31038,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop1.S; LSL Zresult.S, Pg/M, Zresult.S, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -29963,33 +31083,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; LSLR Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30008,33 +31128,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; LSLR Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30051,33 +31171,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop1.B; LSL Zresult.B, Pg/M, Zresult.B, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30096,33 +31216,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; LSLR Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30139,33 +31259,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop1.H; LSL Zresult.H, Pg/M, Zresult.H, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30184,33 +31304,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; LSLR Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30227,33 +31347,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop1.S; LSL Zresult.S, Pg/M, Zresult.S, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30272,33 +31392,33 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; LSLR Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AM_2A : left shifts  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V1, REG_P0, 0, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V3, REG_P1, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V5, REG_P2, 7, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_P2, REG_V0, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AO_3A  LSL <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_P7, REG_V3, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSL <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsl, EA_SCALABLE, REG_V19, REG_V0, REG_V12, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BF_2A  LSL <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 15, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 31, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V0, 0, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V31, REG_V31, 63, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsl, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30320,36 +31440,36 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; ASRR Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AM_2A : right shifts  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_P0, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V1, REG_P1, 2, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V2, REG_P2, 3, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V3, REG_P3, 7, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P7, 8, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AO_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P3, REG_V24, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  ASR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_BF_2A  ASR <Zd>.<T>, <Zn>.<T>, #<const>
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30366,36 +31486,36 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop1.B; ASR Zresult.B, Pg/M, Zresult.B, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AM_2A : right shifts  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_P0, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V1, REG_P1, 2, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V2, REG_P2, 3, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V3, REG_P3, 7, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P7, 8, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AO_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P3, REG_V24, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  ASR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_BF_2A  ASR <Zd>.<T>, <Zn>.<T>, #<const>
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30414,36 +31534,36 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; ASRR Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AM_2A : right shifts  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_P0, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V1, REG_P1, 2, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V2, REG_P2, 3, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V3, REG_P3, 7, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P7, 8, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AO_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P3, REG_V24, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  ASR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_BF_2A  ASR <Zd>.<T>, <Zn>.<T>, #<const>
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30460,36 +31580,36 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop1.H; ASR Zresult.H, Pg/M, Zresult.H, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AM_2A : right shifts  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_P0, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V1, REG_P1, 2, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V2, REG_P2, 3, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V3, REG_P3, 7, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P7, 8, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AO_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P3, REG_V24, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  ASR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_BF_2A  ASR <Zd>.<T>, <Zn>.<T>, #<const>
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30508,36 +31628,36 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; ASRR Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AM_2A : right shifts  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_P0, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V1, REG_P1, 2, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V2, REG_P2, 3, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V3, REG_P3, 7, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P7, 8, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AO_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P3, REG_V24, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  ASR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_BF_2A  ASR <Zd>.<T>, <Zn>.<T>, #<const>
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30554,36 +31674,36 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop1.S; ASR Zresult.S, Pg/M, Zresult.S, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AM_2A : right shifts  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_P0, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V1, REG_P1, 2, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V2, REG_P2, 3, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V3, REG_P3, 7, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P7, 8, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AO_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P3, REG_V24, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  ASR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_BF_2A  ASR <Zd>.<T>, <Zn>.<T>, #<const>
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30602,36 +31722,36 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; ASRR Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AM_2A : right shifts  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_P0, 1, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V1, REG_P1, 2, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V2, REG_P2, 3, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V3, REG_P3, 7, INS_OPTS_SCALABLE_B);
         ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P7, 8, INS_OPTS_SCALABLE_B);
-        ///    IF_SVE_AN_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V5, REG_P0, REG_V21, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_AO_3A  ASR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V4, REG_P3, REG_V24, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  ASR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_asr, EA_SCALABLE, REG_V9, REG_V31, REG_V2, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_BF_2A  ASR <Zd>.<T>, <Zn>.<T>, #<const>
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 7, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_asr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30740,35 +31860,35 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop2.B; LSRR Zresult.B, Pg/M, Zresult.B, Zop1.B
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AM_2A : right shifts  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V8, REG_P5, 1, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V9, REG_P6, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_P7, 17, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P1, 32, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AN_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AO_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_BF_2A  LSR <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30785,35 +31905,35 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.B, Pg/Z, Zop1.B; LSR Zresult.B, Pg/M, Zresult.B, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AM_2A : right shifts  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V8, REG_P5, 1, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V9, REG_P6, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_P7, 17, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P1, 32, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AN_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AO_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_BF_2A  LSR <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30832,35 +31952,35 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop2.H; LSRR Zresult.H, Pg/M, Zresult.H, Zop1.H
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AM_2A : right shifts  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V8, REG_P5, 1, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V9, REG_P6, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_P7, 17, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P1, 32, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AN_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AO_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_BF_2A  LSR <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30877,35 +31997,35 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.H, Pg/Z, Zop1.H; LSR Zresult.H, Pg/M, Zresult.H, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AM_2A : right shifts  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V8, REG_P5, 1, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V9, REG_P6, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_P7, 17, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P1, 32, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AN_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AO_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_BF_2A  LSR <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30924,35 +32044,35 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop2.S; LSRR Zresult.S, Pg/M, Zresult.S, Zop1.S
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AM_2A : right shifts  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V8, REG_P5, 1, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V9, REG_P6, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_P7, 17, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P1, 32, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AN_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AO_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_BF_2A  LSR <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -30969,35 +32089,35 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.S, Pg/Z, Zop1.S; LSR Zresult.S, Pg/M, Zresult.S, Zop2.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AM_2A : right shifts  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V8, REG_P5, 1, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V9, REG_P6, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_P7, 17, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P1, 32, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AN_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AO_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_BF_2A  LSR <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -31016,35 +32136,35 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult.D, Pg/Z, Zop2.D; LSRR Zresult.D, Pg/M, Zresult.D, Zop1.D
         ///
         /// codegenarm64test:
+        ///    IF_SVE_AA_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AM_2A : right shifts  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V8, REG_P5, 1, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V9, REG_P6, 5, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_P7, 17, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, 31, INS_OPTS_SCALABLE_S);
         ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P1, 32, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AN_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V5, REG_P5, REG_V6, INS_OPTS_SCALABLE_B);
         ///    IF_SVE_AO_3A  LSR <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.D
         ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_P0, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_WIDE);
         ///    IF_SVE_BG_3A  LSR <Zd>.<T>, <Zn>.<T>, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED_WIDE);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_lsr, EA_SCALABLE, REG_V29, REG_V10, REG_V22, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_BF_2A  LSR <Zd>.<T>, <Zn>.<T>, #<const
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 8, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 5, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 4, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 16, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 9, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 8, INS_OPTS_SCALABLE_H);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 32, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 15, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 16, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V0, 1, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V31, REG_V31, 64, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 33, INS_OPTS_SCALABLE_D);
+        ///        theEmitter->emitIns_R_R_I(INS_sve_lsr, EA_SCALABLE, REG_V0, REG_V31, 32, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -31250,9 +32370,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.B, Pg, Zresult.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31265,9 +32382,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.H, Pg, Zresult.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31280,9 +32394,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.S, Pg, Zresult.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31295,9 +32406,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.D, Pg, Zresult.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31310,9 +32418,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.B, Pg, Zresult.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31325,9 +32430,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.H, Pg, Zresult.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31340,9 +32442,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.S, Pg, Zresult.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31355,9 +32454,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.D, Pg, Zresult.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31370,9 +32466,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.S, Pg, Zresult.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -31385,9 +32478,6 @@ namespace System.Runtime.Intrinsics.Arm
         ///   MOVPRFX Zresult, Zop1; SPLICE Zresult.D, Pg, Zresult.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_CV_3A  SPLICE <Zd>.<T>, <Pv>, {<Zn1>.<T>, <Zn2>.<T>}
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V0, REG_P0, REG_V30, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V3, REG_P7, REG_V27, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_WITH_VECTOR_PAIR);
         ///    IF_SVE_CV_3B  SPLICE <Zdn>.<T>, <Pv>, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V1, REG_P1, REG_V29, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_R(INS_sve_splice, EA_SCALABLE, REG_V2, REG_P6, REG_V28, INS_OPTS_SCALABLE_S);
@@ -32800,7 +33890,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32824,7 +33914,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32848,7 +33938,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32872,7 +33962,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32896,7 +33986,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32920,7 +34010,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32944,7 +34034,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32968,7 +34058,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///    IF_SVE_AA_3A  SUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V15, REG_P7, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sub, EA_SCALABLE, REG_V19, REG_V7, REG_V13, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_EC_1A  SUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sub, EA_SCALABLE, REG_V3, 255, INS_OPTS_SCALABLE_D);
         ///
@@ -32992,8 +34082,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fsub, EA_SCALABLE, REG_V5, REG_P5, REG_V30, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fsub, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fsub, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_HM_2A  FSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <const>
         ///        theEmitter->emitIns_R_R_F(INS_sve_fsub, EA_SCALABLE, REG_V7, REG_P2, 0.5, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_F(INS_sve_fsub, EA_SCALABLE, REG_V7, REG_P2, 1.0, INS_OPTS_SCALABLE_H);
@@ -33018,8 +34108,8 @@ namespace System.Runtime.Intrinsics.Arm
         /// codegenarm64test:
         ///    IF_SVE_HL_3A  FSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_fsub, EA_SCALABLE, REG_V5, REG_P5, REG_V30, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_HK_3A  FSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_fsub, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_fsub, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_HM_2A  FSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <const>
         ///        theEmitter->emitIns_R_R_F(INS_sve_fsub, EA_SCALABLE, REG_V7, REG_P2, 0.5, INS_OPTS_SCALABLE_H);
         ///        theEmitter->emitIns_R_R_F(INS_sve_fsub, EA_SCALABLE, REG_V7, REG_P2, 1.0, INS_OPTS_SCALABLE_H);
@@ -33037,10 +34127,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQSUB Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V29, REG_P0, REG_V24, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EC_1A  SQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqsub, EA_SCALABLE, REG_V2, 128, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33051,10 +34141,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQSUB Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V29, REG_P0, REG_V24, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EC_1A  SQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqsub, EA_SCALABLE, REG_V2, 128, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33065,10 +34155,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQSUB Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V29, REG_P0, REG_V24, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EC_1A  SQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqsub, EA_SCALABLE, REG_V2, 128, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33079,10 +34169,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   SQSUB Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  SQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V29, REG_P0, REG_V24, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_AT_3A  SQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_sqsub, EA_SCALABLE, REG_V7, REG_V0, REG_V31, INS_OPTS_SCALABLE_S);
         ///    IF_SVE_EC_1A  SQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_sqsub, EA_SCALABLE, REG_V2, 128, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33093,10 +34183,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQSUB Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V1, REG_P4, REG_V28, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AT_3A  UQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  UQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqsub, EA_SCALABLE, REG_V6, 65280, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33107,10 +34197,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQSUB Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V1, REG_P4, REG_V28, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AT_3A  UQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  UQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqsub, EA_SCALABLE, REG_V6, 65280, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33121,10 +34211,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQSUB Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V1, REG_P4, REG_V28, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AT_3A  UQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  UQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqsub, EA_SCALABLE, REG_V6, 65280, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33135,10 +34225,10 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UQSUB Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_ET_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AA_3A  UQSUB <Zdn>.<T>, <Pg>/M, <Zdn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V1, REG_P4, REG_V28, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_AT_3A  UQSUB <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uqsub, EA_SCALABLE, REG_V31, REG_V31, REG_V31, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_EC_1A  UQSUB <Zdn>.<T>, <Zdn>.<T>, #<imm>{, <shift>}
         ///        theEmitter->emitIns_R_I(INS_sve_uqsub, EA_SCALABLE, REG_V6, 65280, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33401,11 +34491,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33416,11 +34506,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33431,11 +34521,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33446,11 +34536,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33463,11 +34553,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Presult.B, Pop1.B, Pop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33480,11 +34570,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Presult.H, Pop1.H, Pop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33497,11 +34587,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Presult.S, Pop1.S, Pop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33514,11 +34604,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Presult.D, Pop1.D, Pop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33529,11 +34619,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33544,11 +34634,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN1 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  TRN1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_V0, REG_V1, REG_V2, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn1, EA_SCALABLE, REG_P1, REG_P3, REG_P4, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -33562,11 +34652,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33577,11 +34667,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33592,11 +34682,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33607,11 +34697,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33624,11 +34714,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Presult.B, Pop1.B, Pop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33641,11 +34731,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Presult.H, Pop1.H, Pop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33658,11 +34748,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Presult.S, Pop1.S, Pop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33675,11 +34765,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Presult.D, Pop1.D, Pop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33690,11 +34780,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33705,11 +34795,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   TRN2 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  TRN2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_D);
+        ///    IF_SVE_BR_3B  TRN2 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_V3, REG_V4, REG_V5, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  TRN2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_trn2, EA_SCALABLE, REG_P5, REG_P2, REG_P7, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -33752,7 +34842,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FTSSEL Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BK_3A  FTSSEL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AT_3A  FTSSEL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_ftssel, EA_SCALABLE, REG_V17, REG_V16, REG_V15, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<float> TrigonometricSelectCoefficient(Vector<float> value, Vector<uint> selector) => TrigonometricSelectCoefficient(value, selector);
@@ -33762,7 +34852,7 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FTSSEL Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BK_3A  FTSSEL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///    IF_SVE_AT_3A  FTSSEL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_ftssel, EA_SCALABLE, REG_V17, REG_V16, REG_V15, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<double> TrigonometricSelectCoefficient(Vector<double> value, Vector<ulong> selector) => TrigonometricSelectCoefficient(value, selector);
@@ -33775,8 +34865,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FTSMUL Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_HK_3A  FTSMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_ftsmul, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FTSMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_ftsmul, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<float> TrigonometricStartingValue(Vector<float> value, Vector<uint> sign) => TrigonometricStartingValue(value, sign);
 
@@ -33785,8 +34875,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///   FTSMUL Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_HK_3A  FTSMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_ftsmul, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  FTSMUL <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_ftsmul, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_D);
         /// </summary>
         public static unsafe Vector<double> TrigonometricStartingValue(Vector<double> value, Vector<ulong> sign) => TrigonometricStartingValue(value, sign);
 
@@ -33798,11 +34888,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33813,11 +34903,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33828,11 +34918,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33843,11 +34933,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33860,11 +34950,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Presult.B, Pop1.B, Pop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33877,11 +34967,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Presult.H, Pop1.H, Pop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33894,11 +34984,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Presult.S, Pop1.S, Pop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33911,11 +35001,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Presult.D, Pop1.D, Pop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33926,11 +35016,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33941,11 +35031,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP1 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_H);
+        ///    IF_SVE_BR_3B  UZP1 <Zd>.Q,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_S);
         /// </summary>
@@ -33959,11 +35049,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -33974,11 +35064,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -33989,11 +35079,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34004,11 +35094,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34021,11 +35111,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Presult.B, Pop1.B, Pop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34038,11 +35128,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Presult.H, Pop1.H, Pop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34055,11 +35145,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Presult.S, Pop1.S, Pop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34072,11 +35162,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Presult.D, Pop1.D, Pop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34087,11 +35177,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34102,11 +35192,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   UZP2 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  UZP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V18, REG_V19, REG_V20, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V21, REG_V22, REG_V23, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  UZP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_V9, REG_V10, REG_V11, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  UZP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_uzp2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_D);
         /// </summary>
@@ -34299,8 +35389,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34327,8 +35417,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34355,8 +35445,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34383,8 +35473,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34411,8 +35501,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34439,8 +35529,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34467,8 +35557,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34495,8 +35585,8 @@ namespace System.Runtime.Intrinsics.Arm
         ///        theEmitter->emitIns_R_R_R_R(INS_sve_eor, EA_SCALABLE, REG_P8, REG_P15, REG_P11, REG_P7, INS_OPTS_SCALABLE_B); /* EOR <Pd>.B, <Pg>/Z, <Pn>.B, <Pm>.B */
         ///    IF_SVE_BS_1A  EOR <Zdn>.<T>, <Zdn>.<T>, #<const>
         ///        theEmitter->emitIns_R_I(INS_sve_eor, EA_SCALABLE, REG_V4, 0x0000000003FFC000, INS_OPTS_SCALABLE_S);
-        ///    IF_SVE_AU_3A  EOR <Zd>.D, <Zn>.D, <Zm>.D
-        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AU_3A  EOR <Zd>.D,
+        ///        theEmitter->emitIns_R_R_R(INS_sve_eor, EA_SCALABLE, REG_V6, REG_V7, REG_V8, INS_OPTS_SCALABLE_D);
         ///
         /// Embedded arg1 mask predicate
         /// </summary>
@@ -34812,11 +35902,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34827,11 +35917,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34842,11 +35932,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34857,11 +35947,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34874,11 +35964,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Presult.B, Pop1.B, Pop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34891,11 +35981,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Presult.H, Pop1.H, Pop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34908,11 +35998,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Presult.S, Pop1.S, Pop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34925,11 +36015,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Presult.D, Pop1.D, Pop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34940,11 +36030,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34955,11 +36045,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP2 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP2 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V30, REG_V31, REG_V0, INS_OPTS_SCALABLE_S);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V1, REG_V2, REG_V3, INS_OPTS_SCALABLE_D);
         ///    IF_SVE_BR_3B  ZIP2 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_V15, REG_V16, REG_V17, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP2 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip2, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_H);
         /// </summary>
@@ -34973,11 +36063,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Zresult.B, Zop1.B, Zop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -34988,11 +36078,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Zresult.H, Zop1.H, Zop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35003,11 +36093,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35018,11 +36108,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35035,11 +36125,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Presult.B, Pop1.B, Pop2.B
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35052,11 +36142,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Presult.H, Pop1.H, Pop2.H
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35069,11 +36159,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Presult.S, Pop1.S, Pop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35086,11 +36176,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Presult.D, Pop1.D, Pop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35101,11 +36191,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Zresult.S, Zop1.S, Zop2.S
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>
@@ -35116,11 +36206,11 @@ namespace System.Runtime.Intrinsics.Arm
         ///   ZIP1 Zresult.D, Zop1.D, Zop2.D
         ///
         /// codegenarm64test:
-        ///    IF_SVE_BR_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B, INS_SCALABLE_OPTS_UNPREDICATED);
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///    IF_SVE_AT_3A  ZIP1 <Zd>.<T>, <Zn>.<T>, <Zm>.<T>
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V24, REG_V25, REG_V26, INS_OPTS_SCALABLE_B);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V27, REG_V28, REG_V29, INS_OPTS_SCALABLE_H);
         ///    IF_SVE_BR_3B  ZIP1 <Zd>.Q, <Zn>.Q, <Zm>.Q
-        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q, INS_SCALABLE_OPTS_UNPREDICATED);
+        ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_V12, REG_V13, REG_V14, INS_OPTS_SCALABLE_Q);
         ///    IF_SVE_CI_3A  ZIP1 <Pd>.<T>, <Pn>.<T>, <Pm>.<T>
         ///        theEmitter->emitIns_R_R_R(INS_sve_zip1, EA_SCALABLE, REG_P0, REG_P0, REG_P0, INS_OPTS_SCALABLE_B);
         /// </summary>

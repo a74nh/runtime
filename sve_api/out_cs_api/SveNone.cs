@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  Change one vector in a tuple of four vectors
+        // Change one vector in a tuple of four vectors
 
         /// <summary>
         /// svbfloat16x4_t svset4[_bf16](svbfloat16x4_t tuple, uint64_t imm_index, svbfloat16_t x)
@@ -90,7 +90,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>, Vector<ulong>) ChangeOneVectorInATupleOfFourVectors((Vector<ulong> tuple1, Vector<ulong> tuple2, Vector<ulong> tuple3, Vector<ulong> tuple4), ulong imm_index, Vector<ulong> x) => ChangeOneVectorInATupleOfFourVectors(tuple1,, imm_index, x);
 
 
-        ///  Change one vector in a tuple of three vectors
+        // Change one vector in a tuple of three vectors
 
         /// <summary>
         /// svbfloat16x3_t svset3[_bf16](svbfloat16x3_t tuple, uint64_t imm_index, svbfloat16_t x)
@@ -153,7 +153,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>) ChangeOneVectorInATupleOfThreeVectors((Vector<ulong> tuple1, Vector<ulong> tuple2, Vector<ulong> tuple3), ulong imm_index, Vector<ulong> x) => ChangeOneVectorInATupleOfThreeVectors(tuple1,, imm_index, x);
 
 
-        ///  Change one vector in a tuple of two vectors
+        // Change one vector in a tuple of two vectors
 
         /// <summary>
         /// svbfloat16x2_t svset2[_bf16](svbfloat16x2_t tuple, uint64_t imm_index, svbfloat16_t x)
@@ -216,7 +216,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>) ChangeOneVectorInATupleOfTwoVectors((Vector<ulong> tuple1, Vector<ulong> tuple2), ulong imm_index, Vector<ulong> x) => ChangeOneVectorInATupleOfTwoVectors(tuple1,, imm_index, x);
 
 
-        ///  Create a tuple of four vectors
+        // Create a tuple of four vectors
 
         /// <summary>
         /// svbfloat16x4_t svcreate4[_bf16](svbfloat16_t x0, svbfloat16_t x1, svbfloat16_t x2, svbfloat16_t x3)
@@ -279,7 +279,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>, Vector<ulong>) CreateATupleOfFourVectors(Vector<ulong> x0, Vector<ulong> x1, Vector<ulong> x2, Vector<ulong> x3) => CreateATupleOfFourVectors(x0, x1, x2, x3);
 
 
-        ///  Create a tuple of three vectors
+        // Create a tuple of three vectors
 
         /// <summary>
         /// svbfloat16x3_t svcreate3[_bf16](svbfloat16_t x0, svbfloat16_t x1, svbfloat16_t x2)
@@ -342,7 +342,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>) CreateATupleOfThreeVectors(Vector<ulong> x0, Vector<ulong> x1, Vector<ulong> x2) => CreateATupleOfThreeVectors(x0, x1, x2);
 
 
-        ///  Create a tuple of two vectors
+        // Create a tuple of two vectors
 
         /// <summary>
         /// svbfloat16x2_t svcreate2[_bf16](svbfloat16_t x0, svbfloat16_t x1)
@@ -405,7 +405,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>) CreateATupleOfTwoVectors(Vector<ulong> x0, Vector<ulong> x1) => CreateATupleOfTwoVectors(x0, x1);
 
 
-        ///  Create an uninitialized tuple of four vectors
+        // Create an uninitialized tuple of four vectors
 
         /// <summary>
         /// svbfloat16x4_t svundef4_bf16()
@@ -468,7 +468,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>, Vector<ulong>) CreateAnUninitializedTupleOfFourVectors() => CreateAnUninitializedTupleOfFourVectors();
 
 
-        ///  Create an uninitialized tuple of three vectors
+        // Create an uninitialized tuple of three vectors
 
         /// <summary>
         /// svbfloat16x3_t svundef3_bf16()
@@ -531,7 +531,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>, Vector<ulong>) CreateAnUninitializedTupleOfThreeVectors() => CreateAnUninitializedTupleOfThreeVectors();
 
 
-        ///  Create an uninitialized tuple of two vectors
+        // Create an uninitialized tuple of two vectors
 
         /// <summary>
         /// svbfloat16x2_t svundef2_bf16()
@@ -594,7 +594,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe (Vector<ulong>, Vector<ulong>) CreateAnUninitializedTupleOfTwoVectors() => CreateAnUninitializedTupleOfTwoVectors();
 
 
-        ///  Create an uninitialized vector
+        // Create an uninitialized vector
 
         /// <summary>
         /// svbfloat16_t svundef_bf16()
@@ -657,7 +657,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> CreateAnUninitializedVector() => CreateAnUninitializedVector();
 
 
-        ///  Broadcast a quadword of scalars
+        // Broadcast a quadword of scalars
 
         /// <summary>
         /// svbfloat16_t svdupq[_n]_bf16(bfloat16_t x0, bfloat16_t x1, bfloat16_t x2, bfloat16_t x3, bfloat16_t x4, bfloat16_t x5, bfloat16_t x6, bfloat16_t x7)
@@ -740,7 +740,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> DuplicateSelectedScalarToVector(bool x0, [ConstantExpected] byte index) => DuplicateSelectedScalarToVector(x0, index);
 
 
-        ///  Extract one vector from a tuple of four vectors
+        // Extract one vector from a tuple of four vectors
 
         /// <summary>
         /// svbfloat16_t svget4[_bf16](svbfloat16x4_t tuple, uint64_t imm_index)
@@ -803,7 +803,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ExtractOneVectorFromATupleOfFourVectors((Vector<ulong> tuple1, Vector<ulong> tuple2, Vector<ulong> tuple3, Vector<ulong> tuple4), ulong imm_index) => ExtractOneVectorFromATupleOfFourVectors(tuple1,, imm_index);
 
 
-        ///  Extract one vector from a tuple of three vectors
+        // Extract one vector from a tuple of three vectors
 
         /// <summary>
         /// svbfloat16_t svget3[_bf16](svbfloat16x3_t tuple, uint64_t imm_index)
@@ -866,7 +866,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ExtractOneVectorFromATupleOfThreeVectors((Vector<ulong> tuple1, Vector<ulong> tuple2, Vector<ulong> tuple3), ulong imm_index) => ExtractOneVectorFromATupleOfThreeVectors(tuple1,, imm_index);
 
 
-        ///  Extract one vector from a tuple of two vectors
+        // Extract one vector from a tuple of two vectors
 
         /// <summary>
         /// svbfloat16_t svget2[_bf16](svbfloat16x2_t tuple, uint64_t imm_index)
@@ -929,7 +929,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ExtractOneVectorFromATupleOfTwoVectors((Vector<ulong> tuple1, Vector<ulong> tuple2), ulong imm_index) => ExtractOneVectorFromATupleOfTwoVectors(tuple1,, imm_index);
 
 
-        ///  Reinterpret vector contents
+        // Reinterpret vector contents
 
         /// <summary>
         /// svbfloat16_t svreinterpret_bf16[_bf16](svbfloat16_t op)

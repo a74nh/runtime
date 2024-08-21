@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  Gather lower bits from positions selected by bitmask
+        // Gather lower bits from positions selected by bitmask
 
         /// <summary>
         /// svuint8_t svbext[_u8](svuint8_t op1, svuint8_t op2)
@@ -54,7 +54,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GatherLowerBitsFromPositionsSelectedByBitmask(Vector<ulong> left, Vector<ulong> right) => GatherLowerBitsFromPositionsSelectedByBitmask(left, right);
 
 
-        ///  Group bits to right or left as selected by bitmask
+        // Group bits to right or left as selected by bitmask
 
         /// <summary>
         /// svuint8_t svbgrp[_u8](svuint8_t op1, svuint8_t op2)
@@ -81,7 +81,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> GroupBitsToRightOrLeftAsSelectedByBitmask(Vector<ulong> left, Vector<ulong> right) => GroupBitsToRightOrLeftAsSelectedByBitmask(left, right);
 
 
-        ///  Scatter lower bits into positions selected by bitmask
+        // Scatter lower bits into positions selected by bitmask
 
         /// <summary>
         /// svuint8_t svbdep[_u8](svuint8_t op1, svuint8_t op2)

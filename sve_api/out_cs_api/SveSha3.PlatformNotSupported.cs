@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  Bitwise rotate left by 1 and exclusive OR
+        // Bitwise rotate left by 1 and exclusive OR
 
         /// <summary>
         /// svint64_t svrax1[_s64](svint64_t op1, svint64_t op2)

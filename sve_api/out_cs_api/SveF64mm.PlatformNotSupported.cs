@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  Concatenate even quadwords from two inputs
+        // Concatenate even quadwords from two inputs
 
         /// <summary>
         /// svuint8_t svuzp1q[_u8](svuint8_t op1, svuint8_t op2)
@@ -90,7 +90,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ConcatenateEvenInt128FromTwoInputs(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Concatenate odd quadwords from two inputs
+        // Concatenate odd quadwords from two inputs
 
         /// <summary>
         /// svuint8_t svuzp2q[_u8](svuint8_t op1, svuint8_t op2)
@@ -153,7 +153,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> ConcatenateOddInt128FromTwoInputs(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Interleave even quadwords from two inputs
+        // Interleave even quadwords from two inputs
 
         /// <summary>
         /// svuint8_t svtrn1q[_u8](svuint8_t op1, svuint8_t op2)
@@ -216,7 +216,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> InterleaveEvenInt128FromTwoInputs(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Interleave quadwords from high halves of two inputs
+        // Interleave quadwords from high halves of two inputs
 
         /// <summary>
         /// svuint8_t svzip2q[_u8](svuint8_t op1, svuint8_t op2)
@@ -279,7 +279,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> InterleaveInt128FromHighHalvesOfTwoInputs(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Interleave quadwords from low halves of two inputs
+        // Interleave quadwords from low halves of two inputs
 
         /// <summary>
         /// svuint8_t svzip1q[_u8](svuint8_t op1, svuint8_t op2)
@@ -342,7 +342,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> InterleaveInt128FromLowHalvesOfTwoInputs(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Interleave odd quadwords from two inputs
+        // Interleave odd quadwords from two inputs
 
         /// <summary>
         /// svuint8_t svtrn2q[_u8](svuint8_t op1, svuint8_t op2)
@@ -405,7 +405,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> InterleaveOddInt128FromTwoInputs(Vector<ulong> left, Vector<ulong> right) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Load and replicate 256 bits of data
+        // Load and replicate 256 bits of data
 
         /// <summary>
         /// svuint8_t svld1ro[_u8](svbool_t pg, const uint8_t *base)
@@ -488,7 +488,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<ulong> LoadVector256AndReplicateToVector(Vector<ulong> mask, ulong* address) { throw new PlatformNotSupportedException(); }
 
 
-        ///  Matrix multiply-accumulate
+        // Matrix multiply-accumulate
 
         /// <summary>
         /// svfloat64_t svmmla[_f64](svfloat64_t op1, svfloat64_t op2, svfloat64_t op3)

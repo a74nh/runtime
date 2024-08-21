@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  SM4 encryption and decryption
+        // SM4 encryption and decryption
 
         /// <summary>
         /// svuint32_t svsm4e[_u32](svuint32_t op1, svuint32_t op2)
@@ -36,7 +36,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector<uint> Sm4EncryptionAndDecryption(Vector<uint> left, Vector<uint> right) => Sm4EncryptionAndDecryption(left, right);
 
 
-        ///  SM4 key updates
+        // SM4 key updates
 
         /// <summary>
         /// svuint32_t svsm4ekey[_u32](svuint32_t op1, svuint32_t op2)

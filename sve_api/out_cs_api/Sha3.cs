@@ -27,7 +27,7 @@ namespace System.Runtime.Intrinsics.Arm
             public static new bool IsSupported { get => IsSupported; }
         }
 
-        ///  Bit Clear and Exclusive OR performs a bitwise AND of the 128-bit vector in a source SIMD&FP register and the complement of the vector in another source SIMD&FP register, then performs a bitwise exclusive OR of the resulting vector and the vector in a third source SIMD&FP register, and writes the result to the destination SIMD&FP register.
+        // Bit Clear and Exclusive OR performs a bitwise AND of the 128-bit vector in a source SIMD&FP register and the complement of the vector in another source SIMD&FP register, then performs a bitwise exclusive OR of the resulting vector and the vector in a third source SIMD&FP register, and writes the result to the destination SIMD&FP register.
 
         /// <summary>
         /// uint8x16_t vbcaxq_u8(uint8x16_t a, uint8x16_t b, uint8x16_t c)
@@ -78,7 +78,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector128<ulong> BitwiseClearXor(Vector128<ulong> xor, Vector128<ulong> value, Vector128<ulong> mask) => BitwiseClearXor(xor, value, mask);
 
 
-        ///  Rotate and Exclusive OR rotates each 64-bit element of the 128-bit vector in a source SIMD&FP register left by 1, performs a bitwise exclusive OR of the resulting 128-bit vector and the vector in another source SIMD&FP register, and writes the result to the destination SIMD&FP register.
+        // Rotate and Exclusive OR rotates each 64-bit element of the 128-bit vector in a source SIMD&FP register left by 1, performs a bitwise exclusive OR of the resulting 128-bit vector and the vector in another source SIMD&FP register, and writes the result to the destination SIMD&FP register.
 
         /// <summary>
         /// uint64x2_t vrax1q_u64(uint64x2_t a, uint64x2_t b)
@@ -87,7 +87,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector128<ulong> BitwiseRotateLeftBy1AndXor(Vector128<ulong> a, Vector128<ulong> b) => BitwiseRotateLeftBy1AndXor(a, b);
 
 
-        ///  Three-way Exclusive OR performs a three-way exclusive OR of the values in the three source SIMD&FP registers, and writes the result to the destination SIMD&FP register.
+        // Three-way Exclusive OR performs a three-way exclusive OR of the values in the three source SIMD&FP registers, and writes the result to the destination SIMD&FP register.
 
         /// <summary>
         /// uint8x16_t veor3q_u8(uint8x16_t a, uint8x16_t b, uint8x16_t c)
@@ -138,7 +138,7 @@ namespace System.Runtime.Intrinsics.Arm
         public static unsafe Vector128<ulong> Xor(Vector128<ulong> value1, Vector128<ulong> value2, Vector128<ulong> value3) => Xor(value1, value2, value3);
 
 
-        ///  Exclusive OR and Rotate performs a bitwise exclusive OR of the 128-bit vectors in the two source SIMD&FP registers, rotates each 64-bit element of the resulting 128-bit vector right by the value specified by a 6-bit immediate value, and writes the result to the destination SIMD&FP register.
+        // Exclusive OR and Rotate performs a bitwise exclusive OR of the 128-bit vectors in the two source SIMD&FP registers, rotates each 64-bit element of the resulting 128-bit vector right by the value specified by a 6-bit immediate value, and writes the result to the destination SIMD&FP register.
 
         /// <summary>
         /// uint64x2_t vxarq_u64(uint64x2_t a, uint64x2_t b, const int imm6)
