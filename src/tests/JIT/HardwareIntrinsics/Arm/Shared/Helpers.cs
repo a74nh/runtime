@@ -8407,7 +8407,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8433,7 +8433,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (Double.IsNaN(maskArray[i]) || maskArray[i] > 0.0d)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8459,7 +8459,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0.0f)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8485,7 +8485,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8511,7 +8511,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8537,7 +8537,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8563,7 +8563,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8589,7 +8589,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8615,7 +8615,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
@@ -8641,7 +8641,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < maskArray.Length; i++)
             {
-                if (maskArray[i] != 0)
+                if (GetSveMaskValue(maskArray, i))
                 {
                     if (start == -1)
                     {
