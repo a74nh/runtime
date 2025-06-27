@@ -336,7 +336,7 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < RetElementCount; i++)
             {
-                {RetBaseType} iterResult = (mask[i] != 0) ? (({RetBaseType})left[i]) : falseVal[i];
+                {RetBaseType} iterResult = (Helpers.GetSveMaskValue(mask, i)) ? (({RetBaseType})left[i]) : falseVal[i];
                 if (iterResult != result[i])
                 {
                     succeeded = false;
@@ -373,8 +373,8 @@ namespace JIT.HardwareIntrinsics.Arm
 
             for (var i = 0; i < RetElementCount; i++)
             {
-                {RetBaseType} iterResult = (mask[i] != 0) ? trueVal[i] : (({RetBaseType})left[i]);
-                if (mask[i] != 0)
+                {RetBaseType} iterResult = (Helpers.GetSveMaskValue(mask, i)) ? trueVal[i] : (({RetBaseType})left[i]);
+                if (Helpers.GetSveMaskValue(mask, i))
                 {
                     if (iterResult != result[i])
                     {

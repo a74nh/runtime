@@ -10737,5 +10737,25 @@ namespace JIT.HardwareIntrinsics.Arm
         public static uint SveShiftLogicalRoundedSaturate(uint op1, int op2) => UnsignedShift(op1, op2, rounding: true, saturating: true, shiftSat: true);
 
         public static ulong SveShiftLogicalRoundedSaturate(ulong op1, long op2) => UnsignedShift(op1, op2, rounding: true, saturating: true, shiftSat: true);
+
+        public static bool GetSveMaskValue(byte[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(sbyte[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(short[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(ushort[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(int[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(uint[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(long[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(ulong[] mask, int index) => (mask[index] & 1) != 0;
+
+        public static bool GetSveMaskValue(float[] mask, int index) => (BitConverter.SingleToInt32Bits(mask[index]) & 1) != 0;
+
+        public static bool GetSveMaskValue(double[] mask, int index) => (BitConverter.DoubleToInt64Bits(mask[index]) & 1) != 0;
     }
 }
