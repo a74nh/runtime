@@ -434,6 +434,9 @@ namespace {Namespace}._Sve
 
         private void ValidateResult({Op1BaseType}[] mask, {Op1BaseType}[] data, {Op2BaseType}[] address, [CallerMemberName] string method = "")
         {
+            // Ensure that memory is correctly read for Non Temporal versions
+            System.Threading.Thread.MemoryBarrier();
+
             bool succeeded = true;
 
             var actualResult = new {NarrowingType}[DataElementCount];
@@ -488,6 +491,9 @@ namespace {Namespace}._Sve
 
         private void ValidateZeroResult({Op1BaseType}[] data, {Op2BaseType}[] address, [CallerMemberName] string method = "")
         {
+            // Ensure that memory is correctly read for Non Temporal versions
+            System.Threading.Thread.MemoryBarrier();
+
             bool succeeded = true;
             var actualResult = new {NarrowingType}[DataElementCount];
             for (var i = 0; i < DataElementCount; i++)

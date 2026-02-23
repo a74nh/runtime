@@ -422,6 +422,9 @@ private void ValidateResult(void* mask, void* data, void* baseAddr, void* offset
 
 private void ValidateResult({Op1BaseType}[] mask, {Op1BaseType}[] data, {Op2BaseType}* baseAddr, {Op3BaseType}[] offset, [CallerMemberName] string method = "")
 {
+    // Ensure that memory is correctly read for Non Temporal versions
+    System.Threading.Thread.MemoryBarrier();
+
     bool succeeded = true;
 
     var actualResult = new {Op2BaseType}[DataElementCount];
@@ -482,6 +485,9 @@ private void ValidateZeroResult(void* data, void* baseAddr, void* offset, [Calle
 
 private void ValidateZeroResult({Op1BaseType}[] data, {Op2BaseType}* baseAddr, {Op3BaseType}[] offset, [CallerMemberName] string method = "")
 {
+    // Ensure that memory is correctly read for Non Temporal versions
+    System.Threading.Thread.MemoryBarrier();
+
     bool succeeded = true;
     var actualResult = new {Op2BaseType}[DataElementCount];
     for (var i = 0; i < DataElementCount; i++)

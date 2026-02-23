@@ -350,7 +350,6 @@ static class Templates
     public static TemplateConfig SveStoreAndZipTestx3 = new TemplateConfig("SveStoreAndZipTestx3.template");
     public static TemplateConfig SveStoreAndZipTestx4 = new TemplateConfig("SveStoreAndZipTestx4.template");
     public static TemplateConfig SveTestTest = new TemplateConfig("SveTestTest.template");
-    public static TemplateConfig SveScatterVectorOffsets = new TemplateConfig("SveScatterVectorOffsets.template");
     public static TemplateConfig ScalarImm2UnOpTest = new TemplateConfig("ScalarImm2UnOpTest.template");
     public static TemplateConfig SveSaturatingByActiveElementCount = new TemplateConfig("SveSaturatingByActiveElementCount.template");
     public static TemplateConfig SveLoad2xVectorAndUnzipTest = new TemplateConfig("SveLoad2xVectorAndUnzipTest.template");
