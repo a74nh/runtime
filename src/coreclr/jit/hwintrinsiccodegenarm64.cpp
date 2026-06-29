@@ -716,8 +716,7 @@ void CodeGen::genEmbeddedMaskedHWIntrinsic(GenTreeHWIntrinsic* cndSelNode, regNu
         {
             if (targetReg == embMaskOp2Reg)
             {
-                GetEmitter()->emitInsSve_Mov(INS_sve_mov, EA_SCALABLE, tempReg, embMaskOp2Reg, /* canSkip */ true,
-                                             opt);
+                GetEmitter()->emitInsSve_Mov(INS_sve_mov, EA_SCALABLE, tempReg, embMaskOp2Reg, /* canSkip */ true, opt);
                 embMaskOp2Reg = tempReg;
                 if (embMaskOp3Reg == targetReg)
                 {
@@ -726,8 +725,7 @@ void CodeGen::genEmbeddedMaskedHWIntrinsic(GenTreeHWIntrinsic* cndSelNode, regNu
             }
             else if (targetReg == embMaskOp3Reg)
             {
-                GetEmitter()->emitInsSve_Mov(INS_sve_mov, EA_SCALABLE, tempReg, embMaskOp3Reg, /* canSkip */ true,
-                                             opt);
+                GetEmitter()->emitInsSve_Mov(INS_sve_mov, EA_SCALABLE, tempReg, embMaskOp3Reg, /* canSkip */ true, opt);
                 embMaskOp3Reg = tempReg;
             }
         }
